@@ -1,40 +1,41 @@
-# Example ESG Rating Response
+# ESG 评级 / 客户问卷回复示例
 
-## Executive summary
+## 执行摘要
 
-This example organizes responses to ESG rating and customer questionnaire requests without predicting scores.
+本示例整理 ESG 评级和客户问卷请求，并避免添加未经支持的分数、估计或供应商审核声明。
 
-## Applicable framework and assumptions
+## 适用框架与假设
 
-- Requesters: illustrative MSCI, Sustainalytics, CDP, EcoVadis, and supplier questionnaire references.
-- Source pack: fictional public policy list.
-- Assumption: response owners must confirm each answer.
+- 请求方：虚构客户或评级机构。
+- 来源材料：未提供证据包。
+- 目的：内部回复准备记录。
 
-## Key findings
+## 关键发现
 
-| Topic | Evidence status | Risk flag |
+| 主题 | 证据状态 | 风险提示 |
 | --- | --- | --- |
-| Supplier audits | Missing data | Do not imply audit results. |
-| Climate targets | Missing data | Do not imply target validation. |
+| 供应商审核覆盖 | Missing data | 不声称所有供应商已审核。 |
+| 气候目标 | Do not claim | 不声称目标对齐。 |
 
-## Practical output: response log
+## 实用输出：回复记录
 
-| Question ID | Request | Proposed response | Evidence status | Next action |
+| 问题编号 | 请求内容 | 拟回复 | 证据状态 | 下一步行动 |
 | --- | --- | --- | --- | --- |
-| Q1 | Provide supplier audit coverage. | No response ready. | Missing data | Procurement to provide approved evidence or confirm unavailable. |
-| Q2 | Provide climate target status. | Do not claim target alignment without approved evidence. | Do not claim | Sustainability and legal to review. |
+| Q1 | 提供供应商审核覆盖。 | 暂无可用回复。 | Missing data | 采购提供已批准证据或确认不可用。 |
+| Q2 | 提供气候目标状态。 | 未有获批准证据前，不声称目标对齐。 | Do not claim | 可持续发展和法律复核。 |
+| Q3 | 提供当前 ESG 评级分数。 | 除非提供评级机构、日期或期间、范围和来源，否则暂无可用回复。 | Missing data | IR 或 ESG 提供来源，或删除分数。 |
 
-## Evidence status
+## 证据状态
 
-No rating score, methodology outcome, or supplier audit result is verified in this example.
+本示例中没有评级分数、方法结果或供应商审核结果被标为 `Verified`。
 
-## Risk flags
+## 风险提示
 
-- Do not predict ESG rating score changes.
-- Do not imply supplier audit results.
+- 不预测 ESG 评级分数变化。
+- 评级分数不代表不存在 ESG 风险或监管合规。
+- 不暗示供应商审核结果。
 
-## Next actions
+## 下一步行动
 
-- Assign questionnaire owners.
-- Collect source documents.
-- Review final responses before submission.
+- 各职能负责人提供来源材料。
+- 提交前完成 ESG、法律、采购和 IR 复核。

@@ -10,6 +10,16 @@ Use this pack when you need an internal ESG draft, checklist, tracker, board bri
 
 For pilot rollout instructions, see [PILOT_GUIDE.md](PILOT_GUIDE.md). For release notes and known limitations, see [CHANGELOG.md](CHANGELOG.md).
 
+## Default Output Language
+
+This pack is Chinese-first by default. Unless you explicitly ask for English or bilingual output, skills should produce Chinese work products.
+
+- If you write in Chinese, the output should be in Chinese.
+- If you mix Chinese and English, the output should still be in Chinese, while keeping useful ESG, IR, framework, and rating terms such as HKEX, ISSB, IFRS S1, IFRS S2, TCFD, Scope 1, Scope 2, Scope 3, MSCI, CDP, EcoVadis, and Sustainalytics.
+- If you write in English but do not specify the output language, the skill should prefer a Chinese summary and Chinese work product.
+- Output in English only when the user explicitly requests English, an English version, an English answer, investor roadshow wording in English, or board-ready English wording.
+- Output bilingual content only when the user explicitly requests bilingual output.
+
 ## Pilot Use Only / Internal Draft Use
 
 This v0.1 pack is for internal pilot use and draft working papers only. It does not provide legal, regulatory, audit, assurance, financial, or sustainability reporting advice. Outputs must not be externally published, filed, submitted, or disclosed until approved by the responsible internal owners and professional reviewers.
@@ -17,6 +27,8 @@ This v0.1 pack is for internal pilot use and draft working papers only. It does 
 Listed-company IR users must consider selective disclosure, inside information, market-sensitive information, and approved disclosure channels before using any output externally.
 
 The skills must not determine whether a regulatory framework is mandatory for a company without legal or professional confirmation.
+
+Real-company public ESG reports can be used for testing, but outputs remain internal working papers and not compliance opinions.
 
 ## What to Provide
 
@@ -43,7 +55,7 @@ If evidence is not available, say so. The skills should mark the item as `Missin
 
 ## Verified Does Not Mean Approved
 
-`Verified` means source-supported within the materials provided to the agent only. It does not mean legally verified, audited, assured, regulator-approved, board-approved, externally publishable, or suitable for filing or submission.
+`Verified` means source-supported within the materials provided to the agent only. It does not mean legally verified, audited, assured, regulator-approved, board-approved, externally publishable, complete, free from error, or suitable for filing or submission.
 
 Treat every output as a draft until the responsible ESG, IR, company secretarial, legal, finance, sustainability, operations, assurance, and management reviewers approve it for the intended use.
 

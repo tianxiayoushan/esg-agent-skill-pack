@@ -1,39 +1,41 @@
-# Example ESG Investor Q&A
+# ESG 投资者问答示例
 
-## Executive summary
+## 执行摘要
 
-This illustrative Q&A prepares cautious answers for an investor roadshow. It avoids unsupported metrics and target claims.
+本示例为投资者路演准备谨慎回答，避免无支持指标和目标声明。
 
-## Applicable framework and assumptions
+## 适用框架与假设
 
-- Audience: investors and analysts.
-- Source pack: fictional public disclosure extracts.
-- Assumption: no non-public ESG metrics should be disclosed.
+- 受众：投资者和分析师。
+- 来源材料：虚构公开披露摘录。
+- 假设：不应披露任何非公开 ESG 指标。
 
-## Key findings
+## 关键发现
 
-| Topic | Evidence status | Risk flag |
+| 主题 | 证据状态 | 风险提示 |
 | --- | --- | --- |
-| Emissions metrics | Missing data | Do not estimate figures. |
-| Governance | Needs confirmation | Confirm approved governance wording. |
+| 排放指标 | Missing data | 不估算数字。 |
+| 治理 | Needs confirmation | 确认已批准治理措辞。 |
 
-## Practical output: Q&A
+## 实用输出：问答
 
-| Question | Draft answer | Evidence status | Safer fallback |
-| --- | --- | --- | --- |
-| What is your climate reporting plan? | We are reviewing reporting requirements and will update the market through approved disclosures. | Needs confirmation | Refer to published reports only. |
-| Are you carbon neutral? | Do not answer yes unless certified evidence is supplied. | Do not claim | State that no approved claim is available. |
+| 问题 | 基于公开披露的稳妥回答 | 谨慎回答 | 不应说的表述 | 证据状态 | 来源或负责人 | 更稳妥替代表述 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 公司的气候披露计划是什么？ | 我们会请投资者参考已批准公开披露，并通过获批准渠道更新市场。 | 内部计划在使用前需要 IR、法律、ESG、财务和管理层复核。 | 不要将未披露计划描述为已批准承诺。 | Needs confirmation | 已发布报告或 IR 批准话术。 | 仅引用已发布报告。 |
+| 公司是否已经 carbon neutral？ | 本示例中没有获批准公开来源支持该声明。 | 任何认证、边界或目标表述均需要证据和批准。 | 除非提供并批准认证证据，否则不要回答“是”。 | Do not claim | 认证或鉴证文件，如有。 | 说明目前没有获批准声明。 |
 
-## Evidence status
+## 证据状态
 
-No new ESG metric is verified in this example.
+本示例没有新的 ESG 指标被标为 `Verified`。
 
-## Risk flags
+## 风险提示
 
-- Avoid selective disclosure.
-- Avoid unsupported target or certification language.
+- 除非有明确来源支持并获批准，避免比较性声明。
+- 避免写“Risk flags: None”；改用“基于已提供材料未识别重大风险，但仍需 IR / 法律复核”。
+- 避免选择性披露、内幕消息、市场敏感信息和未经批准渠道。
+- 避免无支持目标或认证措辞。
 
-## Next actions
+## 下一步行动
 
-- IR to confirm approved public messaging.
-- Legal to review answers before external use.
+- IR 确认已批准公开信息口径。
+- 法律在对外使用前复核回答。

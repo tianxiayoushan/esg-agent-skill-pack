@@ -1,53 +1,46 @@
-# Example Department-Filled ESG Data Request Tracker
+# 部门填列 ESG 数据追踪表示例
 
-## Executive summary
+## 执行摘要
 
-This synthetic example shows how an ESG manager can request annual ESG data from common internal departments. It contains no real company data, no real personnel data, and no emissions figures.
+本示例展示 ESG 经理如何向 HR、Finance、Operations、EHS、Procurement 和 Administration 收集年度 ESG 数据。内容全部为合成样本，不含真实公司数据、真实人员数据或排放数字。
 
-## Applicable framework and assumptions
+## 适用框架与假设
 
-- Company: fictional large manufacturing group.
-- Reporting period: FY2026, to be confirmed by finance.
-- Boundary: group reporting boundary not yet confirmed.
-- Framework or questionnaire: to be confirmed by ESG and legal.
-- Assumption: Scope 1, Scope 2, and Scope 3 items are data requests only, not reported figures.
+- 报告期间：虚构 FY2025。
+- 用途：内部数据收集和证据追踪。
+- 重要限制：本追踪表只发起数据请求，不建立最终 ESG 报告数字。
 
-## Key findings
+## 关键发现
 
-| Finding | Evidence status | Risk flag |
+| 发现事项 | 证据状态 | 风险提示 |
 | --- | --- | --- |
-| Source owners are identified by department, but source files have not been provided. | Needs confirmation | Data ownership and boundary need confirmation. |
-| Scope 1, Scope 2, and Scope 3 activity data are requested only. | Missing data | Do not calculate or disclose emissions figures yet. |
-| HR and safety items may involve personal or sensitive data. | Needs confirmation | Privacy and legal review may be required. |
+| 部门负责人和来源文件需要逐项确认。 | Needs confirmation | 责任边界可能不清晰。 |
+| Scope 1、Scope 2、Scope 3 事项只作为数据请求列示。 | Needs confirmation | 不应假设排放数字。 |
+| 未经支持的最终排放或安全绩效声明不应写入报告。 | Do not claim | 防止无证据对外声明。 |
 
-## Practical output: department tracker
+## 实用输出：部门追踪表
 
-| Department | Metric / data item | Reporting period | Source system or document | Owner | Evidence required | Evidence status | Risk flag | Next action | Reviewer |
+| 部门 | 指标 / 数据项 | 报告期间 | 来源系统或文件 | 负责人 | 所需证据 | 证据状态 | 风险提示 | 下一步行动 | 复核人 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| HR | Year-end headcount and employee turnover by region, aggregated only | FY2026 | HRIS export or approved HR summary | HR data owner | Aggregated source export and methodology note | Missing data | Privacy and aggregation method need review | Provide aggregated report and confirm no personal data is included | HR lead / Legal |
-| Finance | Energy invoices and fuel spend ledger for owned sites | FY2026 | General ledger, invoice archive | Finance controller | Ledger extract, invoice sample, reporting boundary note | Missing data | Boundary and completeness not confirmed | Confirm sites included and provide source files | Finance / ESG |
-| Operations | Electricity, fuel, water, and waste activity data by site | FY2026 | Site utility logs, waste vendor reports | Operations manager | Site-level activity records and responsible site list | Missing data | Site coverage may be incomplete | Confirm site list and upload source records | Operations / ESG |
-| EHS | Recordable safety incidents and environmental incident log | FY2026 | EHS incident register | EHS lead | Approved incident register and definitions used | Needs confirmation | Definitions and reporting threshold need review | Confirm definitions and whether external reporting uses same basis | EHS / Legal |
-| Procurement | Supplier ESG questionnaire status and supplier audit evidence, if any | FY2026 | Procurement tracker, supplier questionnaire files | Procurement lead | Current tracker and approved evidence for any audit claims | Missing data | Do not imply supplier audit results without evidence | Provide tracker and mark unsupported audit claims as unavailable | Procurement / Legal |
-| Administration | Office electricity, business travel, leased office data, and facilities records | FY2026 | Facilities invoices, travel report, lease schedule | Administration manager | Source records and boundary note | Missing data | Scope category and boundary need methodology review | Provide records for methodology review before any Scope 2 or Scope 3 use | Administration / Finance |
+| HR | 员工人数、流失率、培训小时 | FY2025 | HRIS 导出、培训记录 | HR 数据负责人 | 期间锁定导出、口径说明 | Needs confirmation | 员工口径和期间需统一 | 确认正式导出和口径 | ESG / HR 复核人 |
+| Finance | 能源费用、环保支出、罚款记录 | FY2025 | 总账、发票、费用明细 | 财务负责人 | 账务导出、抽样凭证 | Needs confirmation | 账务科目可能需重分类 | 映射 ESG 指标口径 | ESG / Finance 复核人 |
+| Operations | 用电量、用水量、生产场所清单 | FY2025 | 公用事业账单、生产记录 | 运营负责人 | 账单、仪表读数、场所边界 | Missing data | 边界和计量点不清晰 | 提供场所清单和账单 | ESG / Operations 复核人 |
+| EHS | 安全事故、废弃物、环境许可 | FY2025 | EHS 台账、事故记录 | EHS 负责人 | 台账导出、许可文件 | Needs confirmation | 事故定义和分类需确认 | 提供定义和证据 | ESG / EHS 复核人 |
+| Procurement | 供应商问卷、供应商审核覆盖 | FY2025 | 采购系统、供应商问卷 | 采购负责人 | 问卷记录、审核清单 | Needs confirmation | 不应声称所有供应商已审核 | 区分关键、相关和已审核供应商 | ESG / Procurement 复核人 |
+| Administration | 办公室用纸、差旅、车辆资料 | FY2025 | 行政记录、差旅平台 | 行政负责人 | 采购记录、差旅导出、车辆清单 | Missing data | 数据来源分散 | 汇总来源并确认边界 | ESG / Administration 复核人 |
 
-## Evidence status
+## 证据状态
 
-- `Verified`: none in this example because no source files are attached.
-- `Needs confirmation`: HR privacy approach, EHS definitions, and source-owner assignments.
-- `Missing data`: activity data, source exports, invoices, supplier evidence, and boundary documentation.
-- `Do not claim`: final ESG figures, Scope 1, Scope 2, Scope 3 totals, supplier audit results, assurance status, or compliance status.
+`Verified` 仅表示由提供材料支持；不代表审计、鉴证、法律确认、监管批准、董事会批准、可对外发布、完整或无错误。
 
-## Risk flags
+## 风险提示
 
-- Scope 1, Scope 2, and Scope 3 entries are data requests only and must not be treated as calculated emissions figures.
-- Personal data and sensitive HR or safety information require privacy and legal review.
-- Supplier audit results must not be implied without approved evidence.
-- Final figures require source-owner confirmation, methodology review, boundary review, and where applicable finance, assurance, and legal review.
+- no real company data：本示例不含真实公司数据。
+- no real personnel data：本示例不含真实人员数据。
+- no emissions figures：Scope 1、Scope 2 和 Scope 3 仅作为数据请求，不含排放数字。
 
-## Next actions
+## 下一步行动
 
-- ESG manager to confirm reporting period, boundary, and framework or questionnaire driver.
-- Each department owner to provide source files or confirm unavailable data.
-- Finance and ESG to review boundary and completeness before calculations.
-- Legal and assurance reviewers to review externally used figures or statements where applicable.
+- ESG 经理确认部门负责人和截止日期。
+- 各来源负责人提交证据文件。
+- ESG、财务、法律和鉴证团队按适用情况复核方法、边界和最终数字。

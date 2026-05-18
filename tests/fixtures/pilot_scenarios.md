@@ -9,7 +9,7 @@ These synthetic fixtures are for internal pilot testing only. They contain no re
 - Synthetic input: short mixed ESG notes with no jurisdiction, no reporting period, and a few unsupported sustainability claims.
 - Expected behavior:
   - Route to a specific ESG skill when the work product is clear, or ask minimal clarifying questions when the skill choice is ambiguous.
-  - Preserve the mandatory output structure.
+  - Preserve the mandatory output structure using Chinese headings by default.
   - Tag every claim as `Verified`, `Needs confirmation`, `Missing data`, or `Do not claim`.
   - Convert unsupported claims into risk flags and next actions.
 

@@ -1,37 +1,37 @@
-# Stakeholder Interview Questions
+# 利益相关方访谈问题
 
-## Executive summary
+## 执行摘要
 
-Use these questions to collect evidence for materiality or ESG topic prioritisation work.
+使用这些问题为重大性或 ESG 议题优先级工作收集证据。
 
-## Applicable framework and assumptions
+## 适用框架与假设
 
-- Interview purpose:
-- Stakeholder group:
-- Consent and confidentiality approach:
-- Selected framework or internal method:
+- 访谈目的：
+- 利益相关方群体：
+- 同意与保密安排：
+- 选用框架或内部方法：
 
-## Key findings
+## 关键发现
 
-Complete after interviews using evidence status.
+访谈完成后补充，并为每项结论标注证据状态。
 
-## Practical output: interview guide
+## 实用输出：访谈提纲
 
-1. Which ESG topics most affect your decisions or expectations regarding the company?
-2. What evidence or experience supports that view?
-3. Which topics appear under-managed, over-emphasized, or unclear?
-4. What information would improve trust in the company's ESG reporting?
-5. Are there topics that should not be prioritized based on current evidence?
+1. 哪些 ESG 议题最影响您对公司的决策或期望？
+2. 哪些证据或经历支持这一看法？
+3. 哪些议题看起来管理不足、被过度强调或仍不清晰？
+4. 哪些信息会提升您对公司 ESG 报告的信任？
+5. 基于当前证据，有哪些议题暂不应被列为优先事项？
 
-## Evidence status
+## 证据状态
 
-Mark interview-derived claims as `Needs confirmation` until documented, attributed as appropriate, and reviewed.
+访谈得出的声明在记录、适当归因并完成复核前，应标为 `Needs confirmation`。
 
-## Risk flags
+## 风险提示
 
-- Interview sample may not represent all stakeholder groups.
-- Confidential comments may require anonymization.
+- 访谈样本可能无法代表所有利益相关方群体。
+- 保密评论可能需要匿名处理。
 
-## Next actions
+## 下一步行动
 
-- Confirm interview notes, owner, and approved use.
+- 确认访谈记录、负责人和获批准用途。

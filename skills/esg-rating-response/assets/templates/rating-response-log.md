@@ -1,37 +1,45 @@
-# ESG Rating Response Log
+# ESG 评级 / 客户问卷回复记录
 
-## Executive summary
+## 执行摘要
 
-Summarize the questionnaire, deadline, owner, and readiness.
+概述问卷、截止日期、负责人和回复准备度。
 
-## Applicable framework and assumptions
+## 适用框架与假设
 
-- Provider or requester:
-- Questionnaire version:
-- Submission deadline:
-- Source documents:
-- Assumptions requiring confirmation:
+- 评级机构、客户或请求方：
+- 问卷版本：
+- 提交截止日期：
+- 来源文件：
+- 需要确认的假设：
 
-## Key findings
+## 关键发现
 
-| Request area | Current response readiness | Evidence status | Risk flag |
+| 请求领域 | 当前回复准备度 | 证据状态 | 风险提示 |
 | --- | --- | --- | --- |
-| [Area] | [Summary] | [Verified / Needs confirmation / Missing data / Do not claim] | [Risk] |
+| [领域] | [摘要] | [Verified / Needs confirmation / Missing data / Do not claim] | [风险] |
 
-## Practical output: response log
+## 实用输出：回复记录
 
-| Question ID | Request | Proposed response | Evidence status | Source | Owner | Next action |
+| 问题编号 | 请求内容 | 拟回复 | 证据状态 | 来源 | 负责人 | 下一步行动 |
 | --- | --- | --- | --- | --- | --- | --- |
-| [ID] | [Question] | [Response] | [Status] | [Source] | [Owner] | [Action] |
+| [编号] | [问题] | [回复] | [状态] | [来源] | [负责人] | [行动] |
 
-## Evidence status
+### 评级分数证据字段
 
-List responses that need confirmation or should not be claimed.
+如引用评级分数，必须列明评级机构、日期或期间、范围和来源。评级不代表不存在 ESG 风险，也不代表监管合规。
 
-## Risk flags
+### 供应商审核措辞字段
 
-- [Unsupported rating score, missing audit evidence, supplier data gap, or wording risk]
+区分所有供应商、关键供应商、相关供应商、已审核供应商，以及供应商自评或问卷回复。
 
-## Next actions
+## 证据状态
 
-- [Action, owner, due date]
+列出需要确认或不应声称的回复。
+
+## 风险提示
+
+- [无支持评级分数、缺少审核证据、供应商数据缺口或措辞风险]
+
+## 下一步行动
+
+- [行动、负责人、截止日期]

@@ -1,40 +1,40 @@
-# Example HKEX Gap Check
+# HKEX 差距检查示例
 
-## Executive summary
+## 执行摘要
 
-ExampleCo has provided limited ESG source notes for an illustrative HKEX-oriented gap check. No compliance conclusion is made.
+ExampleCo 已提供有限 ESG 来源说明。本示例展示如何使用 HKEX 导向的准备度检查，并避免作出合规结论。
 
-## Applicable framework and assumptions
+## 适用框架与假设
 
-- Framework: HKEX source placeholder only; verify official source text before use.
-- Company: fictional ExampleCo.
-- Assumption: no external assurance evidence was provided.
+- 公司：虚构香港上市制造企业。
+- 来源材料：虚构管理层摘要。
+- 假设：尚未确认发行人类别、LargeCap 状态、报告期间和义务层级。
 
-## Key findings
+## 关键发现
 
-| Finding | Evidence status |
+| 发现事项 | 证据状态 |
 | --- | --- |
-| Board oversight wording is not ready because no board paper or terms of reference was provided. | Missing data |
-| Any compliance conclusion should be removed pending professional review. | Do not claim |
+| 气候披露映射尚未完成。 | Needs confirmation |
+| 鉴证状态未提供。 | Missing data |
 
-## Practical output: gap table
+## 实用输出：差距表
 
-| Topic | Current evidence | Gap | Evidence status | Next action |
-| --- | --- | --- | --- | --- |
-| Climate disclosure | Management says climate work is underway. | No official source mapping or approved disclosure. | Needs confirmation | Ask legal and sustainability to provide current source mapping. |
-| Assurance | No assurance report supplied. | Assurance status cannot be stated. | Missing data | Request assurance scope or confirm none. |
+| 主题 | 当前证据 | 义务层级 | 差距表述 | 证据状态 | 下一步行动 |
+| --- | --- | --- | --- | --- | --- |
+| 气候披露 | 管理层称气候工作正在推进。 | Applicability to confirm | Part D readiness gap；缺少官方来源映射和已批准披露。 | Needs confirmation | 请公司秘书、法律和可持续发展团队提供当前来源映射。 |
+| 鉴证 | 未提供鉴证报告。 | Not assessed | 不能陈述鉴证状态。 | Missing data | 索取鉴证范围或确认未进行鉴证。 |
 
-## Evidence status
+## 证据状态
 
-No item is marked `Verified` in this example because no source pack is attached.
+本示例未将任何事项标为 `Verified`，因为未附来源材料包。
 
-## Risk flags
+## 风险提示
 
-- Do not state compliance status.
-- Do not imply assurance or board oversight.
+- Do not / 避免陈述合规状态或 Part D non-compliance。
+- 不暗示鉴证或董事会监督机制。
+- 使用准备度措辞，例如 potential disclosure gap、Part D readiness gap 和 obligation level to confirm。
 
-## Next actions
+## 下一步行动
 
-- Collect official framework source text.
-- Request company-approved ESG report extracts.
-- Route draft to legal, company secretarial, and sustainability review.
+- 公司秘书团队确认适用框架和发行人类别。
+- ESG 团队补充气候风险管理和数据来源。

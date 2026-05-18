@@ -33,13 +33,13 @@ MANDATORY_SECTIONS = [
 ]
 
 MANDATORY_OUTPUT_ITEMS = [
-    "Executive summary",
-    "Applicable framework and assumptions",
-    "Key findings",
-    "Practical output",
-    "Evidence status",
-    "Risk flags",
-    "Next actions",
+    "执行摘要",
+    "适用框架与假设",
+    "关键发现",
+    "实用输出",
+    "证据状态",
+    "风险提示",
+    "下一步行动",
 ]
 
 EVIDENCE_STATUSES = [
@@ -62,6 +62,18 @@ PROHIBITED_PHRASES = [
     "no material impact",
 ]
 
+UNQUALIFIED_OVERCLAIM_PHRASES = [
+    "fully met",
+    "no material compliance gaps",
+    "Part D non-compliance",
+    "industry-leading",
+    "world-class",
+    "best practice",
+    "fully compliant",
+    "HKEX compliant",
+    "ISSB compliant",
+]
+
 GREENWASHING_ALLOWED_MARKERS = [
     "guardrail",
     "flag",
@@ -69,6 +81,26 @@ GREENWASHING_ALLOWED_MARKERS = [
     "do not",
     "unsupported",
     "unless explicitly supported",
+]
+
+OVERCLAIM_ALLOWED_MARKERS = [
+    "avoid",
+    "do not",
+    "unless",
+    "flag",
+    "guardrail",
+    "prohibited",
+    "overclaim",
+    "caution",
+    "replace",
+    "source language",
+    "quoting",
+    "quoted",
+    "not",
+    "generated-output excerpt to avoid",
+    "not a compliance conclusion",
+    "preferred replacements",
+    "risky",
 ]
 
 TRIGGER_PHRASES = [
@@ -106,6 +138,7 @@ TRIGGER_PHRASES = [
 
 REQUIRED_README_SECTIONS = [
     "Start Here",
+    "Default Output Language",
     "What to Provide",
     "Which Skill Should I Use?",
     "Pilot Use Only / Internal Draft Use",
@@ -124,6 +157,9 @@ README_REQUIRED_PHRASES = [
     "market-sensitive information",
     "approved disclosure channels",
     "must not determine whether a regulatory framework is mandatory",
+    "Chinese-first",
+    "Output in English only when the user explicitly requests English",
+    "Output bilingual content only when the user explicitly requests bilingual output",
 ]
 
 SCENARIO_FIXTURE_REQUIRED_PHRASES = [
@@ -167,6 +203,8 @@ REALISTIC_SCENARIO_REQUIRED_PHRASES = [
     "vague board oversight",
     "supplier ESG audit results",
     "请用英文准备董事会/IR可用的ESG风险措辞",
+    "Default Chinese Output",
+    "帮我用中文整理",
     "帮我看看这个ESG材料能不能发。",
     "draft",
     "internal working paper",
@@ -194,16 +232,16 @@ RESEARCH_MAP_REQUIRED_PHRASES = [
 ]
 
 DEPARTMENT_TRACKER_COLUMNS = [
-    "Department",
-    "Metric / data item",
-    "Reporting period",
-    "Source system or document",
-    "Owner",
-    "Evidence required",
-    "Evidence status",
-    "Risk flag",
-    "Next action",
-    "Reviewer",
+    "部门",
+    "指标 / 数据项",
+    "报告期间",
+    "来源系统或文件",
+    "负责人",
+    "所需证据",
+    "证据状态",
+    "风险提示",
+    "下一步行动",
+    "复核人",
 ]
 
 DEPARTMENT_TRACKER_DEPARTMENTS = [
@@ -280,6 +318,62 @@ OUTPUT_USE_TERMS = [
     "customer response",
     "provider submission",
     "ESG report",
+]
+
+LANGUAGE_POLICY_REQUIRED_PHRASES = [
+    "Default output language: Chinese (`zh-CN`)",
+    "If the user writes in Chinese, output in Chinese",
+    "If the user writes in mixed Chinese/English, output in Chinese",
+    "If the user writes in English but does not specify output language, prefer a Chinese summary",
+    "Output in English only when the user explicitly requests English",
+    "Output bilingual content only when the user explicitly requests bilingual output",
+]
+
+HKEX_OBLIGATION_REQUIRED_PHRASES = [
+    "Mandatory",
+    "Comply-or-explain",
+    "Voluntary",
+    "Applicability to confirm",
+    "Not assessed",
+    "Part D climate disclosures apply from financial years commencing on or after 1 January 2025",
+    "LargeCap status must be confirmed",
+    "Requires company secretary / legal confirmation",
+]
+
+GLOBAL_VERIFIED_REQUIRED_PHRASES = [
+    "supported by user-provided or public report material only",
+    "does not mean legally verified, audited, assured, regulator-approved, board-approved, externally publishable, complete, or free from error",
+    "state the assurance level separately",
+]
+
+MATERIALITY_REQUIRED_PHRASES = [
+    "CSRD/ESRS uses double materiality",
+    "GRI is impact-oriented",
+    "ISSB is investor-focused / financial materiality baseline",
+    "Do not say ISSB emphasizes double materiality",
+]
+
+INVESTOR_CAUTION_REQUIRED_PHRASES = [
+    "selective disclosure",
+    "inside information",
+    "market-sensitive information",
+    "approved channels",
+    "approved public channels",
+]
+
+REAL_COMPANY_ISSUE_REQUIRED_PHRASES = [
+    "Linklogis HKEX Part D Over-Strong Mandatory Wording",
+    "Part D non-compliance",
+    "Obligation level to confirm",
+    "Lenovo ISSB Readiness Overclaim Risk",
+    "Fully met",
+    "industry-leading",
+    "Lenovo Verified Definition Good Example",
+    "supported by the provided public report material only",
+    "Lenovo Product Carbon Neutrality Cautious Wording Good Example",
+    "Lenovo Materiality Framework Correction",
+    "CSRD/ESRS uses double materiality",
+    "ISSB is investor-focused / financial materiality baseline",
 ]
 
 def network_patterns() -> list[str]:
@@ -400,11 +494,13 @@ def validate_skills() -> list[str]:
         if not isinstance(metadata, dict):
             failures.append(f"{skill_md}: missing metadata mapping")
             continue
-        for key in ["version", "domain", "last_reviewed_date", "output_language_default", "professional_review_required"]:
+        for key in ["version", "domain", "last_reviewed_date", "output_language_default", "output_language_policy", "professional_review_required"]:
             if key not in metadata:
                 failures.append(f"{skill_md}: metadata.{key} missing")
-        if metadata.get("output_language_default") != "user-language":
-            failures.append(f"{skill_md}: metadata.output_language_default must be user-language")
+        if metadata.get("output_language_default") != "zh-CN":
+            failures.append(f"{skill_md}: metadata.output_language_default must be zh-CN")
+        if metadata.get("output_language_policy") != "Chinese-first unless English or bilingual output is explicitly requested":
+            failures.append(f"{skill_md}: metadata.output_language_policy must be Chinese-first")
         if metadata.get("professional_review_required") is not True:
             failures.append(f"{skill_md}: metadata.professional_review_required must be true")
 
@@ -427,6 +523,8 @@ def validate_skills() -> list[str]:
                     failures.append(f"{skill_md}: referenced file missing: {relative_link}")
 
         failures.extend(validate_greenwashing_use(skill_md))
+        failures.extend(validate_global_verified_definition(body, skill_md))
+        failures.extend(validate_language_policy(body, skill_md))
         failures.extend(validate_shell_injection_absent(skill_md))
         failures.extend(validate_human_review_language(skill_dir.name, body, skill_md))
         failures.extend(validate_workflow_realism(body, skill_md))
@@ -447,6 +545,14 @@ def validate_workflow_realism(body: str, path: Path) -> list[str]:
     return failures
 
 
+def validate_language_policy(body: str, path: Path) -> list[str]:
+    failures: list[str] = []
+    for phrase in LANGUAGE_POLICY_REQUIRED_PHRASES:
+        if phrase not in body:
+            failures.append(f"{path}: missing Chinese-first language policy phrase: {phrase}")
+    return failures
+
+
 def validate_human_review_language(skill_name: str, body: str, path: Path) -> list[str]:
     failures: list[str] = []
     required = HUMAN_REVIEW_REQUIRED_PHRASES.get(skill_name, [])
@@ -464,6 +570,70 @@ def validate_greenwashing_use(path: Path) -> list[str]:
         for phrase in PROHIBITED_PHRASES:
             if phrase in lowered and not any(marker in lowered for marker in GREENWASHING_ALLOWED_MARKERS):
                 failures.append(f"{path}:{line_no}: prohibited phrase not flagged: {phrase}")
+    return failures
+
+
+def validate_global_verified_definition(body: str, path: Path) -> list[str]:
+    failures: list[str] = []
+    lowered = body.lower()
+    for phrase in GLOBAL_VERIFIED_REQUIRED_PHRASES:
+        if phrase.lower() not in lowered:
+            failures.append(f"{path}: missing global Verified definition phrase: {phrase}")
+    return failures
+
+
+def validate_release_hardening() -> list[str]:
+    failures: list[str] = []
+
+    hkex = read_text(ROOT / "skills" / "esg-hkex-gap-check" / "SKILL.md")
+    for phrase in HKEX_OBLIGATION_REQUIRED_PHRASES:
+        if phrase not in hkex:
+            failures.append(f"esg-hkex-gap-check missing HKEX obligation phrase: {phrase}")
+
+    materiality = read_text(ROOT / "skills" / "esg-materiality" / "SKILL.md")
+    for phrase in MATERIALITY_REQUIRED_PHRASES:
+        if phrase not in materiality:
+            failures.append(f"esg-materiality missing framework distinction phrase: {phrase}")
+
+    investor = read_text(ROOT / "skills" / "esg-investor-qa" / "SKILL.md").lower()
+    for phrase in INVESTOR_CAUTION_REQUIRED_PHRASES:
+        if phrase.lower() not in investor:
+            failures.append(f"esg-investor-qa missing investor caution phrase: {phrase}")
+
+    failures.extend(validate_unqualified_overclaim_phrases())
+    failures.extend(validate_real_company_issue_fixture())
+    return failures
+
+
+def validate_unqualified_overclaim_phrases() -> list[str]:
+    failures: list[str] = []
+    paths = list((ROOT / "skills").glob("*/SKILL.md"))
+    paths += list((ROOT / "shared" / "templates").glob("*.md"))
+    paths += list((ROOT / "shared" / "examples").glob("*.md"))
+    paths += list((ROOT / "skills").glob("*/assets/templates/*.md"))
+    paths += list((ROOT / "skills").glob("*/examples/*.md"))
+    paths += [ROOT / "README.md", ROOT / "PILOT_GUIDE.md", ROOT / "CHANGELOG.md"]
+
+    for path in paths:
+        if not path.exists():
+            continue
+        for line_no, line in enumerate(read_text(path).splitlines(), start=1):
+            lowered = line.lower()
+            for phrase in UNQUALIFIED_OVERCLAIM_PHRASES:
+                if phrase.lower() in lowered and not any(marker in lowered for marker in OVERCLAIM_ALLOWED_MARKERS):
+                    failures.append(f"{path}:{line_no}: unqualified overclaim phrase: {phrase}")
+    return failures
+
+
+def validate_real_company_issue_fixture() -> list[str]:
+    failures: list[str] = []
+    path = ROOT / "tests" / "fixtures" / "real_company_output_issues.md"
+    if not path.exists():
+        return [f"missing real-company output issue fixture: {path}"]
+    text = read_text(path)
+    for phrase in REAL_COMPANY_ISSUE_REQUIRED_PHRASES:
+        if phrase not in text:
+            failures.append(f"{path}: missing real-company issue phrase: {phrase}")
     return failures
 
 
@@ -505,7 +675,7 @@ def validate_examples() -> list[str]:
     failures: list[str] = []
     for path in list((ROOT / "shared" / "examples").glob("example-*.md")) + list((ROOT / "skills").glob("*/examples/example-*.md")):
         text = read_text(path)
-        for phrase in ["Evidence status", "Risk flags", "Next actions"]:
+        for phrase in ["证据状态", "风险提示", "下一步行动"]:
             if phrase not in text:
                 failures.append(f"{path}: missing {phrase}")
     failures.extend(validate_department_tracker_example(ROOT / "shared" / "examples" / "example-data-request-departments.md"))
@@ -766,6 +936,7 @@ def validate_all() -> list[str]:
     failures.extend(validate_trigger_phrases())
     failures.extend(validate_pilot_scenarios())
     failures.extend(validate_research_map())
+    failures.extend(validate_release_hardening())
     return failures
 
 

@@ -20,6 +20,8 @@ Use only:
 - Fictional company labels and fictional business context.
 - Non-confidential templates, questionnaires, and task descriptions.
 
+Language testing note: Chinese prompts should produce Chinese work products by default. Ask explicitly for English or bilingual output only when that is the scenario being tested.
+
 ## What Not To Upload
 
 Do not upload or paste:

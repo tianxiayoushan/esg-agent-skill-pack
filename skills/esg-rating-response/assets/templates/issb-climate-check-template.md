@@ -1,41 +1,41 @@
-# ISSB Climate Check Template
+# ISSB 气候准备度检查模板
 
-## Executive summary
+## 执行摘要
 
-| Climate area | Readiness summary | Evidence status | Next action |
+| 气候领域 | 准备度摘要 | 证据状态 | 下一步行动 |
 | --- | --- | --- | --- |
-| [Area] | [Summary] | [Verified / Needs confirmation / Missing data / Do not claim] | [Action] |
+| [领域] | [摘要] | [Verified / Needs confirmation / Missing data / Do not claim] | [行动] |
 
-## Applicable framework and assumptions
+## 适用框架与假设
 
-- Selected framework source:
-- Jurisdiction or adoption assumption:
-- Reporting period:
-- Boundary:
-- Professional review owner:
+- 选用的框架来源：
+- 司法辖区或采纳假设：
+- 报告期间：
+- 边界：
+- 专业复核负责人：
 
-## Key findings
+## 关键发现
 
-1. [Finding with evidence status]
-2. [Finding with evidence status]
+1. [发现事项，并标注证据状态]
+2. [发现事项，并标注证据状态]
 
-## Practical output: climate readiness checklist
+## 实用输出：气候准备度清单
 
-| Area | Question | Evidence provided | Gap | Evidence status | Owner |
+| 领域 | 检查问题 | 已提供证据 | 准备度说明 | 证据状态 | 负责人 |
 | --- | --- | --- | --- | --- | --- |
-| Governance | [Question] | [Evidence] | [Gap] | [Status] | [Owner] |
-| Strategy | [Question] | [Evidence] | [Gap] | [Status] | [Owner] |
-| Risk management | [Question] | [Evidence] | [Gap] | [Status] | [Owner] |
-| Metrics and targets | [Question] | [Evidence] | [Gap] | [Status] | [Owner] |
+| 治理 | [问题] | [证据] | [Appears substantially prepared / no major readiness gap identified / readiness gap] | [状态] | [负责人] |
+| 战略 | [问题] | [证据] | [Readiness assessment only, not compliance conclusion] | [状态] | [负责人] |
+| 风险管理 | [问题] | [证据] | [差距] | [状态] | [负责人] |
+| 指标与目标 | [问题] | [证据] | [需要确认 Scope 3 类别覆盖、数据质量、方法和假设] | [状态] | [负责人] |
 
-## Evidence status
+## 证据状态
 
-List unsupported Scope 1, Scope 2, Scope 3, target, assurance, and transition-plan claims.
+列出未获支持的 Scope 1、Scope 2、Scope 3、目标、鉴证和转型计划表述。
 
-## Risk flags
+## 风险提示
 
-- [Risk]
+- [风险]
 
-## Next actions
+## 下一步行动
 
-- [Action, owner, due date]
+- [行动、负责人、截止日期]

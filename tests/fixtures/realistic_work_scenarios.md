@@ -99,13 +99,16 @@ These scenarios are synthetic but realistic. They are for testing workflow quali
 ## Scenario 7: Multilingual Output
 
 - Skills: `esg-board-brief`, `esg-investor-qa`, or `esg`
+- Default Chinese Output check:
+  - User asks: "帮我用中文整理这份ESG风险提示和下一步行动。"
+  - Expected output: Chinese-first work product using Chinese headings, with English ESG terms retained only where useful.
 - User asks in Chinese: "请用英文准备董事会/IR可用的ESG风险措辞，但保留证据状态。"
 - Synthetic facts:
   - Source notes are mixed Chinese and English.
   - The output is intended for an English board pre-read or investor Q&A draft.
 - Expected output:
-  - English-ready drafting with evidence statuses preserved.
-  - Chinese assumptions or caveats may be summarized if useful for the user.
+  - English-ready drafting only because English was explicitly requested, with evidence statuses preserved.
+  - Chinese assumptions or caveats may be summarized if useful for the user unless the user asks for English-only.
   - No loss of `Verified`, `Needs confirmation`, `Missing data`, or `Do not claim` labels.
   - External-use and reviewer approval language remains in English.
 

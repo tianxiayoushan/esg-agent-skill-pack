@@ -1,39 +1,39 @@
-# Example ESG Data Request
+# ESG 数据请求示例
 
-## Executive summary
+## 执行摘要
 
-This example tracker turns an ESG reporting request into owner-specific actions.
+本示例将年度 ESG 数据收集拆分为可追踪请求。请求本身不构成最终报告数字。
 
-## Applicable framework and assumptions
+## 适用框架与假设
 
-- Framework: not confirmed.
-- Reporting period: to be confirmed by finance.
-- Company: fictional ExampleCo.
+- 报告期间：虚构 FY2025。
+- 公司：匿名大型企业。
+- 目的：内部数据收集。
 
-## Key findings
+## 关键发现
 
-| Finding | Evidence status |
+| 发现事项 | 证据状态 |
 | --- | --- |
-| Energy and fuel data owners are not confirmed. | Missing data |
-| HR diversity data requires privacy and legal review. | Needs confirmation |
+| Scope 1、Scope 2 和 Scope 3 目前只是数据请求。 | Needs confirmation |
+| 最终数字需要来源负责人确认、方法复核和边界复核。 | Needs confirmation |
 
-## Practical output: tracker extract
+## 实用输出：追踪表摘录
 
-| Request ID | Topic | Metric or evidence requested | Owner | Evidence status | Risk flags | Next actions |
+| 请求编号 | 主题 | 请求的指标或证据 | 负责人 | 证据状态 | 风险提示 | 下一步行动 |
 | --- | --- | --- | --- | --- | --- | --- |
-| ESG-001 | Energy | Electricity consumption source file | Operations | Missing data | Boundary unclear | Confirm sites and reporting period. |
-| ESG-002 | HR | Diversity metric methodology | HR | Needs confirmation | Privacy review needed | Confirm aggregation and approval. |
+| ESG-001 | 能源 | 电力使用量和账单证据 | 运营 | Missing data | 边界不清晰 | 提供电费账单和场所清单。 |
+| ESG-002 | 员工 | 员工人数口径和 HR 导出 | HR | Needs confirmation | 期间需统一 | HR 确认报告期间和口径。 |
 
-## Evidence status
+## 证据状态
 
-All rows need source confirmation before use.
+数据请求不等于最终 ESG 报告数字。
 
-## Risk flags
+## 风险提示
 
-- No emissions figures should be calculated from missing activity data.
-- Personal data must be handled under company policy.
+- 不假设 Scope 1、Scope 2 或 Scope 3 数字。
+- 不将未经复核的数据写入外部报告。
 
-## Next actions
+## 下一步行动
 
-- Assign owners and due dates.
-- Request source files rather than narrative estimates.
+- 各部门提交来源文件。
+- ESG、财务和鉴证团队复核方法、边界和证据。

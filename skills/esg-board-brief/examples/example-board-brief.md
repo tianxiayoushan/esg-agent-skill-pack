@@ -1,42 +1,54 @@
-# Example ESG Board Brief
+# ESG 董事会简报示例
 
-## Executive summary
+## 执行摘要
 
-ExampleCo needs a board discussion on ESG reporting readiness. The current record supports a planning update, not an external disclosure conclusion.
+ExampleCo 需要就 ESG 报告准备度进行董事会讨论。当前记录显示若干数据责任和外部措辞仍需确认。
 
-## Applicable framework and assumptions
+## 适用框架与假设
 
-- Framework: selected ESG reporting framework not confirmed.
-- Audience: directors and management.
-- Source pack: fictional planning notes only.
+- 受众：董事会或 ESG 委员会。
+- 来源材料：虚构内部状态说明。
+- 目的：内部预读材料，不用于外部披露。
 
-## Key findings
+## 关键发现
 
-| Finding | Evidence status | Board relevance |
+| 发现事项 | 证据状态 | 董事会相关性 |
 | --- | --- | --- |
-| ESG data ownership is not fully assigned. | Needs confirmation | Directors may ask management to confirm accountability. |
-| Scope 3 data is not available in the source pack. | Missing data | External claims should wait. |
+| ESG KPI 负责人尚未全部确认。 | Needs confirmation | 影响报告时间表。 |
+| Scope 3 数据缺失。 | Missing data | 影响气候准备度讨论。 |
 
-## Practical output: board paper draft
+## 实用输出：董事会文件草稿
 
-Recommended discussion points:
+建议讨论点：
 
-1. Confirm the reporting framework and review timetable. Evidence status: `Needs confirmation`.
-2. Assign data owners for priority ESG KPIs. Evidence status: `Needs confirmation`.
-3. Remove unsupported targets from external messaging. Evidence status: `Do not claim`.
+已报告事实：
 
-## Evidence status
+1. ESG 数据责任正在复核。证据状态：`Needs confirmation`。
+2. 来源材料包中未提供 Scope 3 数据。证据状态：`Missing data`。
 
-Most items require confirmation by management, legal, and sustainability.
+管理层解释：
 
-## Risk flags
+1. 基于已提供材料，公司可能已为内部规划作出一定准备，但这只是准备度评估，不是合规结论。证据状态：`Needs confirmation`。
 
-- Missing emissions and target evidence.
-- No assurance status source.
-- Board oversight mechanisms should not be implied.
+待决策事项：
 
-## Next actions
+1. 确认报告框架和复核时间表。证据状态：`Needs confirmation`。
+2. 指定优先 ESG KPI 的数据负责人。证据状态：`Needs confirmation`。
 
-- Company secretary to confirm board or committee agenda.
-- Sustainability lead to provide reporting source pack.
-- Finance and operations to confirm KPI owner list.
+观察事项：
+
+1. 从外部信息中移除无支持目标表述。证据状态：`Do not claim`。
+
+## 证据状态
+
+所有关键事项仍需责任人确认。
+
+## 风险提示
+
+- 不声称不存在合规差距；仅可写为基于已提供材料未识别重大准备度差距。
+- 不暗示董事会已批准目标或披露。
+
+## 下一步行动
+
+- 公司秘书团队确认董事会材料用途。
+- ESG 和财务团队补充数据责任矩阵。

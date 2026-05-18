@@ -5,7 +5,8 @@ metadata:
   version: "0.1.0"
   domain: "ESG"
   last_reviewed_date: "2026-05-18"
-  output_language_default: user-language
+  output_language_default: "zh-CN"
+  output_language_policy: "Chinese-first unless English or bilingual output is explicitly requested"
   professional_review_required: true
 ---
 
@@ -30,7 +31,18 @@ Create concise ESG board and management materials that separate facts, assumptio
 - Meeting purpose, date if known, and requested decision or discussion.
 - Source notes, policies, reporting timetable, or ESG workstream update.
 - Framework assumptions and review owners.
-- Desired length and output language.
+- Desired length and any explicit output-language request. Default is Chinese.
+
+## Language policy
+
+Default output language: Chinese (`zh-CN`). Use these rules unless the user explicitly requests otherwise:
+
+- If the user writes in Chinese, output in Chinese.
+- If the user writes in mixed Chinese/English, output in Chinese while retaining useful ESG, IR, framework, and rating terminology such as HKEX, ISSB, IFRS S1, IFRS S2, TCFD, Scope 1, Scope 2, Scope 3, MSCI, CDP, EcoVadis, and Sustainalytics.
+- If the user writes in English but does not specify output language, prefer a Chinese summary and Chinese work product, retaining English technical terms where useful.
+- Output in English only when the user explicitly requests English, an English version, English answer, investor roadshow wording in English, or board-ready English wording.
+- Output bilingual content only when the user explicitly requests bilingual output.
+- Preserve evidence status labels and risk flags in the requested output language; keep the four evidence status labels exactly as `Verified`, `Needs confirmation`, `Missing data`, and `Do not claim` unless the user asks for translated labels.
 
 ## Workflow
 
@@ -40,27 +52,33 @@ Create concise ESG board and management materials that separate facts, assumptio
 4. Separate management recommendations from board decisions.
 5. List risk flags for unsupported claims, missing metrics, external disclosure sensitivity, and assurance needs.
 6. Classify the paper as a draft, internal working paper, board pre-read, external disclosure support, or regulatory filing support.
-7. If the user asks in Chinese but needs English board wording, draft in English while preserving evidence status labels and risk flags.
-8. Add next actions with owners.
+7. Apply the Chinese-first language policy; use English board wording only when explicitly requested, preserving evidence status labels and risk flags.
+8. Separate reported facts, management interpretation, decision items, watch items, external disclosure risks, and reviewer handoff.
+9. Flag subjective promotional terms even if the overall risk appears low.
+10. Add next actions with owners.
 
 ## Mandatory output structure
 
 Use these headings:
 
-1. Executive summary
-2. Applicable framework and assumptions
-3. Key findings
-4. Practical output: draft wording, table, checklist, or tracker
-5. Evidence status
-6. Risk flags
-7. Next actions
+1. 执行摘要
+2. 适用框架与假设
+3. 关键发现
+4. 实用输出：草拟措辞、表格、清单或追踪表
+5. 证据状态
+6. 风险提示
+7. 下一步行动
 
 ## ESG evidence status rules
 
-- `Verified`: supported by user-provided board, management, policy, or source evidence.
+- `Verified`: supported by user-provided or public report material only.
 - `Needs confirmation`: requires management, company secretarial, legal, ESG, finance, or assurance confirmation.
 - `Missing data`: the source needed for board-level discussion is absent.
 - `Do not claim`: the wording implies unsupported approval, oversight, performance, target, or compliance status.
+
+`Verified` does not mean legally verified, audited, assured, regulator-approved, board-approved, externally publishable, complete, or free from error. If a metric is externally assured, state the assurance level separately, such as reasonable assurance, limited assurance, or assurance status not provided.
+
+Use `no major readiness gap identified based on provided materials`, not `no material compliance gaps`.
 
 ## Greenwashing guardrails
 

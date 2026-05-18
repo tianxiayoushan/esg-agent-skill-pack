@@ -1,42 +1,57 @@
-# ESG Board Brief Template
+# ESG 董事会简报模板
 
-## Executive summary
+## 执行摘要
 
-One short paragraph for directors. State what is known, what is uncertain, and the decision or guidance requested.
+用一小段文字说明董事需要知道什么、哪些事项仍不确定，以及本次需要董事会作出什么决定或指导。
 
-## Applicable framework and assumptions
+## 适用框架与假设
 
-- Reporting or disclosure framework:
-- Board or committee context:
-- Reporting period:
-- Evidence sources:
-- Assumptions requiring confirmation:
+- 报告或披露框架：
+- 董事会或委员会背景：
+- 报告期间：
+- 证据来源：
+- 需要确认的假设：
 
-## Key findings
+## 关键发现
 
-| Finding | Evidence status | Board relevance | Risk flag |
+| 发现事项 | 证据状态 | 董事会相关性 | 风险提示 |
 | --- | --- | --- | --- |
-| [Finding] | [Verified / Needs confirmation / Missing data / Do not claim] | [Why directors need it] | [Risk] |
+| [发现事项] | [Verified / Needs confirmation / Missing data / Do not claim] | [董事为什么需要关注] | [风险] |
 
-## Practical output: board paper draft
+## 实用输出：董事会文件草稿
 
-### Recommended discussion points
+### 已报告事实
 
-1. [Point with evidence status]
-2. [Point with evidence status]
+- [事实，并标注证据状态]
 
-### Decisions or guidance requested
+### 管理层解释
 
-- [Decision or guidance request]
+- [解释，并标注证据状态和假设]
 
-## Evidence status
+### 待决策事项
 
-List key claims and status.
+- [请求董事会决定或指导的事项]
 
-## Risk flags
+### 观察事项
 
-- [Regulatory, investor, assurance, operational, or wording risk]
+- [监管、报告、鉴证、运营或投资者关注事项]
 
-## Next actions
+### 对外披露风险
 
-- [Action, owner, due date]
+- [未经支持的表述或措辞风险]
+
+### 复核交接
+
+- [复核人、复核主题、截止日期]
+
+## 证据状态
+
+列出关键声明及其状态。
+
+## 风险提示
+
+- [监管、投资者、鉴证、运营或措辞风险]
+
+## 下一步行动
+
+- [行动、负责人、截止日期]

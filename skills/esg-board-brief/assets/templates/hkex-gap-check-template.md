@@ -1,37 +1,37 @@
-# HKEX Gap Check Template
+# HKEX 差距检查模板
 
-## Executive summary
+## 执行摘要
 
-| Area | Current position | Evidence status | Risk flag | Next action |
-| --- | --- | --- | --- | --- |
-| [Area] | [Short factual summary] | [Verified / Needs confirmation / Missing data / Do not claim] | [Risk] | [Owner and date] |
+| 领域 | 当前位置 | 义务层级 | 证据状态 | 风险提示 | 下一步行动 |
+| --- | --- | --- | --- | --- | --- |
+| [领域] | [简短事实摘要] | [Mandatory / Comply-or-explain / Voluntary / Applicability to confirm / Not assessed] | [Verified / Needs confirmation / Missing data / Do not claim] | [风险] | [负责人和日期] |
 
-## Applicable framework and assumptions
+## 适用框架与假设
 
-- Framework source used:
-- Last reviewed date:
-- Company reporting boundary:
-- Assumptions requiring confirmation:
+- 使用的框架来源：
+- 最后复核日期：
+- 公司报告边界：
+- 需要确认的假设：
 
-## Key findings
+## 关键发现
 
-1. [Finding with evidence status]
-2. [Finding with evidence status]
+1. [发现事项，并标注证据状态]
+2. [发现事项，并标注证据状态]
 
-## Practical output: gap table
+## 实用输出：差距表
 
-| Topic | Expected disclosure or request | Current evidence | Gap | Evidence status | Owner | Next action |
-| --- | --- | --- | --- | --- | --- | --- |
-| [Topic] | [Source-based request] | [Evidence] | [Gap] | [Status] | [Owner] | [Action] |
+| 主题 | 预期披露或资料请求 | 义务层级 | 当前证据 | 差距表述 | 证据状态 | 负责人 | 下一步行动 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [主题] | [基于来源的请求] | [Mandatory / Comply-or-explain / Voluntary / Applicability to confirm / Not assessed] | [证据] | [Potential disclosure gap / Part D readiness gap / Obligation level to confirm] | [状态] | [负责人] | [行动] |
 
-## Evidence status
+## 证据状态
 
-Summarize status counts and list items marked `Do not claim`.
+汇总各状态数量，并列出标为 `Do not claim` 的事项。
 
-## Risk flags
+## 风险提示
 
-- [Unsupported claim, missing source, or review issue]
+- [未经支持的表述、缺失来源或需要复核的问题]
 
-## Next actions
+## 下一步行动
 
-- [Action, owner, due date]
+- [行动、负责人、截止日期]

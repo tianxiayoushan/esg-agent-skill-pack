@@ -5,7 +5,8 @@ metadata:
   version: "0.1.0"
   domain: "ESG"
   last_reviewed_date: "2026-05-18"
-  output_language_default: user-language
+  output_language_default: "zh-CN"
+  output_language_policy: "Chinese-first unless English or bilingual output is explicitly requested"
   professional_review_required: true
 ---
 
@@ -32,6 +33,17 @@ Prepare evidence-backed response trackers for ESG ratings, investor questionnair
 - Source documents or approved public disclosures.
 - Review and confidentiality constraints.
 
+## Language policy
+
+Default output language: Chinese (`zh-CN`). Use these rules unless the user explicitly requests otherwise:
+
+- If the user writes in Chinese, output in Chinese.
+- If the user writes in mixed Chinese/English, output in Chinese while retaining useful ESG, IR, framework, and rating terminology such as HKEX, ISSB, IFRS S1, IFRS S2, TCFD, Scope 1, Scope 2, Scope 3, MSCI, CDP, EcoVadis, and Sustainalytics.
+- If the user writes in English but does not specify output language, prefer a Chinese summary and Chinese work product, retaining English technical terms where useful.
+- Output in English only when the user explicitly requests English, an English version, English answer, investor roadshow wording in English, or board-ready English wording.
+- Output bilingual content only when the user explicitly requests bilingual output.
+- Preserve evidence status labels and risk flags in the requested output language; keep the four evidence status labels exactly as `Verified`, `Needs confirmation`, `Missing data`, and `Do not claim` unless the user asks for translated labels.
+
 ## Workflow
 
 1. Review [rating questionnaire placeholder](references/framework-rating-questionnaires.md).
@@ -40,27 +52,33 @@ Prepare evidence-backed response trackers for ESG ratings, investor questionnair
 4. Mark unsupported answers as `Missing data` or `Do not claim`.
 5. Flag rating score, supplier audit, assurance, target, and confidentiality risks.
 6. Classify the response as a draft, internal working paper, customer response candidate, provider submission, or external disclosure support.
-7. If the user asks in Chinese but needs English customer or rating response wording, draft in English while preserving evidence status labels and risk flags.
-8. Draft owner follow-up requests for missing evidence.
+7. Apply the Chinese-first language policy; use English customer or rating response wording only when explicitly requested, preserving evidence status labels and risk flags.
+8. For ESG rating scores, require rating agency, date or period, scope, and source.
+9. State that ratings do not imply absence of ESG risk or regulatory compliance.
+10. Do not add internal estimates or forward-looking statements unless approved.
+11. For supplier audit wording, distinguish all suppliers, key suppliers, relevant suppliers, audited suppliers, and supplier self-assessment or questionnaire responses.
+12. Draft owner follow-up requests for missing evidence.
 
 ## Mandatory output structure
 
 Use these headings:
 
-1. Executive summary
-2. Applicable framework and assumptions
-3. Key findings
-4. Practical output: draft wording, table, checklist, or tracker
-5. Evidence status
-6. Risk flags
-7. Next actions
+1. 执行摘要
+2. 适用框架与假设
+3. 关键发现
+4. 实用输出：草拟措辞、表格、清单或追踪表
+5. 证据状态
+6. 风险提示
+7. 下一步行动
 
 ## ESG evidence status rules
 
-- `Verified`: supported by the exact questionnaire request and user-provided source evidence.
+- `Verified`: supported by user-provided or public report material only.
 - `Needs confirmation`: response requires owner, legal, IR, sustainability, procurement, or customer-review confirmation.
 - `Missing data`: evidence or approved wording has not been supplied.
 - `Do not claim`: answer implies unsupported score, audit result, certification, target, assurance, or compliance status.
+
+`Verified` does not mean legally verified, audited, assured, regulator-approved, board-approved, externally publishable, complete, or free from error. If a metric is externally assured, state the assurance level separately, such as reasonable assurance, limited assurance, or assurance status not provided.
 
 ## Greenwashing guardrails
 

@@ -1,37 +1,37 @@
-# ESG Investor Q&A Template
+# ESG 投资者问答模板
 
-## Executive summary
+## 执行摘要
 
-Summarize the expected investor or analyst themes and the safest approved messages.
+概述预期投资者或分析师关注主题，以及最稳妥、已获支持的回答方向。
 
-## Applicable framework and assumptions
+## 适用框架与假设
 
-- Audience:
-- Event:
-- Source pack:
-- Disclosure boundary:
-- Assumptions requiring confirmation:
+- 受众：
+- 活动：
+- 来源材料包：
+- 披露边界：
+- 需要确认的假设：
 
-## Key findings
+## 关键发现
 
-| Topic | Likely question | Evidence status | Risk flag |
+| 主题 | 可能问题 | 证据状态 | 风险提示 |
 | --- | --- | --- | --- |
-| [Topic] | [Question] | [Verified / Needs confirmation / Missing data / Do not claim] | [Risk] |
+| [主题] | [问题] | [Verified / Needs confirmation / Missing data / Do not claim] | [风险] |
 
-## Practical output: Q&A
+## 实用输出：问答
 
-| Question | Draft answer | Evidence status | Source or owner | Safer fallback |
-| --- | --- | --- | --- | --- |
-| [Question] | [Answer] | [Status] | [Source] | [Fallback] |
+| 问题 | 基于公开披露的稳妥回答 | 谨慎回答 | 不应说的表述 | 证据状态 | 来源或负责人 | 更稳妥替代表述 |
+| --- | --- | --- | --- | --- | --- | --- |
+| [问题] | [公开来源支持的回答] | [有条件或需复核的回答] | [应避免的无支持表述] | [状态] | [来源] | [替代表述] |
 
-## Evidence status
+## 证据状态
 
-List answers not ready for external use.
+列出尚不适合对外使用的回答。
 
-## Risk flags
+## 风险提示
 
-- [Selective disclosure, unsupported metric, unclear target, or legal review issue]
+- [选择性披露、内幕消息、市场敏感信息、批准渠道、无支持指标、不明确目标或法律复核问题]
 
-## Next actions
+## 下一步行动
 
-- [Action, owner, due date]
+- [行动、负责人、截止日期]

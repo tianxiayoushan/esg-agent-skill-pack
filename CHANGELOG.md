@@ -1,5 +1,33 @@
 # Changelog
 
+## v0.1.2 Internal Pilot Candidate - Unreleased
+
+### Added
+
+- Real-company public report testing notes for Linklogis-style HKEX Part D wording risk and Lenovo-style ISSB, board, investor Q&A, rating response, and materiality output risks.
+- HKEX / Part D obligation-level taxonomy requiring each item to be classified as Mandatory, Comply-or-explain, Voluntary, Applicability to confirm, or Not assessed.
+- Real-company output issue fixture documenting over-strong wording patterns and safer replacements.
+
+### Improved
+
+- Changed default output strategy to Chinese-first across skills, templates, examples, and validation. English or bilingual output is reserved for explicit user requests.
+- Strengthened `Verified` across skills: source-supported only, not legally verified, audited, assured, regulator-approved, board-approved, externally publishable, complete, or free from error.
+- Added anti-overclaim wording for readiness reviews, replacing unqualified compliance labels with readiness-only language and professional review handoff.
+- Clarified HKEX Part D schedule nuance, including financial years commencing on or after 1 January 2025, issuer category, LargeCap status, and company secretary / legal confirmation.
+- Hardened ISSB readiness discipline by separating readiness, alignment, and compliance, and by requiring Scope 3 category coverage, methodology, data quality, and assumptions.
+- Clarified materiality language: CSRD/ESRS uses double materiality, GRI is impact-oriented, and ISSB is investor-focused / financial materiality baseline.
+- Strengthened investor Q&A controls for approved channels, selective disclosure, inside information, market-sensitive information, and comparative claim risk.
+- Improved rating response discipline for ESG rating agency/date/scope/source fields and supplier audit wording.
+
+### Validation
+
+- Validator now checks HKEX obligation-level taxonomy, global `Verified` language, ISSB/CSRD materiality distinction, investor caution language, real-company output issue fixture coverage, and unqualified overclaim phrases.
+
+### Known Limitations
+
+- v0.1.2 remains an internal pilot candidate and does not provide legal, regulatory, audit, assurance, financial, or sustainability reporting conclusions.
+- Public-company report testing improves workflow realism but does not convert outputs into compliance opinions or external disclosure-ready text.
+
 ## v0.1.1 Internal Pilot Candidate - Unreleased
 
 ### Added

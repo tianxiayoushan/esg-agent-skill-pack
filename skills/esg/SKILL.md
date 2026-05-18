@@ -5,7 +5,8 @@ metadata:
   version: "0.1.0"
   domain: "ESG"
   last_reviewed_date: "2026-05-18"
-  output_language_default: user-language
+  output_language_default: "zh-CN"
+  output_language_policy: "Chinese-first unless English or bilingual output is explicitly requested"
   professional_review_required: true
 ---
 
@@ -31,7 +32,18 @@ Use this general skill to create practical ESG work products when the user has n
 - Jurisdiction, listing venue, or selected framework if known.
 - Work product needed and audience.
 - Source materials, notes, or explicit statement that data is unavailable.
-- Reporting period, business boundary, and desired output language.
+- Reporting period, business boundary, and any explicit output-language request. Default is Chinese.
+
+## Language policy
+
+Default output language: Chinese (`zh-CN`). Use these rules unless the user explicitly requests otherwise:
+
+- If the user writes in Chinese, output in Chinese.
+- If the user writes in mixed Chinese/English, output in Chinese while retaining useful ESG, IR, framework, and rating terminology such as HKEX, ISSB, IFRS S1, IFRS S2, TCFD, Scope 1, Scope 2, Scope 3, MSCI, CDP, EcoVadis, and Sustainalytics.
+- If the user writes in English but does not specify output language, prefer a Chinese summary and Chinese work product, retaining English technical terms where useful.
+- Output in English only when the user explicitly requests English, an English version, English answer, investor roadshow wording in English, or board-ready English wording.
+- Output bilingual content only when the user explicitly requests bilingual output.
+- Preserve evidence status labels and risk flags in the requested output language; keep the four evidence status labels exactly as `Verified`, `Needs confirmation`, `Missing data`, and `Do not claim` unless the user asks for translated labels.
 
 ## Workflow
 
@@ -41,7 +53,7 @@ Use this general skill to create practical ESG work products when the user has n
 4. Convert unsupported claims into data requests, risk flags, or safer draft wording.
 5. Use a local template from [assets/templates](assets/templates/board-brief-template.md) when it matches the request.
 6. Classify the requested use as draft, internal working paper, board pre-read, external disclosure, regulatory filing, or investor response, and apply the strictest review language needed.
-7. If the user writes in one language but asks for another output language, preserve evidence status labels and risk flags in the requested output language.
+7. Apply the Chinese-first language policy; use English or bilingual output only when explicitly requested.
 8. Keep assumptions separate from findings.
 9. End with professional review language.
 
@@ -49,22 +61,22 @@ Use this general skill to create practical ESG work products when the user has n
 
 Use these headings for all ESG work products:
 
-1. Executive summary
-2. Applicable framework and assumptions
-3. Key findings
-4. Practical output: draft wording, table, checklist, or tracker
-5. Evidence status
-6. Risk flags
-7. Next actions
+1. 执行摘要
+2. 适用框架与假设
+3. 关键发现
+4. 实用输出：草拟措辞、表格、清单或追踪表
+5. 证据状态
+6. 风险提示
+7. 下一步行动
 
 ## ESG evidence status rules
 
-- `Verified`: the user supplied evidence and the wording follows it.
+- `Verified`: supported by user-provided or public report material only.
 - `Needs confirmation`: plausible but awaiting source, owner, legal, assurance, or management confirmation.
 - `Missing data`: the required evidence is not provided.
 - `Do not claim`: unsupported, promotional, misleading, or outside the provided evidence.
 
-Do not upgrade an item to `Verified` from general knowledge alone.
+`Verified` does not mean legally verified, audited, assured, regulator-approved, board-approved, externally publishable, complete, or free from error. If a metric is externally assured, state the assurance level separately, such as reasonable assurance, limited assurance, or assurance status not provided. Do not upgrade an item to `Verified` from general knowledge alone.
 
 ## Greenwashing guardrails
 

@@ -1,37 +1,38 @@
-# Materiality Issue Map Template
+# 重大性议题地图模板
 
-## Executive summary
+## 执行摘要
 
-Summarize the proposed topic priorities and the evidence base.
+概述建议的议题优先级和证据基础。
 
-## Applicable framework and assumptions
+## 适用框架与假设
 
-- Selected framework or internal method:
-- Stakeholder groups:
-- Evidence sources:
-- Scoring method:
-- Assumptions requiring confirmation:
+- 选用框架或内部方法：
+- 框架视角：CSRD/ESRS 双重重大性、GRI 影响重大性、ISSB 投资者导向 / 财务重大性基线，或公司自定方法：
+- 利益相关方群体：
+- 证据来源：
+- 评分方法：
+- 需要确认的假设：
 
-## Key findings
+## 关键发现
 
-| Topic | Stakeholder signal | Business signal | Evidence status | Risk flag |
+| 议题 | 利益相关方信号 | 业务信号 | 证据状态 | 风险提示 |
 | --- | --- | --- | --- | --- |
-| [Topic] | [Signal] | [Signal] | [Verified / Needs confirmation / Missing data / Do not claim] | [Risk] |
+| [议题] | [信号] | [信号] | [Verified / Needs confirmation / Missing data / Do not claim] | [风险] |
 
-## Practical output: issue map
+## 实用输出：议题地图
 
-| Topic | Stakeholder group | Evidence | Priority rationale | Evidence status | Next action |
+| 议题 | 利益相关方群体 | 证据 | 优先级理由 | 证据状态 | 下一步行动 |
 | --- | --- | --- | --- | --- | --- |
-| [Topic] | [Group] | [Evidence] | [Rationale] | [Status] | [Action] |
+| [议题] | [群体] | [证据] | [理由] | [状态] | [行动] |
 
-## Evidence status
+## 证据状态
 
-List issues that cannot yet be called material.
+列出目前尚不能称为重大议题的事项。
 
-## Risk flags
+## 风险提示
 
-- [Unsupported prioritisation, incomplete stakeholder coverage, or unclear method]
+- [无支持的优先级判断、利益相关方覆盖不完整或方法不清晰]
 
-## Next actions
+## 下一步行动
 
-- [Action, owner, due date]
+- [行动、负责人、截止日期]
