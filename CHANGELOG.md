@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.1.6 Internal Pilot Candidate - Unreleased
+
+### Added
+
+- Added `QUALITY_GATES.md` to define hard acceptance gates for unsupported legal/regulatory conclusions, unapproved future disclosure commitments, A 股 and HKEX unknown-status obligation labels, Chinese-first evidence labels, default language, reviewer handoff, IR controls, and external-use restrictions.
+- Added deep quality scenario fixtures covering A 股, HKEX, ISSB, investor Q&A, board brief, data request, rating response, materiality, language / UX, and low-AI-maturity use cases.
+- Added red-team prompts and Telegram / QQ output regression fixtures for premature obligation labels, unsupported future disclosure commitments, fixed timing, A 股 terminology drift, English-first evidence labels, and `Risk flags: None`.
+- Added Chinese-first sample outputs for human review across the major workflows.
+
+### Improved
+
+- Shifted quality control from single-issue manual fixes to validator-backed regression gates.
+- Reinforced that A 股 and HKEX unknown subject or issuer status must default to `义务层级：适用性待确认`.
+- Reinforced the replacement wording for future disclosure timing: 公司可评估是否、何时以及以何种范围披露相关信息；任何披露时间表须经管理层、证券部/公司秘书/董办、法务及相关审核人确认后方可对外使用。
+
+### Validation
+
+- Validator now checks the quality gate document, 40+ scenario matrix, red-team fixtures, language policy fixtures, obligation-level fixtures, Telegram / QQ regression fixtures, and sample outputs for reviewer handoff and Chinese-first evidence status.
+- Validator scans skills, shared templates, shared examples, installed skill copies, fixtures, README, PILOT_GUIDE, CHANGELOG, and QUALITY_GATES for unguarded overclaim and future-commitment wording.
+
 ## v0.1.5 Internal Pilot Candidate - Unreleased
 
 ### Improved

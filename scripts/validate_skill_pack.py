@@ -453,6 +453,181 @@ A_SHARE_FORBIDDEN_PATTERNS = [
     "义务层级（暂定）: 强制披露",
 ]
 
+DEEP_QUALITY_FIXTURES = {
+    "deep_quality_scenarios.md": [
+        "A1",
+        "A8",
+        "H1",
+        "H8",
+        "I5",
+        "Q5",
+        "B4",
+        "D4",
+        "R3",
+        "M4",
+        "L5",
+    ],
+    "red_team_prompts.md": [
+        "A 股 Red Team",
+        "HKEX Red Team",
+        "ISSB Red Team",
+        "Investor / Rating Red Team",
+    ],
+    "language_policy_scenarios.md": [
+        "LP1",
+        "LP2",
+        "LP3",
+        "LP4",
+        "LP5",
+        "LP6",
+    ],
+    "obligation_level_scenarios.md": [
+        "A 股 Unknown Status Rule",
+        "HKEX Unknown Status Rule",
+        "义务层级：适用性待确认",
+    ],
+    "telegram_qq_output_regressions.md": [
+        "Regression 1",
+        "Regression 6",
+        "义务层级（暂定）: 强制披露",
+        "将在数据条件成熟后补充披露",
+    ],
+}
+
+QUALITY_GATE_REQUIRED_PHRASES = [
+    "No Unsupported Legal Or Regulatory Conclusions",
+    "No Unapproved Future Disclosure Commitments",
+    "A 股 Unknown Status Rule",
+    "HKEX Unknown Status Rule",
+    "Evidence Status Chinese-First",
+    "Output Language",
+    "Reviewer Handoff",
+    "Listed-Company IR And External-Use Controls",
+    "义务层级：适用性待确认",
+    "已验证（Verified）",
+    "需确认（Needs confirmation）",
+    "缺数据（Missing data）",
+    "不得声称（Do not claim）",
+]
+
+QUALITY_REGULATORY_FORBIDDEN = [
+    "违规",
+    "不合规",
+    "必须披露",
+    "已符合",
+    "HKEX compliant",
+    "ISSB compliant",
+    "fully compliant",
+    "fully met",
+    "no material gaps",
+    "industry-leading",
+    "world-class",
+    "best practice",
+]
+
+QUALITY_FUTURE_FORBIDDEN = [
+    "将在后续报告期披露",
+    "将在数据条件成熟后补充披露",
+    "计划披露",
+    "预计披露",
+    "将披露",
+    "保证",
+    "承诺",
+]
+
+QUALITY_ALLOWED_CONTEXT_MARKERS = [
+    "guardrail",
+    "forbidden",
+    "do-not-say",
+    "do not",
+    "don't",
+    "avoid",
+    "unless",
+    "caution",
+    "quality gate",
+    "regression",
+    "red-team",
+    "red team",
+    "prompt",
+    "expected",
+    "bad generated-output excerpt",
+    "required replacement",
+    "unsupported",
+    "replace",
+    "不得",
+    "不要",
+    "避免",
+    "禁止",
+    "禁用",
+    "不得表述",
+    "除非",
+    "不应",
+    "不判断",
+    "不作",
+    "不构成",
+    "不是",
+    "未经",
+    "未批准",
+    "风险提示",
+    "更审慎",
+    "不用于",
+    "不要直接",
+    "不得直接",
+]
+
+FUTURE_ALLOWED_CONTEXT_MARKERS = [
+    "do not",
+    "avoid",
+    "unless",
+    "forbidden",
+    "quality gate",
+    "regression",
+    "red-team",
+    "red team",
+    "bad generated-output excerpt",
+    "required replacement",
+    "不得",
+    "不要",
+    "避免",
+    "禁止",
+    "禁用",
+    "除非",
+    "未批准",
+    "未经",
+    "不应",
+    "仅当",
+    "without",
+    "批准时间表",
+    "approved timetable",
+]
+
+SAMPLE_OUTPUT_REQUIRED_HEADINGS = [
+    "使用的 skill",
+    "输出用途分类",
+    "适用框架与假设",
+    "关键发现 / 差距表",
+    "证据状态",
+    "风险提示",
+    "下一步行动",
+    "审核交接",
+    "专业审核声明",
+]
+
+REVIEWER_HANDOFF_TERMS = [
+    "ESG",
+    "IR",
+    "公司秘书",
+    "董办",
+    "证券部",
+    "法务",
+    "财务",
+    "EHS",
+    "运营",
+    "采购",
+    "管理层",
+    "董事会",
+]
+
 def network_patterns() -> list[str]:
     return [
         "cu" + "rl ",
@@ -1132,6 +1307,148 @@ def validate_research_map() -> list[str]:
     return failures
 
 
+def quality_scan_paths() -> list[Path]:
+    paths: list[Path] = []
+    paths += list((ROOT / "skills").glob("*/SKILL.md"))
+    paths += list((ROOT / "shared" / "templates").glob("*"))
+    paths += list((ROOT / "shared" / "examples").glob("*"))
+    paths += list((ROOT / "skills").glob("*/assets/templates/*"))
+    paths += list((ROOT / "skills").glob("*/examples/*"))
+    paths += list((ROOT / "tests" / "fixtures").glob("*.md"))
+    paths += [
+        ROOT / "README.md",
+        ROOT / "PILOT_GUIDE.md",
+        ROOT / "CHANGELOG.md",
+        ROOT / "QUALITY_GATES.md",
+    ]
+    return [path for path in paths if path.exists() and path.is_file()]
+
+
+def line_has_allowed_context(line: str, markers: list[str]) -> bool:
+    lowered = line.lower()
+    return any(marker.lower() in lowered for marker in markers)
+
+
+def validate_quality_gate_file() -> list[str]:
+    failures: list[str] = []
+    path = ROOT / "QUALITY_GATES.md"
+    if not path.exists():
+        return [f"missing quality gates file: {path}"]
+    text = read_text(path)
+    for phrase in QUALITY_GATE_REQUIRED_PHRASES:
+        if phrase not in text:
+            failures.append(f"{path}: missing quality gate phrase: {phrase}")
+    return failures
+
+
+def validate_deep_quality_fixtures() -> list[str]:
+    failures: list[str] = []
+    fixture_dir = ROOT / "tests" / "fixtures"
+    for filename, required_phrases in DEEP_QUALITY_FIXTURES.items():
+        path = fixture_dir / filename
+        if not path.exists():
+            failures.append(f"missing deep quality fixture: {path}")
+            continue
+        text = read_text(path)
+        for phrase in required_phrases:
+            if phrase not in text:
+                failures.append(f"{path}: missing deep quality phrase: {phrase}")
+
+    deep_path = fixture_dir / "deep_quality_scenarios.md"
+    if deep_path.exists():
+        text = read_text(deep_path)
+        scenario_count = len(re.findall(r"^\| [A-Z]\d+ ", text, flags=re.MULTILINE))
+        if scenario_count < 40:
+            failures.append(f"{deep_path}: expected at least 40 scenarios, found {scenario_count}")
+        for section in ["## A.", "## B.", "## C.", "## D.", "## E.", "## F.", "## G.", "## H.", "## I."]:
+            if section not in text:
+                failures.append(f"{deep_path}: missing scenario category {section}")
+    return failures
+
+
+def validate_quality_phrase_gates() -> list[str]:
+    failures: list[str] = []
+    for path in quality_scan_paths():
+        if path.name == "QUALITY_GATES.md":
+            continue
+        lines = read_text(path).splitlines()
+        for index, line in enumerate(lines):
+            line_no = index + 1
+            context = "\n".join(lines[max(0, index - 3) : min(len(lines), index + 3)])
+            for phrase in QUALITY_REGULATORY_FORBIDDEN:
+                if phrase.lower() in line.lower() and not line_has_allowed_context(context, QUALITY_ALLOWED_CONTEXT_MARKERS):
+                    failures.append(f"{path}:{line_no}: quality gate regulatory phrase outside caution context: {phrase}")
+            for phrase in QUALITY_FUTURE_FORBIDDEN:
+                if phrase in line and not line_has_allowed_context(context, FUTURE_ALLOWED_CONTEXT_MARKERS):
+                    failures.append(f"{path}:{line_no}: future disclosure phrase outside caution context: {phrase}")
+    return failures
+
+
+def validate_unknown_status_defaults() -> list[str]:
+    failures: list[str] = []
+    a_share_paths = [
+        ROOT / "skills" / "esg-a-share-gap-check" / "SKILL.md",
+        ROOT / "shared" / "templates" / "a-share-gap-check-template.md",
+        ROOT / "shared" / "examples" / "example-a-share-gap-check.md",
+        ROOT / "tests" / "fixtures" / "obligation_level_scenarios.md",
+        ROOT / "tests" / "fixtures" / "sample_outputs_for_review.md",
+    ]
+    hkex_paths = [
+        ROOT / "skills" / "esg-hkex-gap-check" / "SKILL.md",
+        ROOT / "shared" / "templates" / "hkex-gap-check-template.md",
+        ROOT / "shared" / "examples" / "example-hkex-gap-check.md",
+        ROOT / "tests" / "fixtures" / "obligation_level_scenarios.md",
+        ROOT / "tests" / "fixtures" / "sample_outputs_for_review.md",
+    ]
+    for path in a_share_paths:
+        if path.exists() and "义务层级：适用性待确认" not in read_text(path):
+            failures.append(f"{path}: missing A-share unknown-status default obligation label")
+    for path in hkex_paths:
+        if path.exists() and "义务层级：适用性待确认" not in read_text(path):
+            failures.append(f"{path}: missing HKEX unknown-status default obligation label")
+    return failures
+
+
+def validate_sample_outputs_for_review() -> list[str]:
+    failures: list[str] = []
+    path = ROOT / "tests" / "fixtures" / "sample_outputs_for_review.md"
+    if not path.exists():
+        return [f"missing sample outputs fixture: {path}"]
+    text = read_text(path)
+    sample_count = len(re.findall(r"^## Sample \d+:", text, flags=re.MULTILINE))
+    if sample_count < 8:
+        failures.append(f"{path}: expected at least 8 sample outputs, found {sample_count}")
+    for heading in SAMPLE_OUTPUT_REQUIRED_HEADINGS:
+        if heading not in text:
+            failures.append(f"{path}: missing sample output heading: {heading}")
+    for status in ["已验证（Verified）", "需确认（Needs confirmation）", "缺数据（Missing data）", "不得声称（Do not claim）"]:
+        if status not in text:
+            failures.append(f"{path}: missing Chinese-first evidence status: {status}")
+    for term in REVIEWER_HANDOFF_TERMS:
+        if term not in text:
+            failures.append(f"{path}: missing reviewer handoff term: {term}")
+    for phrase in [
+        "本输出为内部工作底稿",
+        "不构成法律、监管、审计、鉴证、财务或可持续发展报告意见",
+        "不得在负责审核人批准前对外发布、提交、披露或纳入 ESG 报告",
+        "基于已提供材料，未识别出重大准备度差距；这不是合规结论。",
+        "未从已提供材料识别出重大风险，但仍需 IR/法务/公司秘书复核。",
+    ]:
+        if phrase not in text:
+            failures.append(f"{path}: missing sample-output risk phrase: {phrase}")
+    return failures
+
+
+def validate_quality_gates() -> list[str]:
+    failures: list[str] = []
+    failures.extend(validate_quality_gate_file())
+    failures.extend(validate_deep_quality_fixtures())
+    failures.extend(validate_quality_phrase_gates())
+    failures.extend(validate_unknown_status_defaults())
+    failures.extend(validate_sample_outputs_for_review())
+    return failures
+
+
 def validate_all() -> list[str]:
     failures: list[str] = []
     failures.extend(validate_skills())
@@ -1144,6 +1461,7 @@ def validate_all() -> list[str]:
     failures.extend(validate_pilot_scenarios())
     failures.extend(validate_research_map())
     failures.extend(validate_release_hardening())
+    failures.extend(validate_quality_gates())
     return failures
 
 
