@@ -8,6 +8,8 @@ The skills help draft work products such as gap checks, board briefs, investor Q
 
 Use this pack when you need an internal ESG draft, checklist, tracker, board brief, investor Q&A, or data request that clearly separates supported claims from missing evidence. Start by choosing the closest skill below, then paste your source notes, report extracts, questionnaire, or meeting context into your agent.
 
+For pilot rollout instructions, see [PILOT_GUIDE.md](PILOT_GUIDE.md). For release notes and known limitations, see [CHANGELOG.md](CHANGELOG.md).
+
 ## Pilot Use Only / Internal Draft Use
 
 This v0.1 pack is for internal pilot use and draft working papers only. It does not provide legal, regulatory, audit, assurance, financial, or sustainability reporting advice. Outputs must not be externally published, filed, submitted, or disclosed until approved by the responsible internal owners and professional reviewers.
