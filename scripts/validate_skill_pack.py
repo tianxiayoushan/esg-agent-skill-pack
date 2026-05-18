@@ -98,6 +98,8 @@ OVERCLAIM_ALLOWED_MARKERS = [
     "quoting",
     "quoted",
     "not",
+    "不要",
+    "避免",
     "generated-output excerpt to avoid",
     "not a compliance conclusion",
     "preferred replacements",
@@ -735,6 +737,57 @@ STYLE_ALLOWED_CONTEXT_MARKERS = [
     "avoid",
     "do not",
     "unless",
+]
+
+OFFICIAL_REFERENCE_FILES = [
+    "README.md",
+    "reference_registry.yaml",
+    "hkex/hkex_appendix_c2_source_map.md",
+    "hkex/hkex_appendix_c2_topic_map.yaml",
+    "hkex/hkex_part_d_climate_map.yaml",
+    "hkex/hkex_obligation_matrix.yaml",
+    "hkex/hkex_source_notes.md",
+    "a_share/sse_no14_source_map.md",
+    "a_share/szse_no17_source_map.md",
+    "a_share/a_share_subject_scope_matrix.yaml",
+    "a_share/a_share_topic_map.yaml",
+    "a_share/a_share_obligation_matrix.yaml",
+    "a_share/a_share_source_notes.md",
+    "issb/ifrs_s1_source_map.md",
+    "issb/ifrs_s2_source_map.md",
+    "issb/issb_content_area_map.yaml",
+    "issb/issb_scope3_and_ghg_notes.md",
+    "issb/issb_materiality_notes.md",
+    "issb/issb_source_notes.md",
+    "crosswalks/hkex_issb_crosswalk.yaml",
+    "crosswalks/a_share_issb_crosswalk.yaml",
+    "crosswalks/hkex_a_share_crosswalk.yaml",
+    "crosswalks/materiality_framework_crosswalk.yaml",
+    "disclaimers/copyright_and_source_use_policy.md",
+    "disclaimers/professional_review_policy.md",
+]
+
+OFFICIAL_REFERENCE_METADATA_FIELDS = [
+    "reference_id",
+    "framework_name",
+    "jurisdiction",
+    "issuer_scope",
+    "source_type",
+    "official_source_url",
+    "source_publisher",
+    "publication_date",
+    "effective_date",
+    "last_reviewed_date",
+    "review_status",
+    "copyright_note",
+    "usage_note",
+    "professional_review_required",
+]
+
+OFFICIAL_REFERENCE_FIXTURES = [
+    "official_reference_scenarios.md",
+    "source_citation_regression.md",
+    "framework_crosswalk_scenarios.md",
 ]
 
 def network_patterns() -> list[str]:
@@ -1663,6 +1716,222 @@ def validate_v017_controls() -> list[str]:
     return failures
 
 
+def validate_official_reference_pack() -> list[str]:
+    failures: list[str] = []
+    root = ROOT / "official_references"
+    if not root.exists():
+        return [f"missing official references directory: {root}"]
+
+    registry = root / "reference_registry.yaml"
+    registry_text = read_text(registry) if registry.exists() else ""
+
+    for relative in OFFICIAL_REFERENCE_FILES:
+        path = root / relative
+        if not path.exists():
+            failures.append(f"missing official reference file: {path}")
+            continue
+        text = read_text(path)
+        for field in OFFICIAL_REFERENCE_METADATA_FIELDS:
+            if f"{field}:" not in text:
+                failures.append(f"{path}: missing official reference metadata field: {field}")
+        for phrase in ["official_source_url", "last_reviewed_date", "professional_review_required", "copyright_note"]:
+            if phrase not in text:
+                failures.append(f"{path}: missing required official reference phrase: {phrase}")
+        if relative != "reference_registry.yaml" and relative not in registry_text:
+            failures.append(f"reference registry missing file path: {relative}")
+
+    if registry.exists():
+        for skill in REQUIRED_SKILLS:
+            if skill not in registry_text:
+                failures.append(f"reference registry missing skill mapping: {skill}")
+
+    failures.extend(validate_official_hkex_references(root))
+    failures.extend(validate_official_a_share_references(root))
+    failures.extend(validate_official_issb_references(root))
+    failures.extend(validate_official_crosswalks(root))
+    failures.extend(validate_official_reference_fixtures())
+    failures.extend(validate_official_reference_docs_and_skills())
+    return failures
+
+
+def validate_official_hkex_references(root: Path) -> list[str]:
+    failures: list[str] = []
+    combined = "\n".join(read_text(path) for path in (root / "hkex").glob("*") if path.is_file())
+    for phrase in [
+        "Appendix C2",
+        "Part D",
+        "Mandatory",
+        "Comply-or-explain",
+        "Voluntary",
+        "Applicability to confirm",
+        "义务层级：适用性待确认",
+        "LargeCap",
+        "GEM",
+        "Main Board",
+        "潜在披露差距",
+        "准备度差距",
+    ]:
+        if phrase not in combined:
+            failures.append(f"official HKEX references missing phrase: {phrase}")
+    return failures
+
+
+def validate_official_a_share_references(root: Path) -> list[str]:
+    failures: list[str] = []
+    combined = "\n".join(read_text(path) for path in (root / "a_share").glob("*") if path.is_file())
+    for phrase in [
+        "上海证券交易所上市公司自律监管指引第14号",
+        "深圳证券交易所上市公司自律监管指引第17号",
+        "SSE Main Board",
+        "STAR Market",
+        "SZSE Main Board",
+        "ChiNext",
+        "上证180",
+        "科创50",
+        "深证100",
+        "创业板指数",
+        "强制披露",
+        "鼓励披露",
+        "自愿披露",
+        "适用性待确认",
+        "未评估",
+        "Do not use HKEX comply-or-explain terminology by default",
+    ]:
+        if phrase not in combined:
+            failures.append(f"official A-share references missing phrase: {phrase}")
+    return failures
+
+
+def validate_official_issb_references(root: Path) -> list[str]:
+    failures: list[str] = []
+    combined = "\n".join(read_text(path) for path in (root / "issb").glob("*") if path.is_file())
+    for phrase in [
+        "IFRS S1",
+        "IFRS S2",
+        "governance",
+        "strategy",
+        "risk management",
+        "metrics and targets",
+        "readiness",
+        "alignment",
+        "compliance",
+        "investor-focused / financial materiality baseline",
+        "physical risks",
+        "transition risks",
+        "Scope 1",
+        "Scope 2",
+        "Scope 3",
+        "scenario analysis",
+        "transition plan",
+        "financed emissions",
+        "Do not write `IFRS S1 compliant`",
+        "does not reproduce the full Standard",
+    ]:
+        if phrase not in combined:
+            failures.append(f"official ISSB references missing phrase: {phrase}")
+
+    prohibited_long_text_markers = [
+        "A complete set of sustainability-related financial disclosures",
+        "shall disclose information about all sustainability-related risks and opportunities",
+        "the objective of this Standard is to require an entity",
+    ]
+    for marker in prohibited_long_text_markers:
+        if marker.lower() in combined.lower():
+            failures.append(f"official ISSB references may contain copied IFRS standard text: {marker}")
+    return failures
+
+
+def validate_official_crosswalks(root: Path) -> list[str]:
+    failures: list[str] = []
+    checks = {
+        "crosswalks/hkex_issb_crosswalk.yaml": ["climate_governance", "Scope 1", "Scope 2", "Scope 3", "obligation_level_differences"],
+        "crosswalks/a_share_issb_crosswalk.yaml": ["double materiality", "investor-focused", "reporting_subject"],
+        "crosswalks/hkex_a_share_crosswalk.yaml": ["ESG report", "sustainability report", "obligation_levels", "subject_scope"],
+        "crosswalks/materiality_framework_crosswalk.yaml": ["ISSB", "GRI", "CSRD/ESRS", "Do not say ISSB uses double materiality"],
+    }
+    for relative, phrases in checks.items():
+        path = root / relative
+        text = read_text(path) if path.exists() else ""
+        for phrase in phrases:
+            if phrase.lower() not in text.lower():
+                failures.append(f"{path}: missing crosswalk phrase: {phrase}")
+    return failures
+
+
+def validate_official_reference_fixtures() -> list[str]:
+    failures: list[str] = []
+    fixture_root = ROOT / "tests" / "fixtures"
+    for filename in OFFICIAL_REFERENCE_FIXTURES:
+        path = fixture_root / filename
+        if not path.exists():
+            failures.append(f"missing official reference fixture: {path}")
+            continue
+        text = read_text(path)
+        for phrase in ["official_references", "readiness", "compliance", "source"]:
+            if phrase not in text:
+                failures.append(f"{path}: missing official reference fixture phrase: {phrase}")
+    return failures
+
+
+def validate_official_reference_docs_and_skills() -> list[str]:
+    failures: list[str] = []
+    readme = read_text(ROOT / "README.md")
+    for phrase in ["v0.2 Official Rules Reference Pack", "official_references", "not legal advice", "HKEX, A 股, and ISSB references are separated", "A 股 and HKEX rules must not be mixed"]:
+        if phrase not in readme:
+            failures.append(f"README missing official reference phrase: {phrase}")
+    pilot = read_text(ROOT / "PILOT_GUIDE.md")
+    for phrase in ["Official Reference Pack Testing", "请按 A 股第14号/第17号做准备度检查", "不要作合规结论", "source-map"]:
+        if phrase not in pilot:
+            failures.append(f"PILOT_GUIDE missing official reference phrase: {phrase}")
+    for skill in REQUIRED_SKILLS:
+        path = ROOT / "skills" / skill / "SKILL.md"
+        text = read_text(path)
+        for phrase in ["Official reference layer", "references/official_references", "readiness"]:
+            if phrase not in text:
+                failures.append(f"{path}: missing official reference layer phrase: {phrase}")
+        if "use `official_references/" in text or "use `official_references" in text:
+            failures.append(f"{path}: skill depends on repo-root official_references path")
+        local_official = path.parent / "references" / "official_references"
+        for relative in OFFICIAL_REFERENCE_FILES:
+            if not (local_official / relative).exists():
+                failures.append(f"{path}: missing self-contained official reference copy: {relative}")
+        if "compliance opinions" not in text and "compliance conclusions" not in text and "determine ISSB compliance" not in text:
+            failures.append(f"{path}: missing non-compliance-conclusion caution")
+    return failures
+
+
+def validate_temp_install_official_references() -> list[str]:
+    failures: list[str] = []
+    with tempfile.TemporaryDirectory(prefix="esg-official-install-", dir=ROOT) as project_dir:
+        with tempfile.TemporaryDirectory(prefix="esg-official-home-", dir=ROOT) as home_dir:
+            result = subprocess.run(
+                ["bash", str(ROOT / "install.sh"), "--target", "codex", "--scope", "project"],
+                cwd=project_dir,
+                env={"HOME": home_dir, "PATH": "/bin:/usr/bin"},
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+            if result.returncode != 0:
+                failures.append(f"temp official-reference install failed: {result.stderr}")
+                return failures
+            destination = Path(project_dir) / ".agents" / "skills"
+            for skill in REQUIRED_SKILLS:
+                skill_dir = destination / skill
+                skill_md = skill_dir / "SKILL.md"
+                if not skill_md.exists():
+                    failures.append(f"installed skill missing SKILL.md: {skill}")
+                    continue
+                text = read_text(skill_md)
+                if "use `official_references/" in text or "use `official_references" in text:
+                    failures.append(f"installed skill depends on repo-root official_references path: {skill}")
+                local_official = skill_dir / "references" / "official_references"
+                for relative in OFFICIAL_REFERENCE_FILES:
+                    if not (local_official / relative).exists():
+                        failures.append(f"installed skill missing official reference {skill}/{relative}")
+    return failures
+
+
 def validate_all() -> list[str]:
     failures: list[str] = []
     failures.extend(validate_skills())
@@ -1677,6 +1946,8 @@ def validate_all() -> list[str]:
     failures.extend(validate_release_hardening())
     failures.extend(validate_quality_gates())
     failures.extend(validate_v017_controls())
+    failures.extend(validate_official_reference_pack())
+    failures.extend(validate_temp_install_official_references())
     return failures
 
 

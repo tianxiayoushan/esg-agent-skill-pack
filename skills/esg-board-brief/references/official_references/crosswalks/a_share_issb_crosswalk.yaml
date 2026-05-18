@@ -1,0 +1,33 @@
+reference_id: a-share-issb-crosswalk
+framework_name: "A-share to ISSB Crosswalk"
+jurisdiction: "Mainland China / International"
+issuer_scope: "A-share listed companies assessing ISSB climate or sustainability readiness"
+source_type: "official-source-crosswalk"
+official_source_url: "https://www.sse.com.cn/lawandrules/sselawsrules/stocks/mainipo/c/c_20240412_10753180.shtml; https://www.szse.cn/lawrules/rule/allrules/bussiness/t20240412_606839.html; https://www.ifrs.org/sustainability/knowledge-hub/introduction-to-issb-and-ifrs-sustainability-disclosure-standards/"
+source_publisher: "SSE; SZSE; IFRS Foundation"
+publication_date: "2026-05-18"
+effective_date: "See A-share and ISSB source maps"
+last_reviewed_date: "2026-05-18"
+review_status: "official-source-verified"
+copyright_note: "Crosswalk uses short labels only; no full exchange or IFRS text is reproduced."
+usage_note: "Use for readiness comparison only. Do not mix A-share obligation logic with ISSB compliance language."
+professional_review_required: true
+
+crosswalk:
+  double_materiality_vs_investor_baseline:
+    a_share: "Double materiality where applicable and subject to official source/professional confirmation"
+    issb: "Investor-focused / financial materiality baseline"
+    caution: "Do not say ISSB emphasizes double materiality."
+  climate_disclosure:
+    a_share: "Climate change topic under A-share sustainability reporting"
+    issb: "IFRS S2 climate-related disclosures"
+    caution: "Confirm reporting subject and adoption/applicability separately."
+  governance_strategy_risk_metrics:
+    a_share: "Governance, strategy, impact/risk/opportunity management, metrics and targets"
+    issb: "Governance, strategy, risk management, metrics and targets"
+    caution: "Content areas may align conceptually but obligations differ."
+  reporting_subject:
+    a_share: "Exchange, index status, cross-listing, report period, applicability"
+    issb: "Jurisdictional adoption and reporting basis"
+    caution: "If unknown, use 义务层级：适用性待确认."
+

@@ -146,6 +146,10 @@ Do not invent or imply emissions data, Scope 1, Scope 2, Scope 3 figures, board 
 
 Add this notice: Draft working paper for internal review only. Placeholder framework references do not determine regulatory applicability or compliance. Outputs must not be externally published, filed, submitted, disclosed, or included in sustainability, ESG, or social responsibility reports until approved by responsible reviewers, including 证券部、董办、法务、ESG、财务、管理层 and assurance reviewers where applicable.
 
+## Official reference layer
+
+When repository access is available, use `references/official_references/a_share/` and `references/official_references/crosswalks/a_share_issb_crosswalk.yaml` as readiness source-map support. These files help identify SSE No.14 / SZSE No.17 source notes, A 股 subject-scope assumptions, topic mapping, and obligation labels. They do not determine A 股 compliance and must not be used for compliance conclusions. If exchange, index status, cross-listing status, report period, applicability, or 证券部 / 董办 / 法务 confirmation is missing, default to `义务层级：适用性待确认`. Do not use HKEX Part D or HKEX explanation terminology by default in A 股 outputs.
+
 ## Local resources
 
 - References: [上交所第14号占位参考](references/framework-sse-sustainability-reporting-guideline.md), [深交所第17号占位参考](references/framework-szse-sustainability-reporting-guideline.md)

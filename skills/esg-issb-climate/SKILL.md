@@ -102,6 +102,10 @@ Do not invent or imply emissions data, Scope 1, Scope 2, Scope 3 figures, board 
 
 Add this notice: Draft working paper for internal review only. Confirm climate framework applicability, mandatory status, emissions data, methodologies, targets, assurance status, filing implications, and regulatory use with ESG, finance, risk, legal, and assurance reviewers before external publication, filing, submission, or disclosure.
 
+## Official reference layer
+
+When repository access is available, use `references/official_references/issb/` and `references/official_references/crosswalks/` as source-map support for IFRS S1, IFRS S2, content areas, GHG / Scope 3 notes, materiality distinctions, and HKEX / A-share comparison points. These files are concise summaries and source links only; they do not reproduce IFRS Standards and do not determine ISSB compliance. Keep readiness, alignment, and compliance distinct. Do not write `IFRS S1 compliant`, `IFRS S2 compliant`, or `ISSB compliant` unless all relevant requirements are assessed and professionally confirmed.
+
 ## Local resources
 
 - References: [IFRS S1 placeholder](references/framework-issb-ifrs-s1.md), [IFRS S2 placeholder](references/framework-issb-ifrs-s2.md), [TCFD placeholder](references/framework-tcfd.md)

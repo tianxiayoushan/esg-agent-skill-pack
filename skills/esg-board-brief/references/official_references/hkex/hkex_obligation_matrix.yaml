@@ -1,0 +1,44 @@
+reference_id: hkex-obligation-matrix
+framework_name: "HKEX ESG Reporting Code Obligation Matrix"
+jurisdiction: "Hong Kong"
+issuer_scope: "HKEX Main Board and GEM listed issuers"
+source_type: "official-rulebook-obligation-map"
+official_source_url: "https://www.hkex.com.hk/listing/sustainability/esg-academy/rules-and-regulations?sc_lang=en"
+source_publisher: "Hong Kong Exchanges and Clearing Limited"
+publication_date: "See HKEX rulebook and ESG Academy source pages"
+effective_date: "See issuer category, reporting period, and HKEX timetable"
+last_reviewed_date: "2026-05-18"
+review_status: "official-source-verified"
+copyright_note: "Short labels and caution wording only; no full rule text is reproduced."
+usage_note: "Use to classify readiness rows. Do not use mandatory labels unless issuer status and obligation level are confirmed."
+professional_review_required: true
+
+obligation_levels:
+  mandatory:
+    label: "强制披露（Mandatory）"
+    use_only_when: "Issuer category, reporting period, official rule source, and obligation level are confirmed."
+  comply_or_explain:
+    label: "不遵守就解释（Comply-or-explain）"
+    use_only_when: "HKEX source and applicability are confirmed."
+  voluntary:
+    label: "自愿披露（Voluntary）"
+    use_only_when: "The item is not required for the issuer/context or is explicitly voluntary."
+  applicability_to_confirm:
+    label: "适用性待确认（Applicability to confirm）"
+    default_when: "Issuer category, reporting period, LargeCap/GEM/Main Board status, or obligation level is unknown."
+  not_assessed:
+    label: "未评估（Not assessed）"
+    default_when: "No source material or issue mapping has been reviewed."
+
+forbidden_default_wording:
+  - "non-compliant"
+  - "must disclose"
+  - "mandatory"
+  - "Part D non-compliance"
+
+preferred_default_wording:
+  - "潜在披露差距"
+  - "准备度差距"
+  - "义务层级：适用性待确认"
+  - "需公司秘书 / 法务确认"
+

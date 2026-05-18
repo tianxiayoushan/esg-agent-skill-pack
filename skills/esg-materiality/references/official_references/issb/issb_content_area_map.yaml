@@ -1,0 +1,30 @@
+reference_id: issb-content-area-map
+framework_name: "ISSB Content Area Map"
+jurisdiction: "International"
+issuer_scope: "Entities assessing IFRS S1 / IFRS S2 readiness"
+source_type: "official-standard-content-map"
+official_source_url: "https://www.ifrs.org/sustainability/knowledge-hub/introduction-to-issb-and-ifrs-sustainability-disclosure-standards/"
+source_publisher: "IFRS Foundation / International Sustainability Standards Board"
+publication_date: "2023-06-26"
+effective_date: "2024-01-01"
+last_reviewed_date: "2026-05-18"
+review_status: "official-source-verified"
+copyright_note: "Concise content-area labels only; no full IFRS Standards text is reproduced."
+usage_note: "Use as a readiness content-area map, not as a compliance checklist."
+professional_review_required: true
+
+content_areas:
+  governance:
+    readiness_focus: "Processes, controls, and oversight for sustainability-related or climate-related risks and opportunities."
+  strategy:
+    readiness_focus: "Effects on business model, value chain, strategy, decision-making, financial position, financial performance, and cash flows."
+  risk_management:
+    readiness_focus: "Processes to identify, assess, prioritise, and monitor risks and opportunities."
+  metrics_and_targets:
+    readiness_focus: "Metrics used to monitor performance, including climate-related metrics and targets where applicable."
+
+distinctions:
+  readiness: "Preparatory assessment based on provided evidence."
+  alignment: "Partial mapping to framework concepts; not a statement of compliance."
+  compliance: "Do not state unless full requirements have been assessed and professional confirmation exists."
+

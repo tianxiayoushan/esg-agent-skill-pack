@@ -38,9 +38,10 @@ def main() -> int:
     for skill in SKILLS:
         skill_dir = ROOT / "skills" / skill
         copy_tree_contents(SHARED / "references", skill_dir / "references")
+        copy_tree_contents(ROOT / "official_references", skill_dir / "references" / "official_references")
         copy_tree_contents(SHARED / "templates", skill_dir / "assets" / "templates")
         copy_tree_contents(SHARED / "examples", skill_dir / "examples")
-    print("Synced shared references, templates, and examples into skill directories.")
+    print("Synced shared references, official references, templates, and examples into skill directories.")
     return 0
 
 

@@ -103,6 +103,10 @@ Do not invent or imply emissions data, Scope 1, Scope 2, Scope 3 figures, board 
 
 Add this notice: Draft working paper for internal review only. Confirm questionnaire interpretation, evidence, confidentiality, legal review, customer or provider submission requirements, and submission approval with the responsible professional owners before sending. Do not submit, externally disclose, or include responses in ESG reports until approved for that use.
 
+## Official reference layer
+
+When repository access is available, use `references/official_references/reference_registry.yaml`, `references/official_references/issb/`, and relevant crosswalks to identify readiness framework assumptions behind customer, rating, and supplier questionnaire requests. Use references for evidence requests and source-aware response logs only. Do not convert official-reference summaries into ESG rating scores, compliance conclusions, compliance status, assurance status, emissions figures, supplier audit results, or approved customer statements.
+
 ## Local resources
 
 - Reference: [rating questionnaire placeholder](references/framework-rating-questionnaires.md)

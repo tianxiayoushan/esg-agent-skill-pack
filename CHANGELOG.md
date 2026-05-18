@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.2.0 Internal Pilot Candidate - Unreleased
+
+### Added
+
+- Added `official_references/` as an official rules reference pack for HKEX Appendix C2 / Part D, A 股上交所第14号 / 深交所第17号, and ISSB IFRS S1 / IFRS S2.
+- Added source maps, topic maps, obligation matrices, subject-scope matrices, ISSB content area maps, Scope 3 / GHG notes, materiality notes, and crosswalks.
+- Added copyright/source-use and professional-review policies to keep official references as source-map support only.
+- Added official-reference scenario fixtures, source citation regression fixtures, and framework crosswalk fixtures.
+
+### Improved
+
+- Updated all skills to reference local `references/official_references/` copies as the source-map layer where repository access is available.
+- Packaged official source-map copies into each skill under `references/official_references/` so installed skills remain self-contained after `install.sh`.
+- Preserved the core safety rule: outputs remain readiness workpapers, not legal, regulatory, audit, assurance, financial, sustainability reporting, filing, or compliance opinions.
+- Strengthened README and PILOT_GUIDE guidance for official-reference-aware testing.
+
+### Validation
+
+- Validator now checks official reference structure, required files, metadata fields, source URLs, copyright notes, professional review flags, HKEX obligation caution, A 股 subject-scope caution, ISSB readiness/compliance distinction, crosswalk coverage, official-reference fixtures, README limitations, and skill references.
+
 ## v0.1.7 Internal Pilot Candidate - Unreleased
 
 ### Added

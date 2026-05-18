@@ -103,6 +103,10 @@ Do not invent or imply emissions data, Scope 1, Scope 2, Scope 3 figures, board 
 
 Add this notice: Draft working paper for internal review only. Confirm board remit, meeting context, management recommendations, legal implications, disclosure sensitivity, and any proposed board decision wording with the board secretary, company secretarial, legal, ESG, and finance owners. Do not externally publish, file, submit, disclose, or include board-brief content in ESG reports until approved for that use.
 
+## Official reference layer
+
+When repository access is available, use `references/official_references/reference_registry.yaml` to identify the relevant HKEX, A-share, ISSB, or crosswalk source-map for board pre-read context. Use it to improve assumptions and source traceability only. Do not state legal, regulatory, audit, assurance, financial, sustainability reporting, filing, or compliance conclusions in a board brief without professional confirmation.
+
 ## Local resources
 
 - Reference: [output style policy](references/output-style-policy.md)

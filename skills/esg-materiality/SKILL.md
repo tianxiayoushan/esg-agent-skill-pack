@@ -98,6 +98,10 @@ Do not invent or imply emissions data, Scope 1, Scope 2, Scope 3 figures, board 
 
 Add this notice: Draft working paper for internal review only. Confirm materiality methodology, stakeholder evidence, topic prioritisation, legal implications, and external-use wording with ESG, legal, IR, company secretarial, and management reviewers. Do not externally publish, file, submit, disclose, or include materiality conclusions in ESG reports until approved for that use.
 
+## Official reference layer
+
+When repository access is available, use `references/official_references/crosswalks/materiality_framework_crosswalk.yaml`, `references/official_references/issb/issb_materiality_notes.md`, and relevant HKEX/A-share readiness source maps to keep materiality language framework-specific. Do not say ISSB uses double materiality. Do not determine final materiality or compliance conclusions without actual methodology, stakeholder evidence, scoring, and governance approval.
+
 ## Local resources
 
 - Reference: [materiality source placeholder](references/framework-materiality-source-register.md)

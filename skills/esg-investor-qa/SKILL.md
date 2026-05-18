@@ -102,6 +102,10 @@ Do not invent or imply emissions data, Scope 1, Scope 2, Scope 3 figures, board 
 
 Add this notice: Draft working paper for internal review only. Confirm all ESG investor messaging with IR, legal, ESG, finance, and management reviewers before external publication, filing, submission, or disclosure, including selective disclosure, inside information, market-sensitive information, and approved disclosure channel checks.
 
+## Official reference layer
+
+When repository access is available, use `references/official_references/reference_registry.yaml` to identify HKEX, A-share, ISSB, and crosswalk readiness source-map assumptions behind investor-facing ESG claims. Use official references to keep answers source-aware, not to create new investor disclosures or compliance conclusions. Investor Q&A must remain limited to approved public sources and reviewer-approved channels.
+
 ## Local resources
 
 - Reference: [output style policy](references/output-style-policy.md)

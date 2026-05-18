@@ -50,6 +50,32 @@ Do not upload or paste:
 5. **ESG data request tracker**: Ask for annual ESG data from HR, Finance, Operations, EHS, Procurement, and Administration. Check owners, source documents, evidence status, risk flags, next actions, and reviewers.
 6. **Rating or materiality workflow**: Test either a customer ESG questionnaire requesting supplier audit results and emissions data, or a stakeholder interview and topic prioritisation draft.
 
+## Official Reference Pack Testing
+
+Use the v0.2 official reference pack only for source-aware readiness testing. It must not be treated as legal advice or a final compliance checklist.
+
+Suggested prompts:
+
+```text
+请按 HKEX Appendix C2 / Part D 做准备度检查，但不要作合规结论；请列出使用的官方 source-map 假设和需要公司秘书/法务确认的事项。
+```
+
+```text
+请按 A 股第14号/第17号做准备度检查，但不要作合规结论；如果交易所、指数状态、境内外同时上市状态或报告期不清楚，请保持义务层级：适用性待确认。
+```
+
+```text
+请按 IFRS S1 / IFRS S2 做 climate readiness review；请区分 readiness、alignment 和 compliance；避免使用未经完整评估和专业确认的 ISSB compliance 结论。
+```
+
+If a tester sees an outdated source note, unclear official URL, or source-map assumption that conflicts with official text, record:
+
+- file path under `official_references/`
+- source URL
+- issue description
+- proposed reviewer
+- whether it affects HKEX, A 股, ISSB, crosswalk, or materiality wording
+
 ## Feedback Form
 
 For each task, collect:

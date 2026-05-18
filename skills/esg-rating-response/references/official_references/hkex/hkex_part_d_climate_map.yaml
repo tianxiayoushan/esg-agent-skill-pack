@@ -1,0 +1,40 @@
+reference_id: hkex-part-d-climate-map
+framework_name: "HKEX Appendix C2 Part D Climate-related Disclosures"
+jurisdiction: "Hong Kong"
+issuer_scope: "HKEX listed issuers, with issuer-category and timetable confirmation required"
+source_type: "official-rulebook-climate-map"
+official_source_url: "https://en-rules.hkex.com.hk/rulebook/appendix-c2-environmental-social-and-governance-reporting-code-0"
+source_publisher: "Hong Kong Exchanges and Clearing Limited"
+publication_date: "See HKEX rulebook and revisions page"
+effective_date: "Financial years commencing on or after 1 January 2025 for Part D climate disclosure framework, subject to issuer-category and transitional provisions"
+last_reviewed_date: "2026-05-18"
+review_status: "official-source-verified"
+copyright_note: "Concise paraphrased map only; no full HKEX text is reproduced."
+usage_note: "Use for Part D readiness mapping. Do not decide mandatory status without company secretary/legal confirmation."
+professional_review_required: true
+
+content_areas:
+  governance:
+    readiness_questions:
+      - "Who oversees climate-related risks and opportunities?"
+      - "What management role, reporting line, and meeting evidence support the statement?"
+  strategy:
+    readiness_questions:
+      - "What climate-related risks and opportunities are identified?"
+      - "Are physical and transition risks distinguished?"
+      - "Is scenario analysis qualitative, quantitative, or missing?"
+  risk_management:
+    readiness_questions:
+      - "How are climate-related risks identified, assessed, prioritised, and monitored?"
+      - "How is the process integrated into enterprise risk management?"
+  metrics_and_targets:
+    readiness_questions:
+      - "Are Scope 1, Scope 2, and Scope 3 data, methodology, boundary, and assurance status provided?"
+      - "Are targets approved, bounded, dated, and tracked?"
+
+issuer_category_caution:
+  - "Confirm Main Board or GEM status."
+  - "Confirm LargeCap status before using mandatory language."
+  - "Confirm reporting period and implementation relief."
+  - "Default to 义务层级：适用性待确认 if status is unknown."
+

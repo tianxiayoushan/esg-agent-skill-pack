@@ -1,0 +1,64 @@
+reference_id: official-reference-registry
+framework_name: "ESG Skill Pack Official Rules Reference Registry"
+jurisdiction: "Hong Kong, Mainland China, International"
+issuer_scope: "Listed companies and large companies"
+source_type: "registry"
+official_source_url: "https://www.hkex.com.hk/listing/sustainability/esg-academy/rules-and-regulations?sc_lang=en; https://www.sse.com.cn/lawandrules/sselawsrules/stocks/mainipo/c/c_20240412_10753180.shtml; https://www.szse.cn/lawrules/rule/allrules/bussiness/t20240412_606839.html; https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/ifrs-s1-general-requirements/; https://www.ifrs.org/supporting-implementation/supporting-materials-for-ifrs-sustainability-disclosure-standards/ifrs-s2/"
+source_publisher: "HKEX, SSE, SZSE, IFRS Foundation"
+publication_date: "2026-05-18"
+effective_date: "2026-05-18"
+last_reviewed_date: "2026-05-18"
+review_status: "official-source-verified"
+copyright_note: "Registry contains source links and short summaries only; no full rule or IFRS Standard text is reproduced."
+usage_note: "Use to map references to skills for readiness workpapers only."
+professional_review_required: true
+
+references:
+  - path: "README.md"
+    skills: ["esg"]
+  - path: "hkex/hkex_appendix_c2_source_map.md"
+    skills: ["esg", "esg-hkex-gap-check", "esg-board-brief", "esg-investor-qa", "esg-rating-response", "esg-materiality"]
+  - path: "hkex/hkex_appendix_c2_topic_map.yaml"
+    skills: ["esg-hkex-gap-check", "esg-board-brief", "esg-materiality"]
+  - path: "hkex/hkex_part_d_climate_map.yaml"
+    skills: ["esg-hkex-gap-check", "esg-issb-climate", "esg-board-brief"]
+  - path: "hkex/hkex_obligation_matrix.yaml"
+    skills: ["esg-hkex-gap-check", "esg-investor-qa"]
+  - path: "hkex/hkex_source_notes.md"
+    skills: ["esg-hkex-gap-check", "esg"]
+  - path: "a_share/sse_no14_source_map.md"
+    skills: ["esg-a-share-gap-check", "esg-board-brief", "esg-materiality"]
+  - path: "a_share/szse_no17_source_map.md"
+    skills: ["esg-a-share-gap-check", "esg-board-brief", "esg-materiality"]
+  - path: "a_share/a_share_subject_scope_matrix.yaml"
+    skills: ["esg-a-share-gap-check", "esg-investor-qa"]
+  - path: "a_share/a_share_topic_map.yaml"
+    skills: ["esg-a-share-gap-check", "esg-materiality", "esg-data-request"]
+  - path: "a_share/a_share_obligation_matrix.yaml"
+    skills: ["esg-a-share-gap-check"]
+  - path: "a_share/a_share_source_notes.md"
+    skills: ["esg-a-share-gap-check", "esg"]
+  - path: "issb/ifrs_s1_source_map.md"
+    skills: ["esg-issb-climate", "esg-board-brief", "esg-materiality"]
+  - path: "issb/ifrs_s2_source_map.md"
+    skills: ["esg-issb-climate", "esg-rating-response", "esg-data-request"]
+  - path: "issb/issb_content_area_map.yaml"
+    skills: ["esg-issb-climate", "esg-board-brief"]
+  - path: "issb/issb_scope3_and_ghg_notes.md"
+    skills: ["esg-issb-climate", "esg-data-request", "esg-rating-response"]
+  - path: "issb/issb_materiality_notes.md"
+    skills: ["esg-issb-climate", "esg-materiality"]
+  - path: "issb/issb_source_notes.md"
+    skills: ["esg-issb-climate", "esg"]
+  - path: "crosswalks/hkex_issb_crosswalk.yaml"
+    skills: ["esg-hkex-gap-check", "esg-issb-climate"]
+  - path: "crosswalks/a_share_issb_crosswalk.yaml"
+    skills: ["esg-a-share-gap-check", "esg-issb-climate"]
+  - path: "crosswalks/hkex_a_share_crosswalk.yaml"
+    skills: ["esg-hkex-gap-check", "esg-a-share-gap-check"]
+  - path: "crosswalks/materiality_framework_crosswalk.yaml"
+    skills: ["esg-materiality", "esg-issb-climate", "esg-a-share-gap-check"]
+  - path: "disclaimers/copyright_and_source_use_policy.md"
+    skills: ["esg", "esg-hkex-gap-check", "esg-a-share-gap-check", "esg-issb-climate"]
+  - path: "disclaimers/professional_review_policy.md"
+    skills: ["esg", "esg-board-brief", "esg-investor-qa", "esg-rating-response"]

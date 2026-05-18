@@ -1,0 +1,48 @@
+reference_id: hkex-issb-crosswalk
+framework_name: "HKEX to ISSB Crosswalk"
+jurisdiction: "Hong Kong / International"
+issuer_scope: "HKEX listed issuers assessing ISSB climate readiness"
+source_type: "official-source-crosswalk"
+official_source_url: "https://en-rules.hkex.com.hk/rulebook/appendix-c2-environmental-social-and-governance-reporting-code; https://www.ifrs.org/supporting-implementation/supporting-materials-for-ifrs-sustainability-disclosure-standards/ifrs-s2/"
+source_publisher: "HKEX; IFRS Foundation"
+publication_date: "2026-05-18"
+effective_date: "See HKEX and ISSB source maps"
+last_reviewed_date: "2026-05-18"
+review_status: "official-source-verified"
+copyright_note: "Crosswalk uses short labels only; no full HKEX or IFRS text is reproduced."
+usage_note: "Use for readiness comparison only. Obligation levels differ and require professional confirmation."
+professional_review_required: true
+
+crosswalk:
+  climate_governance:
+    hkex: "Part D governance"
+    issb: "Governance content area"
+    caution: "Confirm issuer category and reporting period before HKEX obligation labels."
+  strategy:
+    hkex: "Part D strategy"
+    issb: "Strategy content area"
+    caution: "Scenario analysis and transition plan detail may differ by framework and evidence."
+  risk_management:
+    hkex: "Part D risk management"
+    issb: "Risk management content area"
+    caution: "Do not infer integration into enterprise risk management without evidence."
+  metrics_and_targets:
+    hkex: "Part D metrics and targets"
+    issb: "Metrics and targets content area"
+    caution: "Scope 1/2/3 data require method, boundary, and assurance status."
+  scope_1_2_3:
+    hkex: "Climate metrics, including Scope 1, Scope 2, and Scope 3 where applicable, subject to HKEX timetable and issuer category"
+    issb: "GHG metrics under IFRS S2 readiness, including Scope 1, Scope 2, and Scope 3 discipline"
+    caution: "No invented emissions figures."
+  transition_plan:
+    hkex: "Climate strategy / transition-related disclosure where applicable"
+    issb: "Transition plan information under IFRS S2 readiness"
+    caution: "Do not imply approved transition plan without evidence."
+  scenario_analysis:
+    hkex: "Climate resilience / strategy-related assessment"
+    issb: "Scenario analysis under climate strategy readiness"
+    caution: "Distinguish qualitative discussion from quantified financial effects."
+  obligation_level_differences:
+    hkex: "Mandatory / comply-or-explain / voluntary / applicability to confirm"
+    issb: "Readiness / alignment / compliance distinction; jurisdiction adoption may determine mandatory use"
+    caution: "Do not say HKEX compliant or ISSB compliant without full assessment."

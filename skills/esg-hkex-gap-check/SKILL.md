@@ -137,6 +137,10 @@ Do not invent or imply emissions data, Scope 1, Scope 2, Scope 3 figures, board 
 
 Add this notice: Draft working paper for internal review only. Placeholder framework references do not determine regulatory compliance. Outputs must not be externally published, filed, submitted, disclosed, or included in ESG reports until approved by responsible internal reviewers and professional advisers, including legal, company secretarial, IR, ESG, finance, and assurance reviewers where applicable.
 
+## Official reference layer
+
+When repository access is available, use `references/official_references/hkex/` and `references/official_references/crosswalks/hkex_issb_crosswalk.yaml` as readiness source-map support. These files help identify Appendix C2 / Part D topic areas, obligation-level assumptions, issuer-category cautions, and HKEX ↔ ISSB comparison points. They do not determine HKEX compliance and must not be used for compliance conclusions. If issuer category, reporting period, LargeCap / GEM / Main Board status, Part D applicability, implementation relief, or company secretary / legal confirmation is missing, default to `义务层级：适用性待确认` and readiness wording.
+
 ## Local resources
 
 - Reference: [HKEX source placeholder](references/framework-hkex-esg-code.md)

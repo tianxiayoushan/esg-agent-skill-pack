@@ -1,0 +1,36 @@
+reference_id: a-share-obligation-matrix
+framework_name: "A-share Sustainability Reporting Obligation Matrix"
+jurisdiction: "Mainland China"
+issuer_scope: "SSE and SZSE listed companies"
+source_type: "official-exchange-obligation-map"
+official_source_url: "https://www.sse.com.cn/lawandrules/sselawsrules/stocks/mainipo/c/c_20240412_10753180.shtml; https://www.szse.cn/lawrules/rule/allrules/bussiness/t20240412_606839.html"
+source_publisher: "Shanghai Stock Exchange; Shenzhen Stock Exchange"
+publication_date: "2024-04-12"
+effective_date: "2024-05-01"
+last_reviewed_date: "2026-05-18"
+review_status: "official-source-verified"
+copyright_note: "Short obligation labels and caution rules only; no full rule text is reproduced."
+usage_note: "Use for A-share readiness labels. Do not use HKEX comply-or-explain terminology by default."
+professional_review_required: true
+
+obligation_levels:
+  mandatory:
+    label: "强制披露"
+    use_only_when: "Exchange, board, index/cross-listing status, report period, official source, and professional confirmation are provided."
+  encouraged:
+    label: "鼓励披露"
+    use_only_when: "Official source and applicability are confirmed."
+  voluntary:
+    label: "自愿披露"
+    use_only_when: "Voluntary reporting context is confirmed."
+  applicability_to_confirm:
+    label: "适用性待确认"
+    default_when: "Exchange, index status, cross-listing status, report period, or applicability is unknown."
+  not_assessed:
+    label: "未评估"
+    default_when: "No issue mapping has been performed."
+
+default_rule: "If exchange, index status, cross-listing status, report period or applicability is unknown, output must stay: 义务层级：适用性待确认."
+terminology_caution: "Do not use HKEX comply-or-explain terminology by default in A-share outputs."
+preferred_wording: ["潜在披露差距", "准备度差距", "适用性待确认", "需证券部 / 董办 / 法务确认"]
+

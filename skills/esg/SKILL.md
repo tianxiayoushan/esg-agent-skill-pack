@@ -103,6 +103,10 @@ Do not invent or imply emissions data, Scope 1, Scope 2, Scope 3 figures, board 
 
 Add this notice when output may be used internally or externally: Draft working paper for internal review only. Confirm all ESG, regulatory, legal, investor, assurance, financial, operational, and company-specific claims with the responsible professional owner. Outputs must not be externally published, filed, submitted, disclosed, or included in ESG reports until approved for the intended use.
 
+## Official reference layer
+
+When repository access is available, use `references/official_references/reference_registry.yaml` as the official source-map layer for HKEX, A-share, ISSB, and crosswalk routing. Treat it as traceability support only. Do not convert references/official_references summaries into legal, regulatory, audit, assurance, financial, sustainability reporting, filing, or compliance opinions. If official source applicability, issuer category, reporting period, or professional confirmation is missing, keep framework conclusions as readiness assumptions and route to the relevant specialist skill.
+
 ## Local resources
 
 - Reference: [output style policy](references/output-style-policy.md)

@@ -26,6 +26,23 @@ For pilot rollout instructions, see [PILOT_GUIDE.md](PILOT_GUIDE.md). For releas
 
 CI note for technical owners: GitHub Actions runs the same local validation commands on push and pull request.
 
+## v0.2 Official Rules Reference Pack
+
+v0.2 adds an official rules reference pack under [official_references](official_references/). It tracks official source metadata, `last_reviewed_date`, source URLs, topic maps, obligation matrices, and crosswalks for HKEX, A 股, and ISSB.
+
+It helps the agent ask fewer repeated framework questions, but it is still not legal advice, regulatory advice, audit advice, assurance advice, financial advice, sustainability reporting advice, a filing opinion, or a compliance conclusion.
+
+Packaging note: installed skills include local official source-map copies under each skill's `references/official_references/` folder, so Hermes, Codex, Claude Code, and OpenClaw do not need access to the repository root at runtime.
+
+Important boundaries:
+
+- HKEX, A 股, and ISSB references are separated.
+- 港股 / HKEX work should use `esg-hkex-gap-check`.
+- A 股 / 上交所 / 深交所 work should use `esg-a-share-gap-check`.
+- ISSB / IFRS S1 / IFRS S2 work should use `esg-issb-climate`.
+- A 股 and HKEX rules must not be mixed.
+- Official source summaries are source-map support only. They must be checked against official source text and professional reviewers before external use.
+
 ## 30 秒理解
 
 这是一个 ESG 工作助手包，不是 ESG 合规意见。你可以把公开 ESG 报告片段、草稿、投资者问题或数据收集需求发给 AI Agent，它会输出中文优先的工作底稿、证据状态、风险提示和下一步行动。

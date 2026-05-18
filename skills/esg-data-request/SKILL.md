@@ -95,6 +95,10 @@ Do not invent or imply emissions data, Scope 1, Scope 2, Scope 3 figures, board 
 
 Add this notice: Draft working paper for internal review only. Data requests do not establish final ESG reporting figures. Final figures require source-owner confirmation, methodology review, boundary review, and where applicable finance, assurance, and legal review. Scope 1, Scope 2, and Scope 3 items must be treated as data requests only unless supported by approved methodology and source evidence.
 
+## Official reference layer
+
+When repository access is available, use `references/official_references/reference_registry.yaml`, `references/official_references/a_share/a_share_topic_map.yaml`, `references/official_references/issb/issb_scope3_and_ghg_notes.md`, and relevant HKEX/A-share/ISSB readiness source maps to improve data request categories and evidence fields. Official references do not create final ESG figures, emissions calculations, assurance conclusions, compliance conclusions, or compliance status.
+
 ## Local resources
 
 - Template: [data request tracker](assets/templates/data-request-tracker.csv)

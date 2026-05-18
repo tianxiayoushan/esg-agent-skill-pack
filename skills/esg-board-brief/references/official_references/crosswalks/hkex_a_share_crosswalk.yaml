@@ -1,0 +1,39 @@
+reference_id: hkex-a-share-crosswalk
+framework_name: "HKEX to A-share Crosswalk"
+jurisdiction: "Hong Kong / Mainland China"
+issuer_scope: "Companies comparing HKEX ESG Reporting Code and A-share sustainability reporting guidelines"
+source_type: "official-source-crosswalk"
+official_source_url: "https://en-rules.hkex.com.hk/rulebook/appendix-c2-environmental-social-and-governance-reporting-code; https://www.sse.com.cn/lawandrules/sselawsrules/stocks/mainipo/c/c_20240412_10753180.shtml; https://www.szse.cn/lawrules/rule/allrules/bussiness/t20240412_606839.html"
+source_publisher: "HKEX; SSE; SZSE"
+publication_date: "2026-05-18"
+effective_date: "See HKEX and A-share source maps"
+last_reviewed_date: "2026-05-18"
+review_status: "official-source-verified"
+copyright_note: "Crosswalk uses short labels only; no full rule text is reproduced."
+usage_note: "Use for comparison only. Do not apply HKEX Part D logic to A-share outputs or A-share subject-scope logic to HKEX outputs."
+professional_review_required: true
+
+crosswalk:
+  terminology:
+    hkex: "ESG report / ESG Reporting Code / Part D climate-related disclosures"
+    a_share: "Sustainability report / ESG report / social responsibility report under exchange guidelines"
+  obligation_levels:
+    hkex: ["Mandatory", "Comply-or-explain", "Voluntary", "Applicability to confirm", "Not assessed"]
+    a_share: ["强制披露", "鼓励披露", "自愿披露", "适用性待确认", "未评估"]
+    caution: "Do not use HKEX comply-or-explain terminology by default in A-share outputs."
+  subject_scope:
+    hkex: "Main Board, GEM, LargeCap status, reporting period, Part D timetable"
+    a_share: "SSE/SZSE board, index status, cross-listing status, report period"
+  climate_disclosure:
+    hkex: "Part D governance, strategy, risk management, metrics and targets"
+    a_share: "Climate change topic and core disclosure structure where applicable"
+  social_topics:
+    hkex: "Social KPI topics under Appendix C2"
+    a_share: "Rural revitalisation, innovation, technology ethics, supply chain security, SMEs, privacy, employee rights, anti-corruption, stakeholder communication"
+  materiality:
+    hkex: "Materiality and reporting principles under ESG Code"
+    a_share: "Double materiality where applicable"
+  reporting_period:
+    hkex: "Confirm issuer category and financial year"
+    a_share: "Confirm report period and exchange guideline applicability"
+
