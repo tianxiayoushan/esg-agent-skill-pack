@@ -40,7 +40,9 @@ Prepare ISSB-oriented climate readiness work products with cautious assumptions 
 3. Use the [ISSB climate check template](assets/templates/issb-climate-check-template.md).
 4. Separate governance, strategy, risk management, metrics, and targets only as organizing labels, not invented requirements.
 5. Mark unsupported emissions, targets, scenario analysis, transition plan, or assurance claims as `Missing data` or `Do not claim`.
-6. Convert gaps into owner-specific next actions.
+6. Classify whether the output is a draft readiness review, internal working paper, board pre-read, external disclosure support, or regulatory filing support.
+7. If the user asks in Chinese but needs English board or IR wording, preserve evidence status labels and risk flags in English.
+8. Convert gaps into owner-specific next actions.
 
 ## Mandatory output structure
 

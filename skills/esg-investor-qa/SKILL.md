@@ -39,7 +39,9 @@ Prepare cautious ESG Q&A for investor relations, analysts, roadshows, and manage
 3. Draft concise answers with one evidence status each.
 4. Create safer fallback wording for unsupported or sensitive questions.
 5. Flag selective disclosure, unverified metric, target, certification, rating, or assurance risks.
-6. Mark questions needing legal, IR, or management approval.
+6. Classify the output as draft Q&A, internal working paper, approved message candidate, external investor response, or regulatory filing support.
+7. If the user asks in Chinese but needs English IR wording, draft in English while preserving evidence status labels and risk flags.
+8. Mark questions needing legal, IR, or management approval.
 
 ## Mandatory output structure
 

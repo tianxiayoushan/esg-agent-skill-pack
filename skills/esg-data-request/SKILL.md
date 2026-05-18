@@ -39,7 +39,9 @@ Create practical ESG data request trackers that identify owners, source systems,
 3. Assign owner, department, source system, due date, and reviewer where known.
 4. Mark evidence status for each row.
 5. Flag privacy, methodology, boundary, assurance, and missing-source risks.
-6. End with a short owner follow-up message if requested.
+6. Classify the tracker as an internal working paper and state that it does not establish final ESG figures.
+7. If the user asks in Chinese but needs an English tracker, draft in English while preserving evidence status labels and risk flags.
+8. End with a short owner follow-up message if requested.
 
 ## Mandatory output structure
 

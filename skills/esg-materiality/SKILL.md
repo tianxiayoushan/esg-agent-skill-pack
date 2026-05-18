@@ -39,7 +39,9 @@ Prepare materiality and stakeholder work products that document evidence, assump
 3. Separate stakeholder evidence from management assumptions.
 4. Tag each topic, score, or claim with evidence status.
 5. Flag incomplete stakeholder coverage, unclear methodology, and unsupported prioritisation.
-6. Produce practical next actions for evidence collection and review.
+6. Classify the output as a draft issue pool, internal working paper, board pre-read, external disclosure support, or ESG report support.
+7. If the user asks in Chinese but needs English stakeholder or board wording, draft in English while preserving evidence status labels and risk flags.
+8. Produce practical next actions for evidence collection and review.
 
 ## Mandatory output structure
 

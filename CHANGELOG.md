@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.1.1 Internal Pilot Candidate - Unreleased
+
+### Added
+
+- Public-source research map for realistic ESG workflow design, with official and public-source citations and caution notes.
+- Realistic work scenario fixture covering HKEX gap review, investor roadshow Q&A, board pre-read, ESG data collection, customer questionnaire response, materiality planning, multilingual output, and low-AI-maturity use.
+
+### Improved
+
+- Added output-use classification guidance to skills: draft, internal working paper, board pre-read, external disclosure, regulatory filing, investor response, customer response, or provider submission.
+- Added bilingual drafting guidance so Chinese prompts can produce English board or IR wording while preserving evidence status labels and risk flags.
+- Strengthened validation for realistic scenario coverage, public-source research map coverage, and workflow realism.
+
+### Notes
+
+- No new skills, dependencies, network runtime, data integrations, legal checklists, or carbon calculation engines were added.
+- Public sources remain reference aids only and do not determine legal, regulatory, audit, assurance, financial, or sustainability reporting conclusions.
+
 ## v0.1.0 Internal Pilot - 2026-05-18
 
 Initial internal pilot release of the ESG Skill Pack for listed companies and large companies.

@@ -39,7 +39,9 @@ Prepare evidence-backed response trackers for ESG ratings, investor questionnair
 3. Convert each request into a response row with source, owner, evidence status, and next action.
 4. Mark unsupported answers as `Missing data` or `Do not claim`.
 5. Flag rating score, supplier audit, assurance, target, and confidentiality risks.
-6. Draft owner follow-up requests for missing evidence.
+6. Classify the response as a draft, internal working paper, customer response candidate, provider submission, or external disclosure support.
+7. If the user asks in Chinese but needs English customer or rating response wording, draft in English while preserving evidence status labels and risk flags.
+8. Draft owner follow-up requests for missing evidence.
 
 ## Mandatory output structure
 

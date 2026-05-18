@@ -155,6 +155,44 @@ SCENARIO_FIXTURE_REQUIRED_PHRASES = [
     "Reviewer handoff clarity",
 ]
 
+REALISTIC_SCENARIO_REQUIRED_PHRASES = [
+    "Scenario 1: Hong Kong Listed Issuer ESG Report Gap Review",
+    "Scenario 2: Investor Roadshow ESG Question Set",
+    "Scenario 3: Board / ESG Committee Pre-Read",
+    "Scenario 4: ESG Data Collection Cycle",
+    "Scenario 5: Customer / Supplier ESG Questionnaire",
+    "Scenario 6: Materiality Assessment Planning",
+    "Scenario 7: Multilingual Output",
+    "Scenario 8: Low-AI-Maturity User",
+    "vague board oversight",
+    "supplier ESG audit results",
+    "请用英文准备董事会/IR可用的ESG风险措辞",
+    "帮我看看这个ESG材料能不能发。",
+    "draft",
+    "internal working paper",
+    "board pre-read",
+    "external disclosure",
+    "regulatory filing",
+    "investor response",
+    "Multilingual usability where relevant",
+]
+
+RESEARCH_MAP_REQUIRED_PHRASES = [
+    "HKEX ESG Academy Rules and Regulations",
+    "HKEX Appendix C2",
+    "IFRS Introduction to ISSB",
+    "GRI 3: Material Topics 2021",
+    "CDP Question Bank",
+    "EcoVadis supporting documents guidance",
+    "MSCI ESG Ratings overview",
+    "Morningstar Sustainalytics ESG Risk Ratings overview",
+    "Macquarie Sustainability reporting page",
+    "Caterpillar sustainability reporting page",
+    "not a legal checklist",
+    "v0.1",
+    "v0.2",
+]
+
 DEPARTMENT_TRACKER_COLUMNS = [
     "Department",
     "Metric / data item",
@@ -227,6 +265,22 @@ HUMAN_REVIEW_REQUIRED_PHRASES = {
         "include materiality conclusions in ESG reports",
     ],
 }
+
+WORKFLOW_REQUIRED_PHRASES = [
+    "Classify",
+    "draft",
+    "internal working paper",
+]
+
+OUTPUT_USE_TERMS = [
+    "board pre-read",
+    "external",
+    "regulatory filing",
+    "investor response",
+    "customer response",
+    "provider submission",
+    "ESG report",
+]
 
 def network_patterns() -> list[str]:
     return [
@@ -375,7 +429,21 @@ def validate_skills() -> list[str]:
         failures.extend(validate_greenwashing_use(skill_md))
         failures.extend(validate_shell_injection_absent(skill_md))
         failures.extend(validate_human_review_language(skill_dir.name, body, skill_md))
+        failures.extend(validate_workflow_realism(body, skill_md))
 
+    return failures
+
+
+def validate_workflow_realism(body: str, path: Path) -> list[str]:
+    failures: list[str] = []
+    lowered = body.lower()
+    for phrase in WORKFLOW_REQUIRED_PHRASES:
+        if phrase.lower() not in lowered:
+            failures.append(f"{path}: missing workflow realism phrase: {phrase}")
+    if "preserve evidence status labels and risk flags" not in lowered and "preserving evidence status labels and risk flags" not in lowered:
+        failures.append(f"{path}: missing bilingual evidence-status preservation phrase")
+    if not any(term in body for term in OUTPUT_USE_TERMS):
+        failures.append(f"{path}: missing output-use classification term")
     return failures
 
 
@@ -658,6 +726,32 @@ def validate_pilot_scenarios() -> list[str]:
     for status in EVIDENCE_STATUSES:
         if status not in text:
             failures.append(f"{path}: missing evidence status {status}")
+    realistic = ROOT / "tests" / "fixtures" / "realistic_work_scenarios.md"
+    if not realistic.exists():
+        failures.append(f"missing realistic scenario fixture: {realistic}")
+    else:
+        realistic_text = read_text(realistic)
+        realistic_lowered = realistic_text.lower()
+        for phrase in REALISTIC_SCENARIO_REQUIRED_PHRASES:
+            if phrase.lower() not in realistic_lowered:
+                failures.append(f"{realistic}: missing realistic scenario phrase: {phrase}")
+        for status in EVIDENCE_STATUSES:
+            if status not in realistic_text:
+                failures.append(f"{realistic}: missing evidence status {status}")
+    return failures
+
+
+def validate_research_map() -> list[str]:
+    failures: list[str] = []
+    path = ROOT / "research" / "public_source_research_map.md"
+    if not path.exists():
+        return [f"missing public source research map: {path}"]
+    text = read_text(path)
+    for phrase in RESEARCH_MAP_REQUIRED_PHRASES:
+        if phrase not in text:
+            failures.append(f"{path}: missing research phrase: {phrase}")
+    if "http" not in text:
+        failures.append(f"{path}: missing public URLs")
     return failures
 
 
@@ -671,6 +765,7 @@ def validate_all() -> list[str]:
     failures.extend(validate_installer_options())
     failures.extend(validate_trigger_phrases())
     failures.extend(validate_pilot_scenarios())
+    failures.extend(validate_research_map())
     return failures
 
 

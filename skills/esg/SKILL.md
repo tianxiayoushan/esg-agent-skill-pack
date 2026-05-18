@@ -40,8 +40,10 @@ Use this general skill to create practical ESG work products when the user has n
 3. Extract claims from user-provided materials and tag each claim with evidence status.
 4. Convert unsupported claims into data requests, risk flags, or safer draft wording.
 5. Use a local template from [assets/templates](assets/templates/board-brief-template.md) when it matches the request.
-6. Keep assumptions separate from findings.
-7. End with professional review language.
+6. Classify the requested use as draft, internal working paper, board pre-read, external disclosure, regulatory filing, or investor response, and apply the strictest review language needed.
+7. If the user writes in one language but asks for another output language, preserve evidence status labels and risk flags in the requested output language.
+8. Keep assumptions separate from findings.
+9. End with professional review language.
 
 ## Mandatory output structure
 

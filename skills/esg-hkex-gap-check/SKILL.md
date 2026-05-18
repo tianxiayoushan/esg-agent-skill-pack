@@ -39,7 +39,9 @@ Prepare practical HKEX-oriented ESG gap checks for Hong Kong listed issuers. Thi
 3. Map each user-provided disclosure or missing area into the [HKEX gap check template](assets/templates/hkex-gap-check-template.md).
 4. Assign one evidence status to every claim and gap.
 5. Convert unsupported compliance wording into `Do not claim` or `Needs confirmation`.
-6. Highlight owners, due dates, and professional review needs.
+6. Classify whether the output is a draft gap review, internal working paper, board pre-read, external disclosure support, or regulatory filing support.
+7. If the user asks in Chinese but needs English board or IR wording, preserve evidence status labels and risk flags in English.
+8. Highlight owners, due dates, and professional review needs.
 
 ## Mandatory output structure
 

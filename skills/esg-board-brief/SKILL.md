@@ -39,7 +39,9 @@ Create concise ESG board and management materials that separate facts, assumptio
 3. Convert source notes into short findings with evidence status.
 4. Separate management recommendations from board decisions.
 5. List risk flags for unsupported claims, missing metrics, external disclosure sensitivity, and assurance needs.
-6. Add next actions with owners.
+6. Classify the paper as a draft, internal working paper, board pre-read, external disclosure support, or regulatory filing support.
+7. If the user asks in Chinese but needs English board wording, draft in English while preserving evidence status labels and risk flags.
+8. Add next actions with owners.
 
 ## Mandatory output structure
 
