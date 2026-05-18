@@ -54,7 +54,7 @@ Default output language: Chinese (`zh-CN`). Use these rules unless the user expl
 2. Open local placeholders for [上交所第14号](references/framework-sse-sustainability-reporting-guideline.md) and [深交所第17号](references/framework-szse-sustainability-reporting-guideline.md), and state that they are not legal checklists.
 3. Capture assumptions: exchange, board, report period, index constituent status, domestic-and-overseas listing status, and whether the user supplied official source text.
 4. Classify the disclosure subject status before describing gaps: 上证180、科创50、深证100、创业板指数样本公司、境内外同时上市公司、其他自愿披露公司、或适用性待确认。
-5. Classify each item by A 股义务层级：强制披露、鼓励披露、自愿披露、适用性待确认、未评估。
+5. Classify each item by A 股义务层级 cautiously. If exchange, index constituent status, domestic-and-overseas listing status, report period, or rule applicability is not confirmed, default to `义务层级：适用性待确认`.
 6. Map user-provided disclosures into the [A 股差距检查模板](assets/templates/a-share-gap-check-template.md).
 7. Assign one evidence status to every claim and gap.
 8. Convert unsupported regulatory or future-commitment wording into `不得声称（Do not claim）` or `需确认（Needs confirmation）`.
@@ -72,14 +72,30 @@ Use these Chinese-first labels:
 - `适用性待确认`
 - `未评估`
 
+When company exchange, index constituent status, domestic-and-overseas listing status, report period, or rule applicability is not confirmed, do not output `义务层级：强制披露`, `义务层级：鼓励披露`, or `义务层级：自愿披露`. Default to `义务层级：适用性待确认`.
+
+If describing a potential situation, use: `若公司确认为相关交易所规则所列强制披露主体，则该议题可能属于重点披露项；具体适用性需由证券部、董办、法务确认。`
+
 Do not write `违规`, `不合规`, `必须披露`, or `已符合上交所/深交所要求` unless official source text, company category, report period, and professional confirmation are provided.
 
 Default to:
 
+- `可能需要披露`
 - `潜在披露差距`
 - `准备度差距`
 - `适用性待确认`
 - `需证券部 / 董办 / 法务 / ESG / 财务确认`
+
+## Timing and A-share terminology controls
+
+- Do not write fixed trading-day, day-count, or calendar-deadline language unless the user explicitly provides it.
+- Use: `在主体状态确认前，所有义务层级判断均应保持为“适用性待确认”。`
+- Do not write `将在后续报告期披露`, `计划于 [X] 年内实现首次披露`, `将披露`, or `预计披露` unless the user provides an approved timetable.
+- Use: `公司可评估是否、何时以及以何种范围披露相关信息。`
+- Use: `任何披露时间表须经管理层、证券部、董办、法务及相关审核人确认后方可对外使用。`
+- If no approved plan exists, write only: `正在评估`.
+- Do not default to HK-style English explain-or-comply terminology as A 股 terminology. Use `原因说明`, `改进计划`, `后续披露安排`, or `适用规则要求下的解释性说明` where relevant.
+- Add this instruction in A 股 gap outputs: `不得直接判断合规或不合规。`
 
 ## Mandatory output structure
 

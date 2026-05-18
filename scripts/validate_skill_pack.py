@@ -435,6 +435,24 @@ A_SHARE_OUTPUT_HEADINGS = [
     "审核交接",
 ]
 
+A_SHARE_CAUTION_REQUIRED_PHRASES = [
+    "义务层级：适用性待确认",
+    "证券部 / 董办 / 法务确认",
+    "不得直接判断合规或不合规",
+    "在主体状态确认前，所有义务层级判断均应保持为“适用性待确认”",
+    "任何披露时间表须经管理层、证券部、董办、法务及相关审核人确认后方可对外使用",
+    "原因说明",
+    "改进计划",
+    "后续披露安排",
+    "适用规则要求下的解释性说明",
+]
+
+A_SHARE_FORBIDDEN_PATTERNS = [
+    "5个交易日",
+    "5 个交易日",
+    "义务层级（暂定）: 强制披露",
+]
+
 def network_patterns() -> list[str]:
     return [
         "cu" + "rl ",
@@ -792,6 +810,31 @@ def validate_a_share_skill() -> list[str]:
     ]:
         if not path.exists():
             failures.append(f"missing A-share self-contained resource: {path}")
+
+    a_share_paths = [
+        ROOT / "skills" / "esg-a-share-gap-check" / "SKILL.md",
+        ROOT / "shared" / "templates" / "a-share-gap-check-template.md",
+        ROOT / "shared" / "examples" / "example-a-share-gap-check.md",
+        ROOT / "tests" / "fixtures" / "pilot_scenarios.md",
+        ROOT / "CHANGELOG.md",
+    ]
+    a_share_paths += list((ROOT / "skills").glob("*/assets/templates/a-share-gap-check-template.md"))
+    a_share_paths += list((ROOT / "skills").glob("*/examples/example-a-share-gap-check.md"))
+
+    for path in a_share_paths:
+        if not path.exists():
+            continue
+        text_for_path = read_text(path)
+        for pattern in A_SHARE_FORBIDDEN_PATTERNS:
+            if pattern in text_for_path:
+                failures.append(f"{path}: A-share forbidden phrase found: {pattern}")
+        if "comply-or-explain" in text_for_path and "Do not default to `comply-or-explain`" not in text_for_path and "不要默认使用 `comply-or-explain`" not in text_for_path:
+            failures.append(f"{path}: default A-share comply-or-explain wording found")
+
+    combined_a_share_text = "\n".join(read_text(path) for path in a_share_paths if path.exists())
+    for phrase in A_SHARE_CAUTION_REQUIRED_PHRASES:
+        if phrase not in combined_a_share_text:
+            failures.append(f"A-share caution phrase missing: {phrase}")
 
     readme = read_text(ROOT / "README.md")
     for phrase in ["港股用", "A 股用", "esg-a-share-gap-check", "esg-hkex-gap-check"]:

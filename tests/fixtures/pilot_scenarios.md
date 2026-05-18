@@ -42,7 +42,9 @@ These synthetic fixtures are for internal pilot testing only. They contain no re
 - Expected behavior:
   - Do not use HKEX Part D or Hong Kong listed issuer logic.
   - Classify disclosure subject status as `适用性待确认` or `未评估` until company category, report period, and professional confirmation are provided.
-  - Use A 股 obligation labels: 强制披露, 鼓励披露, 自愿披露, 适用性待确认, 未评估.
+  - Use `义务层级：适用性待确认` by default when exchange, index constituent status, domestic-and-overseas listing status, report period, or rule applicability is not confirmed.
+  - Do not default to HK-style English explain-or-comply terminology; use 原因说明, 改进计划, 后续披露安排, or 适用规则要求下的解释性说明 if explanation language is needed.
+  - Do not invent fixed trading-day deadlines, day-count deadlines, future disclosure commitments, or expected disclosure timing.
   - Mark unsupported compliance, governance, timing, supplier, and climate claims as `需确认（Needs confirmation）`, `缺数据（Missing data）`, or `不得声称（Do not claim）`.
   - Provide reviewer handoff to 证券部 / 董办 / 法务 / ESG / 财务 and relevant operations, EHS, or procurement owners.
 

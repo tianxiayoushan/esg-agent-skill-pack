@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.1.5 Internal Pilot Candidate - Unreleased
+
+### Improved
+
+- Strengthened A-share obligation-level caution: when exchange, index constituent status, domestic-and-overseas listing status, report period, or rule applicability is unconfirmed, default to `义务层级：适用性待确认`.
+- Removed unsupported timing language from A-share outputs unless the user provides a specific approved deadline.
+- Reduced forward-looking disclosure wording in A-share outputs by requiring approved timetables before using disclosure timing commitments.
+- Reduced HK-style English explain-or-comply language in A-share outputs; use 原因说明, 改进计划, 后续披露安排, or 适用规则要求下的解释性说明 where relevant.
+
+### Validation
+
+- Validator now checks A-share files for unsupported timing, HK-style English explain-or-comply wording, premature obligation labels, and required caution phrases.
+
 ## v0.1.4 Internal Pilot Candidate - Unreleased
 
 ### Added
