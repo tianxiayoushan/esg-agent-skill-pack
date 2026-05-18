@@ -15,9 +15,11 @@ Why it is risky:
 
 Required safer pattern:
 
-- Use `Potential disclosure gap`, `Part D readiness gap`, or `Obligation level to confirm`.
-- Classify each item as Mandatory, Comply-or-explain, Voluntary, Applicability to confirm, or Not assessed.
-- Add `Requires company secretary / legal confirmation`.
+- Use `潜在披露缺口（Potential disclosure gap）`, `Part D 准备度缺口（Part D readiness gap）`, or `义务层级：适用性待确认（Applicability to confirm）`.
+- Classify each item as 强制披露（Mandatory）, 不遵守就解释（Comply-or-explain）, 自愿披露（Voluntary）, 适用性待确认（Applicability to confirm）, or 未评估（Not assessed）.
+- Add `需公司秘书 / 法务确认（Requires company secretary / legal confirmation）`.
+- Avoid forward-looking timing such as `预计于下个报告期披露`, `计划在 [X] 个报告期内实现首次披露`, or `将披露` unless an approved timetable is provided.
+- Avoid regulatory-style conclusions such as `必须披露`, `无法满足`, or `A1 要求披露` unless applicability, reporting boundary, and obligation level are confirmed.
 
 ## Issue 2: Lenovo ISSB Readiness Overclaim Risk
 

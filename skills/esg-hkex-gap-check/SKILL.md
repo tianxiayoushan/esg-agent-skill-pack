@@ -42,7 +42,8 @@ Default output language: Chinese (`zh-CN`). Use these rules unless the user expl
 - If the user writes in English but does not specify output language, prefer a Chinese summary and Chinese work product, retaining English technical terms where useful.
 - Output in English only when the user explicitly requests English, an English version, English answer, investor roadshow wording in English, or board-ready English wording.
 - Output bilingual content only when the user explicitly requests bilingual output.
-- Preserve evidence status labels and risk flags in the requested output language; keep the four evidence status labels exactly as `Verified`, `Needs confirmation`, `Missing data`, and `Do not claim` unless the user asks for translated labels.
+- 默认证据状态采用中文优先标签：`已验证（Verified）`、`需确认（Needs confirmation）`、`缺数据（Missing data）`、`不得声称（Do not claim）`。不要默认使用英文优先的 evidence-status 裸标签。
+- If English or bilingual output is explicitly requested, preserve the four evidence status labels `Verified`, `Needs confirmation`, `Missing data`, and `Do not claim` in English or bilingual form.
 
 ## Workflow
 
@@ -61,13 +62,13 @@ Default output language: Chinese (`zh-CN`). Use these rules unless the user expl
 
 Classify each HKEX / Part D item as one of:
 
-- `Mandatory`
-- `Comply-or-explain`
-- `Voluntary`
-- `Applicability to confirm`
-- `Not assessed`
+- `强制披露（Mandatory）`：仅在发行人类别、报告期和义务层级已确认时使用。
+- `不遵守就解释（Comply-or-explain）`
+- `自愿披露（Voluntary）`
+- `适用性待确认（Applicability to confirm）`
+- `未评估（Not assessed）`
 
-Do not write `Part D non-compliance`, `mandatory disclosure`, or `must disclose` unless issuer category, reporting period, and obligation level are confirmed. Default to `Potential disclosure gap`, `Part D readiness gap`, `Obligation level to confirm`, `Comply-or-explain / implementation relief may apply`, and `Requires company secretary / legal confirmation`.
+Do not write `Part D non-compliance`, `mandatory disclosure`, or `must disclose` unless issuer category, reporting period, and obligation level are confirmed. Default to `潜在披露缺口（Potential disclosure gap）`, `Part D 准备度缺口（Part D readiness gap）`, `义务层级：适用性待确认（Applicability to confirm）`, `不遵守就解释 / 实施宽免可能适用（Comply-or-explain / implementation relief may apply）`, and `需公司秘书 / 法务确认（Requires company secretary / legal confirmation）`.
 
 For Part D schedule nuance, state the assumptions cautiously:
 
@@ -77,6 +78,18 @@ For Part D schedule nuance, state the assumptions cautiously:
 - LargeCap status must be confirmed before using mandatory language.
 - GEM and other issuers may have different treatment.
 - Do not determine regulatory status without company secretary / legal confirmation.
+
+## Forward-looking and regulatory-style wording controls
+
+- Do not write `预计于下个报告期披露`, `计划在 [X] 个报告期内实现首次披露`, or `将披露` unless the user provides an approved timetable.
+- Use: `公司可评估是否、何时以及以何种范围披露相关信息。`
+- Use: `任何披露时间表须经管理层、公司秘书及相关审核人确认后方可对外使用。`
+- If no approved plan exists, write only: `正在评估`.
+- Do not write `作为主板发行人，八项社会议题均需覆盖`, `A1 要求披露`, `必须披露`, or `无法满足` unless official applicability, reporting boundary, and obligation level are confirmed by company secretary / legal reviewers.
+- Use: `通常需要根据适用的 HKEX ESG Reporting Code 条文进行披露或解释，具体适用性、披露范围及义务层级需由公司秘书/法务确认。`
+- Use: `可能构成披露范围缺口。`
+- Use: `需进一步确认适用条文和报告边界。`
+- Use `包装性表述`, `宣传性表述`, or `未经支持的概括性表述（unsupported promotional wording）` for unsupported promotional wording.
 
 ## Mandatory output structure
 
@@ -92,12 +105,14 @@ Use these headings:
 
 ## ESG evidence status rules
 
-- `Verified`: supported by user-provided or public report material only.
-- `Needs confirmation`: plausible but requires legal, company secretarial, ESG, assurance, or management confirmation.
-- `Missing data`: required source or company evidence is absent.
-- `Do not claim`: compliance, assurance, emissions, target, or governance wording is unsupported.
+- `已验证（Verified）`: supported by user-provided or public report material only.
+- `需确认（Needs confirmation）`: plausible but requires legal, company secretarial, ESG, assurance, or management confirmation.
+- `缺数据（Missing data）`: required source or company evidence is absent.
+- `不得声称（Do not claim）`: compliance, assurance, emissions, target, or governance wording is unsupported.
 
-`Verified` does not mean legally verified, audited, assured, regulator-approved, board-approved, externally publishable, complete, or free from error. If a metric is externally assured, state the assurance level separately, such as reasonable assurance, limited assurance, or assurance status not provided.
+Default output labels should read `证据状态：缺数据（Missing data）` or `证据状态：不得声称（Do not claim）`, not English-first labels.
+
+`已验证（Verified）` does not mean legally verified, audited, assured, regulator-approved, board-approved, externally publishable, complete, or free from error. If a metric is externally assured, state the assurance level separately, such as reasonable assurance, limited assurance, or assurance status not provided.
 
 ## Greenwashing guardrails
 

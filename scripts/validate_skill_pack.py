@@ -330,14 +330,32 @@ LANGUAGE_POLICY_REQUIRED_PHRASES = [
 ]
 
 HKEX_OBLIGATION_REQUIRED_PHRASES = [
-    "Mandatory",
-    "Comply-or-explain",
-    "Voluntary",
-    "Applicability to confirm",
-    "Not assessed",
+    "强制披露（Mandatory）",
+    "不遵守就解释（Comply-or-explain）",
+    "自愿披露（Voluntary）",
+    "适用性待确认（Applicability to confirm）",
+    "未评估（Not assessed）",
     "Part D climate disclosures apply from financial years commencing on or after 1 January 2025",
     "LargeCap status must be confirmed",
-    "Requires company secretary / legal confirmation",
+    "需公司秘书 / 法务确认（Requires company secretary / legal confirmation）",
+]
+
+HKEX_CHINESE_EVIDENCE_REQUIRED_PHRASES = [
+    "已验证（Verified）",
+    "需确认（Needs confirmation）",
+    "缺数据（Missing data）",
+    "不得声称（Do not claim）",
+    "证据状态：缺数据（Missing data）",
+    "证据状态：不得声称（Do not claim）",
+]
+
+HKEX_CHINESE_OBLIGATION_REQUIRED_PHRASES = [
+    "强制披露（Mandatory）",
+    "不遵守就解释（Comply-or-explain）",
+    "自愿披露（Voluntary）",
+    "适用性待确认（Applicability to confirm）",
+    "未评估（Not assessed）",
+    "义务层级：适用性待确认（Applicability to confirm）",
 ]
 
 GLOBAL_VERIFIED_REQUIRED_PHRASES = [
@@ -364,7 +382,7 @@ INVESTOR_CAUTION_REQUIRED_PHRASES = [
 REAL_COMPANY_ISSUE_REQUIRED_PHRASES = [
     "Linklogis HKEX Part D Over-Strong Mandatory Wording",
     "Part D non-compliance",
-    "Obligation level to confirm",
+    "义务层级：适用性待确认（Applicability to confirm）",
     "Lenovo ISSB Readiness Overclaim Risk",
     "Fully met",
     "industry-leading",
@@ -602,6 +620,7 @@ def validate_release_hardening() -> list[str]:
 
     failures.extend(validate_unqualified_overclaim_phrases())
     failures.extend(validate_real_company_issue_fixture())
+    failures.extend(validate_hkex_chinese_first_labels())
     return failures
 
 
@@ -634,6 +653,53 @@ def validate_real_company_issue_fixture() -> list[str]:
     for phrase in REAL_COMPANY_ISSUE_REQUIRED_PHRASES:
         if phrase not in text:
             failures.append(f"{path}: missing real-company issue phrase: {phrase}")
+    return failures
+
+
+def hkex_default_output_paths() -> list[Path]:
+    paths = [
+        ROOT / "skills" / "esg-hkex-gap-check" / "SKILL.md",
+        ROOT / "shared" / "templates" / "hkex-gap-check-template.md",
+        ROOT / "shared" / "examples" / "example-hkex-gap-check.md",
+        ROOT / "tests" / "fixtures" / "real_company_output_issues.md",
+        ROOT / "CHANGELOG.md",
+    ]
+    paths += list((ROOT / "skills").glob("*/assets/templates/hkex-gap-check-template.md"))
+    paths += list((ROOT / "skills").glob("*/examples/example-hkex-gap-check.md"))
+    return [path for path in paths if path.exists()]
+
+
+def hkex_forbidden_literal_patterns() -> list[str]:
+    return [
+        "Vol" + "untry",
+        "sug" + "ared wording",
+        "Evidence status: Missing data",
+        "Evidence status: Do not claim",
+        "Obligation level to confirm",
+    ]
+
+
+def validate_hkex_chinese_first_labels() -> list[str]:
+    failures: list[str] = []
+    required_paths = [
+        ROOT / "skills" / "esg-hkex-gap-check" / "SKILL.md",
+        ROOT / "shared" / "templates" / "hkex-gap-check-template.md",
+        ROOT / "shared" / "examples" / "example-hkex-gap-check.md",
+    ]
+    for path in required_paths:
+        text = read_text(path)
+        for phrase in HKEX_CHINESE_EVIDENCE_REQUIRED_PHRASES:
+            if phrase not in text:
+                failures.append(f"{path}: missing HKEX Chinese-first evidence label: {phrase}")
+        for phrase in HKEX_CHINESE_OBLIGATION_REQUIRED_PHRASES:
+            if phrase not in text:
+                failures.append(f"{path}: missing HKEX Chinese-first obligation label: {phrase}")
+
+    for path in hkex_default_output_paths():
+        text = read_text(path)
+        for pattern in hkex_forbidden_literal_patterns():
+            if pattern in text:
+                failures.append(f"{path}: HKEX default-output forbidden phrase found: {pattern}")
     return failures
 
 

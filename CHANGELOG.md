@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.1.3 Internal Pilot Candidate - Unreleased
+
+### Improved
+
+- Reworked README to start from a non-technical business-user perspective, with 30-second overview, copy-ready Chinese prompts, safe-material guidance, and plain-language output interpretation.
+- Added Telegram / Hermes user guidance, OpenClaw quick install, and a non-technical FAQ to the README.
+- Made HKEX default evidence labels Chinese-first: 已验证（Verified）, 需确认（Needs confirmation）, 缺数据（Missing data）, and 不得声称（Do not claim）.
+- Made HKEX obligation labels Chinese-first: 强制披露（Mandatory）, 不遵守就解释（Comply-or-explain）, 自愿披露（Voluntary）, 适用性待确认（Applicability to confirm）, and 未评估（Not assessed）.
+- Reduced forward-looking wording in HKEX outputs by requiring approved disclosure timetables before using timing language.
+- Reduced regulatory-style conclusions in HKEX outputs by replacing bare mandatory or failure language with applicability, boundary, and obligation-level confirmation wording.
+- Replaced unnatural promotional-wording terminology with Chinese alternatives such as 包装性表述, 宣传性表述, and 未经支持的概括性表述.
+
+### Validation
+
+- Validator now checks HKEX Chinese-first evidence and obligation mappings, the Voluntary spelling, and default-output regressions such as English-first evidence labels or bare English obligation-level labels.
+
 ## v0.1.2 Internal Pilot Candidate - Unreleased
 
 ### Added
