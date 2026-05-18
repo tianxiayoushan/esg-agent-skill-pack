@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.1.4 Internal Pilot Candidate - Unreleased
+
+### Added
+
+- Added `esg-a-share-gap-check` as a separate A 股可持续发展报告 / ESG 报告 / 社会责任报告 / 气候披露差距检查 skill.
+- Added cautious placeholder references for 上交所《上市公司自律监管指引第14号——可持续发展报告（试行）》 and 深交所《上市公司自律监管指引第17号——可持续发展报告（试行）》.
+- Added A 股差距检查 template and example with Chinese-first evidence status, A 股披露主体判断, 议题差距表, 更审慎表述, and 审核交接.
+
+### Improved
+
+- Updated the ESG router, README, and PILOT_GUIDE to separate 港股 HKEX work from A 股上交所/深交所 work.
+- Added validator checks for the ninth skill, A 股 trigger phrases, A 股 obligation-level labels, self-contained resources, and HKEX/A-share separation.
+
 ## v0.1.3 Internal Pilot Candidate - Unreleased
 
 ### Improved

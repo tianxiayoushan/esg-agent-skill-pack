@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SHARED = ROOT / "shared"
 SKILLS = [
     "esg",
+    "esg-a-share-gap-check",
     "esg-hkex-gap-check",
     "esg-issb-climate",
     "esg-board-brief",

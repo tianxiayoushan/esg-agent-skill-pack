@@ -1,6 +1,6 @@
 ---
 name: esg
-description: "Use for practical ESG work products for listed companies and large companies; route to HKEX, ISSB, board, investor, rating, data, or materiality skills."
+description: "Use for practical ESG work products for listed companies and large companies; route to HKEX, A股, 上交所, 深交所, ISSB, board, investor, rating, data, or materiality skills."
 metadata:
   version: "0.1.0"
   domain: "ESG"
@@ -12,7 +12,7 @@ metadata:
 
 # ESG
 
-Use this general skill to create practical ESG work products when the user has not selected a more specific ESG skill. Prefer the specific skill when the request clearly matches HKEX, ISSB, board, investor, data, rating, or materiality work.
+Use this general skill to create practical ESG work products when the user has not selected a more specific ESG skill. Prefer the specific skill when the request clearly matches HKEX, A 股, 上交所, 深交所, ISSB, board, investor, data, rating, or materiality work.
 
 ## When to use
 
@@ -48,6 +48,8 @@ Default output language: Chinese (`zh-CN`). Use these rules unless the user expl
 ## Workflow
 
 1. Clarify the work product and select the most specific ESG skill if appropriate.
+   - Route A股、A-share、上交所、深交所、可持续发展报告、第14号、第17号、ESG报告、社会责任报告或 A 股气候披露差距检查 to `esg-a-share-gap-check`.
+   - Route HKEX、Hong Kong listed、Part D or 香港上市发行人 climate disclosure gap checks to `esg-hkex-gap-check`.
 2. Read local references only as needed: [evidence policy](references/evidence-status-policy.md), [greenwashing guardrails](references/greenwashing-guardrails.md), and relevant framework placeholders.
 3. Extract claims from user-provided materials and tag each claim with evidence status.
 4. Convert unsupported claims into data requests, risk flags, or safer draft wording.
@@ -99,5 +101,5 @@ Add this notice when output may be used internally or externally: Draft working 
 
 ## Local resources
 
-- Templates: [HKEX gap check](assets/templates/hkex-gap-check-template.md), [ISSB climate check](assets/templates/issb-climate-check-template.md), [board brief](assets/templates/board-brief-template.md), [investor Q&A](assets/templates/investor-qa-template.md), [data request tracker](assets/templates/data-request-tracker.csv), [rating response log](assets/templates/rating-response-log.md), [materiality issue map](assets/templates/materiality-issue-map.md).
-- Examples: [HKEX gap check](examples/example-hkex-gap-check.md), [board brief](examples/example-board-brief.md), [investor Q&A](examples/example-investor-qa.md), [data request](examples/example-data-request.md), [rating response](examples/example-rating-response.md).
+- Templates: [A 股 gap check](assets/templates/a-share-gap-check-template.md), [HKEX gap check](assets/templates/hkex-gap-check-template.md), [ISSB climate check](assets/templates/issb-climate-check-template.md), [board brief](assets/templates/board-brief-template.md), [investor Q&A](assets/templates/investor-qa-template.md), [data request tracker](assets/templates/data-request-tracker.csv), [rating response log](assets/templates/rating-response-log.md), [materiality issue map](assets/templates/materiality-issue-map.md).
+- Examples: [A 股 gap check](examples/example-a-share-gap-check.md), [HKEX gap check](examples/example-hkex-gap-check.md), [board brief](examples/example-board-brief.md), [investor Q&A](examples/example-investor-qa.md), [data request](examples/example-data-request.md), [rating response](examples/example-rating-response.md).

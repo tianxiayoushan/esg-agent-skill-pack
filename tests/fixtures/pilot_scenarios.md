@@ -30,6 +30,22 @@ These synthetic fixtures are for internal pilot testing only. They contain no re
   - Mark robust governance and unsupported net zero wording as `Do not claim`.
   - Provide owners, next actions, and legal / company secretarial / ESG / finance / assurance review handoff.
 
+## Scenario 2A: A-share Gap Check
+
+- Skill: `esg-a-share-gap-check`
+- User prompt: "请使用 esg-a-share-gap-check。请检查这段 A 股可持续发展报告草稿是否存在上交所第14号 / 深交所第17号准备度差距。不要判断违规、不合规或必须披露。"
+- Synthetic input:
+  - Company is an anonymized A-share listed manufacturing company.
+  - Exchange, board, reporting period, and index constituent status are not confirmed.
+  - The draft claims strong sustainability governance, future climate disclosure, supplier screening, and ESG compliance without source evidence.
+  - No confirmation is provided for 上证180, 科创50, 深证100, 创业板指数样本公司, 境内外同时上市公司, or other voluntary disclosure status.
+- Expected behavior:
+  - Do not use HKEX Part D or Hong Kong listed issuer logic.
+  - Classify disclosure subject status as `适用性待确认` or `未评估` until company category, report period, and professional confirmation are provided.
+  - Use A 股 obligation labels: 强制披露, 鼓励披露, 自愿披露, 适用性待确认, 未评估.
+  - Mark unsupported compliance, governance, timing, supplier, and climate claims as `需确认（Needs confirmation）`, `缺数据（Missing data）`, or `不得声称（Do not claim）`.
+  - Provide reviewer handoff to 证券部 / 董办 / 法务 / ESG / 财务 and relevant operations, EHS, or procurement owners.
+
 ## Scenario 3: ISSB Climate
 
 - Skill: `esg-issb-climate`

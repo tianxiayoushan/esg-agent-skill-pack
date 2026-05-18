@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED_SKILLS = [
     "esg",
+    "esg-a-share-gap-check",
     "esg-hkex-gap-check",
     "esg-issb-climate",
     "esg-board-brief",
@@ -108,6 +109,13 @@ TRIGGER_PHRASES = [
     "Hong Kong listed",
     "Part D",
     "climate disclosure",
+    "A股",
+    "A-share",
+    "上交所",
+    "深交所",
+    "可持续发展报告",
+    "第14号",
+    "第17号",
     "ISSB",
     "IFRS S1",
     "IFRS S2",
@@ -394,6 +402,39 @@ REAL_COMPANY_ISSUE_REQUIRED_PHRASES = [
     "ISSB is investor-focused / financial materiality baseline",
 ]
 
+A_SHARE_REQUIRED_PHRASES = [
+    "esg-a-share-gap-check",
+    "上海证券交易所上市公司自律监管指引第14号",
+    "深圳证券交易所上市公司自律监管指引第17号",
+    "上证180",
+    "科创50",
+    "深证100",
+    "创业板指数样本公司",
+    "境内外同时上市公司",
+    "其他自愿披露公司",
+    "强制披露",
+    "鼓励披露",
+    "自愿披露",
+    "适用性待确认",
+    "未评估",
+    "潜在披露差距",
+    "准备度差距",
+    "需证券部 / 董办 / 法务 / ESG / 财务确认",
+]
+
+A_SHARE_OUTPUT_HEADINGS = [
+    "使用的 skill",
+    "输出用途分类",
+    "适用框架与假设",
+    "A 股披露主体判断",
+    "议题差距表",
+    "证据状态",
+    "风险提示",
+    "更审慎表述",
+    "下一步行动",
+    "审核交接",
+]
+
 def network_patterns() -> list[str]:
     return [
         "cu" + "rl ",
@@ -621,6 +662,7 @@ def validate_release_hardening() -> list[str]:
     failures.extend(validate_unqualified_overclaim_phrases())
     failures.extend(validate_real_company_issue_fixture())
     failures.extend(validate_hkex_chinese_first_labels())
+    failures.extend(validate_a_share_skill())
     return failures
 
 
@@ -700,6 +742,62 @@ def validate_hkex_chinese_first_labels() -> list[str]:
         for pattern in hkex_forbidden_literal_patterns():
             if pattern in text:
                 failures.append(f"{path}: HKEX default-output forbidden phrase found: {pattern}")
+    return failures
+
+
+def validate_a_share_skill() -> list[str]:
+    failures: list[str] = []
+    skill_path = ROOT / "skills" / "esg-a-share-gap-check" / "SKILL.md"
+    if not skill_path.exists():
+        return [f"missing A-share skill: {skill_path}"]
+    text = read_text(skill_path)
+
+    for phrase in A_SHARE_REQUIRED_PHRASES:
+        if phrase not in text:
+            failures.append(f"{skill_path}: missing A-share phrase: {phrase}")
+    for phrase in A_SHARE_OUTPUT_HEADINGS:
+        if phrase not in text:
+            failures.append(f"{skill_path}: missing A-share output heading: {phrase}")
+    for phrase in LANGUAGE_POLICY_REQUIRED_PHRASES:
+        if phrase not in text:
+            failures.append(f"{skill_path}: missing A-share language policy phrase: {phrase}")
+    for phrase in ["已验证（Verified）", "需确认（Needs confirmation）", "缺数据（Missing data）", "不得声称（Do not claim）"]:
+        if phrase not in text:
+            failures.append(f"{skill_path}: missing Chinese-first evidence status: {phrase}")
+    for forbidden in ["违规", "不合规", "必须披露", "已符合上交所/深交所要求"]:
+        if forbidden in text and "Do not write" not in text:
+            failures.append(f"{skill_path}: A-share forbidden regulatory phrase not guarded: {forbidden}")
+    if "不用于 HKEX" not in text or "esg-hkex-gap-check" not in text:
+        failures.append(f"{skill_path}: missing A-share/HKEX separation language")
+
+    router = read_text(ROOT / "skills" / "esg" / "SKILL.md")
+    for phrase in ["A股", "上交所", "深交所", "可持续发展报告", "第14号", "第17号", "esg-a-share-gap-check"]:
+        if phrase not in router:
+            failures.append(f"esg router missing A-share trigger: {phrase}")
+
+    hkex = read_text(ROOT / "skills" / "esg-hkex-gap-check" / "SKILL.md")
+    for phrase in ["A股", "A 股", "上交所", "深交所", "第14号", "第17号"]:
+        if phrase in hkex:
+            failures.append(f"HKEX skill should not claim A-share scope: {phrase}")
+
+    for path in [
+        ROOT / "shared" / "templates" / "a-share-gap-check-template.md",
+        ROOT / "shared" / "examples" / "example-a-share-gap-check.md",
+        ROOT / "shared" / "references" / "framework-sse-sustainability-reporting-guideline.md",
+        ROOT / "shared" / "references" / "framework-szse-sustainability-reporting-guideline.md",
+        ROOT / "skills" / "esg-a-share-gap-check" / "assets" / "templates" / "a-share-gap-check-template.md",
+        ROOT / "skills" / "esg-a-share-gap-check" / "examples" / "example-a-share-gap-check.md",
+        ROOT / "skills" / "esg-a-share-gap-check" / "references" / "framework-sse-sustainability-reporting-guideline.md",
+        ROOT / "skills" / "esg-a-share-gap-check" / "references" / "framework-szse-sustainability-reporting-guideline.md",
+    ]:
+        if not path.exists():
+            failures.append(f"missing A-share self-contained resource: {path}")
+
+    readme = read_text(ROOT / "README.md")
+    for phrase in ["港股用", "A 股用", "esg-a-share-gap-check", "esg-hkex-gap-check"]:
+        if phrase not in readme:
+            failures.append(f"README missing A-share/HKEX chooser phrase: {phrase}")
+
     return failures
 
 

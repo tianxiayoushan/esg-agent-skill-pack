@@ -45,6 +45,7 @@ For pilot rollout instructions, see [PILOT_GUIDE.md](PILOT_GUIDE.md). For releas
 | 你想做什么 | 使用哪个 skill | 你可以怎么问 |
 | --- | --- | --- |
 | 检查香港上市公司 ESG / 气候披露缺口 | `esg-hkex-gap-check` | 请检查这段 ESG 披露是否有 HKEX gap |
+| 检查 A 股可持续发展报告 / ESG 报告差距 | `esg-a-share-gap-check` | 请检查这段 A 股可持续发展报告是否有上交所/深交所准备度差距 |
 | 检查 ISSB / IFRS S2 气候披露准备度 | `esg-issb-climate` | 请按 ISSB S2 检查这段气候披露 |
 | 做董事会 ESG 简报 | `esg-board-brief` | 请把这份 ESG 报告整理成董事会预读材料 |
 | 准备投资者 ESG Q&A | `esg-investor-qa` | 请基于这份报告生成投资者问答 |
@@ -58,6 +59,7 @@ For pilot rollout instructions, see [PILOT_GUIDE.md](PILOT_GUIDE.md). For releas
 | If your request mentions... | Use this skill |
 | --- | --- |
 | HKEX / Hong Kong listed / Part D / climate disclosure | `esg-hkex-gap-check` |
+| A股 / A-share / 上交所 / 深交所 / 可持续发展报告 / 第14号 / 第17号 | `esg-a-share-gap-check` |
 | ISSB / IFRS S1 / IFRS S2 / TCFD | `esg-issb-climate` |
 | Board / directors / management update | `esg-board-brief` |
 | Investor / analyst / IR / roadshow / Q&A | `esg-investor-qa` |
@@ -67,6 +69,8 @@ For pilot rollout instructions, see [PILOT_GUIDE.md](PILOT_GUIDE.md). For releas
 | General ESG workplan or unsure which skill applies | `esg` |
 
 ## 直接复制使用的例子
+
+港股用 `esg-hkex-gap-check`；A 股用 `esg-a-share-gap-check`。通用工作流、证据状态、风险提示和审核交接原则可以共用，但不要把 HKEX Part D 和 A 股上交所/深交所规则混在一个 skill 里判断。
 
 投资者问答：
 
@@ -78,6 +82,12 @@ HKEX gap check：
 
 ```text
 请使用 esg-hkex-gap-check。以下是一段 ESG 披露草稿，请检查潜在 HKEX / Part D 准备度差距。不要直接判断合规或不合规。
+```
+
+A 股 gap check：
+
+```text
+请使用 esg-a-share-gap-check。以下是一段 A 股可持续发展报告草稿，请检查潜在上交所第14号 / 深交所第17号准备度差距。不要直接判断违规、不合规或必须披露。
 ```
 
 董事会简报：
@@ -236,6 +246,7 @@ Telegram / Hermes 测试 prompt 3：
 ## Skills Included
 
 - `esg` - general ESG work product router and drafting support
+- `esg-a-share-gap-check` - A 股、上交所、深交所、可持续发展报告、第14号、第17号差距检查
 - `esg-hkex-gap-check` - HKEX and Hong Kong listed issuer gap checks
 - `esg-issb-climate` - ISSB, IFRS S1, IFRS S2, and TCFD climate disclosure support
 - `esg-board-brief` - board briefs, board papers, director updates, and management updates

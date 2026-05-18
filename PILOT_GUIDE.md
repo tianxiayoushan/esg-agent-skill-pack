@@ -37,17 +37,18 @@ Do not upload or paste:
 
 | Tester | Suggested focus | Skills to test |
 | --- | --- | --- |
-| ESG / sustainability | Disclosure gaps, climate readiness, materiality, evidence status discipline | `esg`, `esg-hkex-gap-check`, `esg-issb-climate`, `esg-materiality` |
-| IR / company secretarial / legal | Board brief, investor Q&A, selective disclosure, approval handoff | `esg-board-brief`, `esg-investor-qa`, `esg-hkex-gap-check` |
+| ESG / sustainability | Disclosure gaps, climate readiness, materiality, evidence status discipline | `esg`, `esg-hkex-gap-check`, `esg-a-share-gap-check`, `esg-issb-climate`, `esg-materiality` |
+| IR / company secretarial / legal | Board brief, investor Q&A, selective disclosure, approval handoff | `esg-board-brief`, `esg-investor-qa`, `esg-hkex-gap-check`, `esg-a-share-gap-check` |
 | Finance / operations / EHS | Data requests, source evidence, ownership, methodology and boundary review | `esg-data-request`, `esg-rating-response` |
 
 ## Five Pilot Tasks
 
 1. **General ESG triage**: Ask, "帮我检查这份ESG材料，看有没有披露风险。" Confirm whether the skill routes, asks minimal clarifying questions, and tags claims with evidence status.
 2. **HKEX gap check**: Use a fictional Hong Kong listed manufacturing company draft with vague board oversight, missing Scope 1 / Scope 2 / Scope 3 data, unsupported governance wording, and an implied net zero ambition.
-3. **Investor Q&A**: Ask, "Does the company have a net zero target, and will lack of one affect overseas customer orders?" Check safe answer, cautious answer, do-not-say wording, and IR/legal handoff.
-4. **ESG data request tracker**: Ask for annual ESG data from HR, Finance, Operations, EHS, Procurement, and Administration. Check owners, source documents, evidence status, risk flags, next actions, and reviewers.
-5. **Rating or materiality workflow**: Test either a customer ESG questionnaire requesting supplier audit results and emissions data, or a stakeholder interview and topic prioritisation draft.
+3. **A 股 gap check**: Use a fictional A 股上市公司可持续发展报告 draft. Ask the skill to assess 上交所第14号 / 深交所第17号 readiness without saying 违规、不合规、必须披露 or 已符合要求.
+4. **Investor Q&A**: Ask, "Does the company have a net zero target, and will lack of one affect overseas customer orders?" Check safe answer, cautious answer, do-not-say wording, and IR/legal handoff.
+5. **ESG data request tracker**: Ask for annual ESG data from HR, Finance, Operations, EHS, Procurement, and Administration. Check owners, source documents, evidence status, risk flags, next actions, and reviewers.
+6. **Rating or materiality workflow**: Test either a customer ESG questionnaire requesting supplier audit results and emissions data, or a stakeholder interview and topic prioritisation draft.
 
 ## Feedback Form
 
