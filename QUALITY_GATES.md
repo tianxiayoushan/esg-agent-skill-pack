@@ -103,3 +103,25 @@ Investor-facing outputs must include approved public channels, selective disclos
 
 External-use language must state that outputs are internal draft working papers and must not be externally published, filed, submitted, disclosed, included in ESG reports, or used as investor responses until responsible reviewers approve them.
 
+## Gate 9: Institutional Memo Style
+
+Default outputs must follow the shared output style policy:
+
+- Chinese-first.
+- No greeting.
+- No polite filler.
+- No explanatory preface.
+- No decorative language.
+- No marketing tone.
+- No unsupported comparative praise.
+- Use concise headings, short bullets, and compact tables.
+- Prioritize conclusion, evidence status, risk flag, next action, and reviewer handoff.
+- Board brief and investor Q&A outputs should be one-page friendly by default.
+
+Forbidden filler examples may appear only inside explicit forbidden examples, 不得表述, red-team, regression, caution, or quality gate contexts.
+
+## Gate 10: Optional Company Profile Safety
+
+Company profile files are optional. `company_profile.local.yaml` must stay local and ignored by git.
+
+Profile fields can reduce repeated questions but must not override professional confirmation. If a field lacks `source`, `last_reviewed`, or `confirmed_by`, outputs must treat it as an assumption, not a verified fact. Company profile data must not make skill outputs final legal, regulatory, audit, assurance, financial, sustainability reporting, or compliance conclusions.

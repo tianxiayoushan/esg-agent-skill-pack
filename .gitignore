@@ -1,1 +1,15 @@
 .DS_Store
+.env
+.env.*
+!.env.example
+company_profile.local.yaml
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+dist/
+build/
+tmp/
+temp/
+*.log

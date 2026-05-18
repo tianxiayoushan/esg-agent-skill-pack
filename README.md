@@ -24,6 +24,8 @@
 
 For pilot rollout instructions, see [PILOT_GUIDE.md](PILOT_GUIDE.md). For release notes and known limitations, see [CHANGELOG.md](CHANGELOG.md).
 
+CI note for technical owners: GitHub Actions runs the same local validation commands on push and pull request.
+
 ## 30 秒理解
 
 这是一个 ESG 工作助手包，不是 ESG 合规意见。你可以把公开 ESG 报告片段、草稿、投资者问题或数据收集需求发给 AI Agent，它会输出中文优先的工作底稿、证据状态、风险提示和下一步行动。
@@ -162,6 +164,21 @@ Telegram / Hermes 测试 prompt 3：
 - 哪些措辞已经批准、禁止使用、仍在审核或可能涉及市场敏感信息。
 
 如果没有证据，请直接说明没有。不要让 AI 猜数字、猜目标、猜董事会审批或猜合规状态。
+
+## 可选：公司 Profile
+
+公司 Profile 是一个可选的本地 YAML 文件，适合由技术同事、证券部、董办、公司秘书、法务或 ESG owner 准备，用来减少重复提问。
+
+普通用户不需要自己写 profile。你可以让技术同事参考 [company_profile.example.yaml](company_profile.example.yaml)，复制成 `company_profile.local.yaml` 后只放在本地使用。`company_profile.local.yaml` 已加入 `.gitignore`，不应提交到 GitHub。
+
+Profile 可以记录公司名称、股票代码、上市地、板块、财政年度、HKEX / A 股主体状态、默认输出语言、已批准公开资料来源和审核角色。
+
+重要限制：
+
+- Profile 是可选上下文，不是合规结论。
+- Profile 不能替代法务、公司秘书、证券部、董办、财务、ESG、鉴证或管理层确认。
+- 如果 profile 字段没有 `source`、`last_reviewed` 或 `confirmed_by`，输出必须把它当作假设，而不是已验证事实。
+- 即使 profile 字段完整，输出仍然只是内部工作底稿，不能直接对外发布、提交、披露或纳入 ESG 报告。
 
 ## 什么资料可以上传 / 不要上传什么
 

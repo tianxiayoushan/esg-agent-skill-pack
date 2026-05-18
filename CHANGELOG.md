@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.1.7 Internal Pilot Candidate - Unreleased
+
+### Added
+
+- Added GitHub Actions CI for unit tests, validator, installer dry-run, whitespace checks, and unwanted tracked-file checks.
+- Added optional `company_profile.example.yaml` and `company_profile.schema.yaml` for local company context without confidential data.
+- Added shared `output-style-policy.md` for institutional memo style: Chinese-first, no filler, compact tables, concise headings, and reviewer handoff.
+
+### Improved
+
+- Updated router, HKEX, A 股, board brief, investor Q&A, and rating response skills to reference the output style policy.
+- Documented optional company profile use for non-technical users while preserving professional confirmation requirements.
+- Extended quality gates for institutional memo style and company profile safety.
+
+### Validation
+
+- Validator now checks CI workflow commands, `.gitignore`, company profile template/schema fields, output style policy, target skill references, and banned filler phrases outside explicit forbidden-example or regression contexts.
+
 ## v0.1.6 Internal Pilot Candidate - Unreleased
 
 ### Added

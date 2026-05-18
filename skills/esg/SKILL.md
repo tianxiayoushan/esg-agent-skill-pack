@@ -59,6 +59,10 @@ Default output language: Chinese (`zh-CN`). Use these rules unless the user expl
 8. Keep assumptions separate from findings.
 9. End with professional review language.
 
+## Output style policy
+
+Follow the local [output style policy](references/output-style-policy.md). Default to institutional memo style: Chinese-first, no greeting, no polite filler, no explanatory preface, no decorative language, no marketing tone, and no unsupported comparative praise. Use concise headings, short bullets, and compact tables. Prioritize workflow routing, evidence status, risk flag, next action, and reviewer handoff. If the user is unsure what to do, give a compact skill recommendation table.
+
 ## Mandatory output structure
 
 Use these headings for all ESG work products:
@@ -101,5 +105,6 @@ Add this notice when output may be used internally or externally: Draft working 
 
 ## Local resources
 
+- Reference: [output style policy](references/output-style-policy.md)
 - Templates: [A 股 gap check](assets/templates/a-share-gap-check-template.md), [HKEX gap check](assets/templates/hkex-gap-check-template.md), [ISSB climate check](assets/templates/issb-climate-check-template.md), [board brief](assets/templates/board-brief-template.md), [investor Q&A](assets/templates/investor-qa-template.md), [data request tracker](assets/templates/data-request-tracker.csv), [rating response log](assets/templates/rating-response-log.md), [materiality issue map](assets/templates/materiality-issue-map.md).
 - Examples: [A 股 gap check](examples/example-a-share-gap-check.md), [HKEX gap check](examples/example-hkex-gap-check.md), [board brief](examples/example-board-brief.md), [investor Q&A](examples/example-investor-qa.md), [data request](examples/example-data-request.md), [rating response](examples/example-rating-response.md).

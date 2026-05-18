@@ -628,6 +628,115 @@ REVIEWER_HANDOFF_TERMS = [
     "董事会",
 ]
 
+CI_REQUIRED_COMMANDS = [
+    "python3 -B -m unittest discover -s tests",
+    "python3 -B scripts/validate_skill_pack.py",
+    "./install.sh --target all --dry-run",
+    "git diff --check",
+    "git ls-files | grep -E",
+]
+
+GITIGNORE_REQUIRED_PATTERNS = [
+    ".DS_Store",
+    ".env",
+    "company_profile.local.yaml",
+    "__pycache__/",
+    ".venv/",
+    "dist/",
+    "build/",
+    "tmp/",
+    "temp/",
+]
+
+COMPANY_PROFILE_REQUIRED_FIELDS = [
+    "company:",
+    "name:",
+    "stock_code:",
+    "listing_market:",
+    "board:",
+    "industry:",
+    "fiscal_year_end:",
+    "hkex:",
+    "issuer_type:",
+    "largecap_status:",
+    "part_d_applicability:",
+    "a_share:",
+    "exchange:",
+    "index_status:",
+    "cross_listed:",
+    "disclosure:",
+    "default_output_language:",
+    "approved_public_sources:",
+    "reviewer_roles:",
+    "profile_meta:",
+    "source:",
+    "last_reviewed:",
+    "confirmed_by:",
+]
+
+COMPANY_PROFILE_REQUIRED_SAFETY_PHRASES = [
+    "Company profile is optional",
+    "does not override professional confirmation",
+    "assumptions, not verified facts",
+    "no_final_compliance_conclusions",
+]
+
+OUTPUT_STYLE_REQUIRED_PHRASES = [
+    "Chinese-first",
+    "No greeting",
+    "No polite filler",
+    "No explanatory preface",
+    "No decorative language",
+    "No marketing tone",
+    "No unsupported comparative praise",
+    "concise headings, short bullets, and compact tables",
+    "Prioritize conclusion, evidence status, risk flag, next action, and reviewer handoff",
+    "one-page friendly by default",
+]
+
+STYLE_TARGET_SKILLS = [
+    "esg",
+    "esg-a-share-gap-check",
+    "esg-hkex-gap-check",
+    "esg-board-brief",
+    "esg-investor-qa",
+    "esg-rating-response",
+]
+
+BANNED_FILLER_PHRASES = [
+    "当然可以",
+    "以下是",
+    "希望有帮助",
+    "如需我可以继续",
+    "非常全面",
+    "行业领先",
+    "世界一流",
+    "best practice",
+    "fully aligned",
+    "fully compliant",
+]
+
+STYLE_ALLOWED_CONTEXT_MARKERS = [
+    "forbidden examples",
+    "forbidden filler",
+    "forbidden",
+    "red-team",
+    "red team",
+    "regression",
+    "quality gate",
+    "不得表述",
+    "禁用",
+    "禁止",
+    "不得",
+    "不要",
+    "避免",
+    "unsupported",
+    "flag unsupported",
+    "avoid",
+    "do not",
+    "unless",
+]
+
 def network_patterns() -> list[str]:
     return [
         "cu" + "rl ",
@@ -1374,7 +1483,7 @@ def validate_quality_phrase_gates() -> list[str]:
         lines = read_text(path).splitlines()
         for index, line in enumerate(lines):
             line_no = index + 1
-            context = "\n".join(lines[max(0, index - 3) : min(len(lines), index + 3)])
+            context = "\n".join(lines[max(0, index - 15) : min(len(lines), index + 3)])
             for phrase in QUALITY_REGULATORY_FORBIDDEN:
                 if phrase.lower() in line.lower() and not line_has_allowed_context(context, QUALITY_ALLOWED_CONTEXT_MARKERS):
                     failures.append(f"{path}:{line_no}: quality gate regulatory phrase outside caution context: {phrase}")
@@ -1449,6 +1558,111 @@ def validate_quality_gates() -> list[str]:
     return failures
 
 
+def validate_ci_workflow() -> list[str]:
+    failures: list[str] = []
+    path = ROOT / ".github" / "workflows" / "ci.yml"
+    if not path.exists():
+        return [f"missing CI workflow: {path}"]
+    text = read_text(path)
+    for phrase in ["push:", "pull_request:"]:
+        if phrase not in text:
+            failures.append(f"{path}: missing trigger {phrase}")
+    for command in CI_REQUIRED_COMMANDS:
+        if command not in text:
+            failures.append(f"{path}: missing CI command: {command}")
+    for unwanted in ["curl", "wget", "npm install", "pip install"]:
+        if unwanted in text:
+            failures.append(f"{path}: CI should not add network/dependency install command: {unwanted}")
+    return failures
+
+
+def validate_gitignore() -> list[str]:
+    failures: list[str] = []
+    path = ROOT / ".gitignore"
+    if not path.exists():
+        return [f"missing .gitignore: {path}"]
+    text = read_text(path)
+    for pattern in GITIGNORE_REQUIRED_PATTERNS:
+        if pattern not in text:
+            failures.append(f"{path}: missing ignore pattern: {pattern}")
+    return failures
+
+
+def validate_company_profile_files() -> list[str]:
+    failures: list[str] = []
+    example = ROOT / "company_profile.example.yaml"
+    schema = ROOT / "company_profile.schema.yaml"
+    if not example.exists():
+        failures.append(f"missing company profile example: {example}")
+    if not schema.exists():
+        failures.append(f"missing company profile schema: {schema}")
+    combined = ""
+    for path in [example, schema]:
+        if path.exists():
+            combined += "\n" + read_text(path)
+    for field in COMPANY_PROFILE_REQUIRED_FIELDS:
+        if field not in combined:
+            failures.append(f"company profile files missing field: {field}")
+    for phrase in COMPANY_PROFILE_REQUIRED_SAFETY_PHRASES:
+        if phrase not in combined:
+            failures.append(f"company profile files missing safety phrase: {phrase}")
+    readme = read_text(ROOT / "README.md")
+    for phrase in ["可选：公司 Profile", "company_profile.local.yaml", "不能替代法务", "source", "last_reviewed", "confirmed_by"]:
+        if phrase not in readme:
+            failures.append(f"README missing company profile guidance phrase: {phrase}")
+    return failures
+
+
+def validate_output_style_policy() -> list[str]:
+    failures: list[str] = []
+    path = ROOT / "shared" / "references" / "output-style-policy.md"
+    if not path.exists():
+        return [f"missing output style policy: {path}"]
+    text = read_text(path)
+    for phrase in OUTPUT_STYLE_REQUIRED_PHRASES:
+        if phrase not in text:
+            failures.append(f"{path}: missing output style phrase: {phrase}")
+    for skill in STYLE_TARGET_SKILLS:
+        skill_path = ROOT / "skills" / skill / "SKILL.md"
+        skill_text = read_text(skill_path)
+        for phrase in ["Output style policy", "references/output-style-policy.md", "no greeting", "no polite filler", "no explanatory preface"]:
+            if phrase not in skill_text:
+                failures.append(f"{skill_path}: missing style policy phrase: {phrase}")
+        if skill in {"esg-board-brief", "esg-investor-qa"} and "one-page friendly" not in skill_text:
+            failures.append(f"{skill_path}: missing one-page friendly style constraint")
+        local_copy = ROOT / "skills" / skill / "references" / "output-style-policy.md"
+        if not local_copy.exists():
+            failures.append(f"{skill_path}: missing synced output style policy reference")
+    return failures
+
+
+def validate_banned_filler_phrases() -> list[str]:
+    failures: list[str] = []
+    paths = quality_scan_paths()
+    paths += [ROOT / "shared" / "references" / "output-style-policy.md"]
+    for path in paths:
+        if not path.exists() or not path.is_file():
+            continue
+        lines = read_text(path).splitlines()
+        for index, line in enumerate(lines):
+            line_no = index + 1
+            context = "\n".join(lines[max(0, index - 15) : min(len(lines), index + 3)])
+            for phrase in BANNED_FILLER_PHRASES:
+                if phrase.lower() in line.lower() and not line_has_allowed_context(context, STYLE_ALLOWED_CONTEXT_MARKERS):
+                    failures.append(f"{path}:{line_no}: banned filler phrase outside explicit forbidden context: {phrase}")
+    return failures
+
+
+def validate_v017_controls() -> list[str]:
+    failures: list[str] = []
+    failures.extend(validate_ci_workflow())
+    failures.extend(validate_gitignore())
+    failures.extend(validate_company_profile_files())
+    failures.extend(validate_output_style_policy())
+    failures.extend(validate_banned_filler_phrases())
+    return failures
+
+
 def validate_all() -> list[str]:
     failures: list[str] = []
     failures.extend(validate_skills())
@@ -1462,6 +1676,7 @@ def validate_all() -> list[str]:
     failures.extend(validate_research_map())
     failures.extend(validate_release_hardening())
     failures.extend(validate_quality_gates())
+    failures.extend(validate_v017_controls())
     return failures
 
 

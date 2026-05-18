@@ -59,6 +59,10 @@ Default output language: Chinese (`zh-CN`). Use these rules unless the user expl
 11. For supplier audit wording, distinguish all suppliers, key suppliers, relevant suppliers, audited suppliers, and supplier self-assessment or questionnaire responses.
 12. Draft owner follow-up requests for missing evidence.
 
+## Output style policy
+
+Follow the local [output style policy](references/output-style-policy.md). Default to institutional memo style: Chinese-first, no greeting, no polite filler, no explanatory preface, no decorative language, no marketing tone, and no unsupported comparative praise. Use concise headings, short bullets, and compact tables. Prioritize response position, evidence status, risk flag, next action, owner, and reviewer handoff. If the response log becomes long, provide an executive summary first.
+
 ## Mandatory output structure
 
 Use these headings:
@@ -102,5 +106,6 @@ Add this notice: Draft working paper for internal review only. Confirm questionn
 ## Local resources
 
 - Reference: [rating questionnaire placeholder](references/framework-rating-questionnaires.md)
+- Reference: [output style policy](references/output-style-policy.md)
 - Template: [rating response log](assets/templates/rating-response-log.md)
 - Example: [example rating response](examples/example-rating-response.md)

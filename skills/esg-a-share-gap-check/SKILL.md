@@ -97,6 +97,10 @@ Default to:
 - Do not default to HK-style English explain-or-comply terminology as A 股 terminology. Use `原因说明`, `改进计划`, `后续披露安排`, or `适用规则要求下的解释性说明` where relevant.
 - Add this instruction in A 股 gap outputs: `不得直接判断合规或不合规。`
 
+## Output style policy
+
+Follow the local [output style policy](references/output-style-policy.md). Default to institutional memo style: Chinese-first, no greeting, no polite filler, no explanatory preface, no decorative language, no marketing tone, and no unsupported comparative praise. Use concise headings, short bullets, and compact tables. Prioritize disclosure subject status, obligation level, evidence status, risk flag, next action, and reviewer handoff. If the gap check is long, provide the executive summary first.
+
 ## Mandatory output structure
 
 Use these headings:
@@ -145,5 +149,6 @@ Add this notice: Draft working paper for internal review only. Placeholder frame
 ## Local resources
 
 - References: [上交所第14号占位参考](references/framework-sse-sustainability-reporting-guideline.md), [深交所第17号占位参考](references/framework-szse-sustainability-reporting-guideline.md)
+- Reference: [output style policy](references/output-style-policy.md)
 - Template: [A 股差距检查模板](assets/templates/a-share-gap-check-template.md)
 - Example: [A 股差距检查示例](examples/example-a-share-gap-check.md)

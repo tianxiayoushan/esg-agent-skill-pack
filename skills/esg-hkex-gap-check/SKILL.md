@@ -91,6 +91,10 @@ For Part D schedule nuance, state the assumptions cautiously:
 - Use: `需进一步确认适用条文和报告边界。`
 - Use `包装性表述`, `宣传性表述`, or `未经支持的概括性表述（unsupported promotional wording）` for unsupported promotional wording.
 
+## Output style policy
+
+Follow the local [output style policy](references/output-style-policy.md). Default to institutional memo style: Chinese-first, no greeting, no polite filler, no explanatory preface, no decorative language, no marketing tone, and no unsupported comparative praise. Use concise headings, short bullets, and compact tables. Prioritize potential gap, obligation level, evidence status, risk flag, next action, and reviewer handoff. If the gap check is long, provide the executive summary first.
+
 ## Mandatory output structure
 
 Use these headings:
@@ -136,5 +140,6 @@ Add this notice: Draft working paper for internal review only. Placeholder frame
 ## Local resources
 
 - Reference: [HKEX source placeholder](references/framework-hkex-esg-code.md)
+- Reference: [output style policy](references/output-style-policy.md)
 - Template: [HKEX gap check template](assets/templates/hkex-gap-check-template.md)
 - Example: [example HKEX gap check](examples/example-hkex-gap-check.md)

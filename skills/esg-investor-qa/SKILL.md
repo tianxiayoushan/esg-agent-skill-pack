@@ -58,6 +58,10 @@ Default output language: Chinese (`zh-CN`). Use these rules unless the user expl
 10. Avoid `Risk flags: None`; use `No material risk identified from provided materials, but IR/legal review required`.
 11. Mark questions needing legal, IR, company secretary, or management approval.
 
+## Output style policy
+
+Follow the local [output style policy](references/output-style-policy.md). Default to institutional memo style: Chinese-first, no greeting, no polite filler, no explanatory preface, no decorative language, no marketing tone, and no unsupported comparative praise. Use concise headings, short bullets, and compact tables. Prioritize safe answer, evidence status, risk flag, next action, and reviewer handoff. Investor Q&A outputs should be one-page friendly by default; if longer detail is necessary, provide the executive summary first.
+
 ## Mandatory output structure
 
 Use these headings:
@@ -100,5 +104,6 @@ Add this notice: Draft working paper for internal review only. Confirm all ESG i
 
 ## Local resources
 
+- Reference: [output style policy](references/output-style-policy.md)
 - Template: [investor Q&A template](assets/templates/investor-qa-template.md)
 - Example: [example investor Q&A](examples/example-investor-qa.md)

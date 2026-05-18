@@ -1,0 +1,55 @@
+# Lightweight schema guide for optional company profiles.
+# This is documentation-oriented YAML, not a runtime dependency.
+
+schema_name: "ESG Skill Pack Company Profile"
+version: "0.1.7"
+last_reviewed: "2026-05-18"
+status: "internal pilot"
+
+rules:
+  optional: true
+  local_file: "company_profile.local.yaml"
+  example_file: "company_profile.example.yaml"
+  gitignore_required: true
+  no_confidential_data: true
+  no_final_compliance_conclusions: true
+  source_required_for_verified_use: true
+  last_reviewed_required_for_verified_use: true
+  confirmed_by_required_for_verified_use: true
+  missing_source_rule: "Treat profile fields without source, last_reviewed, or confirmed_by as assumptions, not verified facts."
+  professional_confirmation_rule: "Company profile can reduce repeated questions but must not override legal, company secretary, securities affairs, audit, assurance, finance, ESG, or management confirmation."
+
+required_sections:
+  company:
+    fields:
+      - name
+      - stock_code
+      - listing_market
+      - board
+      - industry
+      - fiscal_year_end
+  hkex:
+    fields:
+      - issuer_type
+      - largecap_status
+      - part_d_applicability
+  a_share:
+    fields:
+      - exchange
+      - index_status
+      - cross_listed
+  disclosure:
+    fields:
+      - default_output_language
+      - approved_public_sources
+      - reviewer_roles
+  profile_meta:
+    fields:
+      - source
+      - last_reviewed
+      - confirmed_by
+
+field_rule:
+  scalar_profile_fields: "Use value, source, last_reviewed, and confirmed_by where practical."
+  list_profile_fields: "Use value as a list plus source, last_reviewed, and confirmed_by."
+  evidence_status: "Profile data with complete source, last_reviewed, and confirmed_by may be treated as user-provided context, but still requires purpose-specific review before external use."

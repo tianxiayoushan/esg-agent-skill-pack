@@ -1,0 +1,101 @@
+# Example optional company profile for local internal testing.
+# Do not put confidential, unpublished, personal, customer, supplier, board, password, token, or market-sensitive information here.
+# Copy to company_profile.local.yaml for local use. The local file is ignored by git.
+
+company:
+  name:
+    value: "Fictional Listed Company Limited"
+    source: "Public annual report excerpt or approved internal profile"
+    last_reviewed: "2026-05-18"
+    confirmed_by: "Example reviewer role only"
+  stock_code:
+    value: "0000"
+    source: "Public stock exchange page"
+    last_reviewed: "2026-05-18"
+    confirmed_by: "Securities affairs"
+  listing_market:
+    value: "HKEX / SSE / SZSE / other"
+    source: "Public listing page"
+    last_reviewed: "2026-05-18"
+    confirmed_by: "Company secretary / securities affairs"
+  board:
+    value: "Main Board / GEM / STAR Market / ChiNext / other"
+    source: "Public listing page"
+    last_reviewed: "2026-05-18"
+    confirmed_by: "Company secretary / securities affairs"
+  industry:
+    value: "Fictional industry"
+    source: "Public annual report"
+    last_reviewed: "2026-05-18"
+    confirmed_by: "ESG owner"
+  fiscal_year_end:
+    value: "12-31"
+    source: "Public annual report"
+    last_reviewed: "2026-05-18"
+    confirmed_by: "Finance"
+
+hkex:
+  issuer_type:
+    value: "Main Board / GEM / not applicable / to confirm"
+    source: "Official listing information or company secretary confirmation"
+    last_reviewed: "2026-05-18"
+    confirmed_by: "Company secretary"
+  largecap_status:
+    value: "confirmed / not confirmed / not applicable / to confirm"
+    source: "Official or professionally confirmed status"
+    last_reviewed: "2026-05-18"
+    confirmed_by: "Company secretary / legal"
+  part_d_applicability:
+    value: "confirmed / not confirmed / to confirm"
+    source: "Official HKEX source text plus professional confirmation"
+    last_reviewed: "2026-05-18"
+    confirmed_by: "Company secretary / legal"
+
+a_share:
+  exchange:
+    value: "SSE / SZSE / not applicable / to confirm"
+    source: "Official listing information"
+    last_reviewed: "2026-05-18"
+    confirmed_by: "Securities affairs / board office"
+  index_status:
+    value: "上证180 / 科创50 / 深证100 / 创业板指数 / other / to confirm"
+    source: "Official index information or securities affairs confirmation"
+    last_reviewed: "2026-05-18"
+    confirmed_by: "Securities affairs / legal"
+  cross_listed:
+    value: "yes / no / to confirm"
+    source: "Public listing information"
+    last_reviewed: "2026-05-18"
+    confirmed_by: "Securities affairs / legal"
+
+disclosure:
+  default_output_language:
+    value: "zh-CN"
+    source: "Internal pilot preference"
+    last_reviewed: "2026-05-18"
+    confirmed_by: "Pilot owner"
+  approved_public_sources:
+    value:
+      - "Public annual report"
+      - "Public ESG or sustainability report"
+      - "Approved investor presentation"
+    source: "Internal disclosure control list"
+    last_reviewed: "2026-05-18"
+    confirmed_by: "IR / legal / company secretary"
+  reviewer_roles:
+    value:
+      - "ESG"
+      - "IR"
+      - "Company secretary / board office / securities affairs"
+      - "Legal"
+      - "Finance"
+      - "EHS / operations / procurement where applicable"
+    source: "Internal review workflow"
+    last_reviewed: "2026-05-18"
+    confirmed_by: "Pilot owner"
+
+profile_meta:
+  source: "Synthetic example only"
+  last_reviewed: "2026-05-18"
+  confirmed_by: "No real company confirmation"
+  notes: "Company profile is optional. It reduces repeated questions but does not override professional confirmation or create compliance conclusions."

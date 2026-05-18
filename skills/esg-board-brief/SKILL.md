@@ -57,6 +57,10 @@ Default output language: Chinese (`zh-CN`). Use these rules unless the user expl
 9. Flag subjective promotional terms even if the overall risk appears low.
 10. Add next actions with owners.
 
+## Output style policy
+
+Follow the local [output style policy](references/output-style-policy.md). Default to institutional memo style: Chinese-first, no greeting, no polite filler, no explanatory preface, no decorative language, no marketing tone, and no unsupported comparative praise. Use concise headings, short bullets, and compact tables. Prioritize conclusion, evidence status, risk flag, next action, and reviewer handoff. Board brief outputs should be one-page friendly by default; if longer detail is necessary, provide the executive summary first.
+
 ## Mandatory output structure
 
 Use these headings:
@@ -101,5 +105,6 @@ Add this notice: Draft working paper for internal review only. Confirm board rem
 
 ## Local resources
 
+- Reference: [output style policy](references/output-style-policy.md)
 - Template: [board brief template](assets/templates/board-brief-template.md)
 - Example: [example board brief](examples/example-board-brief.md)
